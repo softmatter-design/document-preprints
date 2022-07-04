@@ -1,0 +1,1723 @@
+\documentclass[11pt, dvipdfmx]{beamer}
+%\documentclass[8,9,10,11,12,14,17,20pt, dvips, handout]{beamer}
+%%%%%%%%%%%  package  %%%%%%%%%%%
+\usepackage{amssymb,amsmath,ascmac}
+\usepackage{atbegshi}
+%\usepackage[orientation=portrait, size=a4, debug]{beamerposter}
+
+
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\usepackage{minijs}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usepackage{multirow}
+\usepackage{bm}
+%\usepackage[dvipdfmx]{graphicx}
+%\usepackage{multimedia}
+
+\usepackage{tikz}
+\usepackage{xparse}
+\usetikzlibrary{shapes,arrows}
+%% define fancy arrow. \tikzfancyarrow[<option>]{<text>}. ex: \tikzfancyarrow[fill=red!5]{hoge}
+  \tikzset{arrowstyle/.style n args={2}{inner ysep=0.1ex, inner xsep=0.5em, minimum height=2em, draw=#2, fill=black!20, font=\sffamily\bfseries, single arrow, single arrow head extend=0.4em, #1,}}
+  \NewDocumentCommand{\tikzfancyarrow}{O{fill=black!20} O{none}  m}{
+    \tikz[baseline=-0.5ex]\node [arrowstyle={#1}{#2}] {#3 \mathstrut};}
+
+%微分関連のマクロ
+%
+\newcommand{\diff}{\mathrm d}
+\newcommand{\difd}[2]{\dfrac{\diff #1}{\diff #2}}
+\newcommand{\difp}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\difdd}[2]{\dfrac{\diff^2 #1}{\diff #2^2}}
+\newcommand{\difpp}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+
+%%%%%%%%%%%  theme  %%%%%%%%%%%
+
+%%%%%
+% Simple
+%%%%%
+%\usetheme{default}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Szeged}
+
+%%%%%
+% So So
+%%%%%
+%\usetheme{Singapore}
+%\usetheme{CambridgeUS}
+\usetheme{Copenhagen}
+%\usetheme{Luebeck}
+%\usetheme{Malmoe}
+%\usetheme{Warsaw}
+
+%%%%%
+% No Heasder
+%%%%%
+%\usetheme{Madrid}
+%\usetheme{Boadilla}
+
+%%%%%
+% No Footer
+%%%%%
+%\usetheme{Darmstadt}
+%\usetheme{JuanLesPins}
+%\usetheme{Montpellier}
+
+%%%%%
+% Color
+%%%%%
+%\usetheme{AnnArbor}
+
+%%%%%
+% Too much
+%%%%%
+%\usetheme{Berlin}
+%\usetheme{Ilmenau}
+
+%%%%%
+% Right hand Side
+%%%%%
+%\usetheme{Goettingen}
+%\usetheme{Marburg}
+
+%%%%%
+% Left hand Side
+%%%%%
+%\usetheme{PaloAlto}
+
+
+%%%%%%%%%%%  inner theme  %%%%%%%%%%%
+\useinnertheme{default}
+%\useinnertheme{circles}
+%\useinnertheme{inmargin}
+%\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+
+
+%%%%%%%%%%%  outer theme  %%%%%%%%%%%
+\useoutertheme{default}
+%\useoutertheme{miniframes}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebars}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+
+%%%%%%%%%%%  color theme  %%%%%%%%%%%
+%\usecolortheme{structure}
+%\usecolortheme{sidebartab}
+%\usecolortheme{albatross}
+%\usecolortheme{beetle}
+%\usecolortheme{dove}
+%\usecolortheme{crane}
+%\usecolortheme{fly}
+%\usecolortheme{seagull}
+%\usecolortheme{wolverine}
+%\usecolortheme{beaver}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{whale}
+%\usecolortheme{seahorse}
+%\usecolortheme{dolphin}
+
+
+%%%%%%%%%%%  font theme  %%%%%%%%%%%
+\usefonttheme{professionalfonts}
+%\usefonttheme{default}
+%\usefonttheme{serif}
+%\usefonttheme{structurebold}
+%\usefonttheme{structureserif}
+%\usefonttheme{structuresmallcapsserif}
+
+
+%%%%%%%%%%%  degree of transparency  %%%%%%%%%%%
+%\setbeamercovered{transparent=30}
+
+%\setbeamercolor{item}{fg=red}
+\setbeamertemplate{items}[default]
+
+%%%%%%%%%%%  numbering  %%%%%%%%%%%
+%\setbeamertemplate{numbered}
+
+\setbeamertemplate{navigation symbols}{}
+
+\title
+[MD シミュレーションによるゴム弾性]
+{MD シミュレーションによる\\ネットワークポリマーのゴム弾性}
+\author{佐々木裕}
+\institute[東亞合成]{東亞合成}
+\date{\today}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}\frametitle{}
+	\titlepage
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{はじめに}
+%%%%%%%%%%%%%%%%
+\begin{frame}
+\LARGE{はじめに}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+%\subsection{ネットワークポリマー研究の深化と新規材料への展開}
+%
+%\begin{frame}
+%\frametitle{ネットワークポリマー研究の深化}
+%
+%近年、ソフトマターの階層的な構造設計の考え方が深化し、力学特性に優れたネットワークポリマーの材料設計にも応用されている。
+%例えば、旧知の材料であるゴムの機能発現機構についても、フィラーとの相互作用
+%%~\cite{Igarashi2013}
+%という観点から検討が進められ、
+%また、脆い材料として知られているゲルも、これまでにない高強度なものが発見されてきている%~\cite{Gong2010}。
+%
+%\begin{center}
+%\includegraphics[width=80mm]{./fig/tire.png}
+%\end{center}
+%
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{高分子材料への期待}
+
+地球温暖化対策の CO$_2$ 削減への一つの主要なアイテムとして、\\
+{\Large
+\alert{「自動車を中心とした運送機器の抜本的な軽量化」}
+}\\
+が提唱されている。
+\begin{block}{高分子材料への期待}
+	\begin{itemize}
+	\item
+	現行の鉄鋼主体$ \Rightarrow$ 高分子材料を含むマルチマテリアル化
+	
+	\item
+	高分子材料によるマルチマテリアル化のポイント
+		\begin{itemize}
+		\item
+		\alert{\large 特徴を生かした適材適所 $\Leftrightarrow$ 適切な接合方法の選択}
+			\begin{itemize}
+			\item
+			{\normalsize 高い比強度の有効利用}
+			\item
+			{\normalsize「接着接合」への高分子の利用}
+			\item
+			{\normalsize「柔らかさを生かした弾性接着接合」への期待}
+			\end{itemize}
+		\item
+		{\color{blue}\large 耐久性が不明確（特に疲労破壊に対して）}
+		\end{itemize}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{破壊にたいする粘弾性効果}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{破壊工学の考え方}
+\begin{exampleblock}{破壊工学の考え方}
+
+\begin{itemize}
+\item
+系中にクラックが存在することを前提に材料の耐久性を評価
+\item
+\alert{「クラック近傍での応力集中を如何に抑制するか」}がポイント
+\end{itemize}
+\end{exampleblock}
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.5\textwidth}
+\begin{alertblock}{破壊工学の観点から（微視的）}
+	\begin{itemize}
+		\item
+		クラック先端での応力集中\\ \alert{応力拡大係数 $K_I$ で評価}
+		\footnotesize
+		\begin{align*}
+		K_{I} = \sigma \sqrt{\pi c}
+		\end{align*}
+		\normalsize
+		\item 
+		クラック進展の抑制 \\
+		$\Rightarrow$ 先端での\alert{局所降伏}\\
+		降伏応力 $\sigma_Y$ に反比例
+		\footnotesize
+		\begin{align*}
+		d \propto \left( \dfrac{K_I}{\sigma_Y} \right)^2
+		\end{align*}
+		\normalsize
+	\end{itemize}
+\end{alertblock}
+\column{.5\textwidth}
+	\centering
+	\includegraphics[width=45mm]{./fig/Crack_Yield.pdf}
+\end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+%[shrink squeeze]
+\frametitle{ゴムの破壊と粘弾性}
+
+\begin{block}{ゴムの破壊}
+ゴムの破壊は大変形を伴うにもかかわらず、時間温度換算則が成立する例が多数報告されている。
+\end{block}
+
+
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.48\textwidth}
+
+ゴムの亀裂先端近傍での大変形
+
+\centering
+\includegraphics[width=.6\textwidth]{./fig/rubber_crack.png}
+
+\column{.48\textwidth}
+
+時間温度換算則の成立
+
+\centering
+\includegraphics[width=.5\textwidth]{./fig/Time_Temp.png}
+\end{columns}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+%[shrink squeeze]
+\frametitle{天然ゴムとSBRとの違い（伸びきり効果の有無）}
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.48\textwidth}
+
+伸長時の結晶化の有無で議論？
+
+\includegraphics[width=0.7\textwidth]{./fig/NR_SBR.png}
+
+\column{.48\textwidth}
+
+低温であれば、SBRでも伸びきり効果が発現
+
+\includegraphics[width=0.9\textwidth]{./fig/SBR_lowTemp.png}
+
+\end{columns}
+
+\begin{alertblock}{時間温度換算則で考えてみれば？}
+NR の適正な変形速度・温度と SBR のそれとの違い
+\end{alertblock}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+%[shrink squeeze]
+\frametitle{引き裂きエネルギーの時間温度依存}
+
+%\begin{alertblock}{時間温度換算則で考えてみれば？}
+%NR の適正な変形速度・温度と SBR のそれとの違い
+%\end{alertblock}
+%
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.48\textwidth}
+
+粘弾性効果の極限
+
+高温・低速
+
+\includegraphics[width=\textwidth]{./fig/Lake_Thomas.png}
+
+\column{.48\textwidth}
+
+判りやすい依存性
+
+\includegraphics[width=0.8\textwidth]{./fig/break_TT.png}
+
+\end{columns}
+
+
+\end{frame}
+
+
+\subsection{力学的ヒステリシスの重要性}
+%
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{クラック先端のミクロな場での振る舞い}
+
+%ゴム弾性はエントロピー由来であり{\color{red}本質的に可逆}。
+%
+%近年、しなやかな強さを示す靭性材料として再注目を集めている。
+
+\small
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.6\textwidth}
+\begin{exampleblock}{\Large Andrews 理論}
+クラック先端での応力緩和機構について、
+	\begin{itemize}
+	\item
+	クラック先端の応力等高線を用いた\\
+	クラック成長時の応力場の考察より、
+		\begin{itemize}
+		\item
+		\alert{Loading 場とUnloading 場の差}が重要。
+		\item
+		この差は\alert{ヒステリシスに由来}
+		\end{itemize}	
+	\item
+	\alert{ひずみエネルギー開放率が低減} \\$\Rightarrow$ 強靭さの起源。
+	\end{itemize}
+\end{exampleblock}
+
+{Andrews, E. H. and Fukahori, Y., Journal of Materials Science, 12, 1307 (1977)}
+
+\column{.4\textwidth}
+\centering
+\includegraphics[width=40mm]{./fig/crack.png}
+\end{columns}
+
+\begin{alertblock}{クラック先端での力学的ヒステリシス}
+ミクロな緩和現象がマクロな耐久性向上と繋がる。
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{本発表の内容}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{スケールについて}
+
+
+\begin{block}{メゾスケールでの報告}
+ゴムにおけるフィラーの効果やDN ゲルにおける犠牲結合においては大きなヒステリシスが存在し、高靭性メカニズムはこの考え方に合致。
+これらの例はいずれも分子鎖描像より若干大きいメゾスケール領域での挙動であり、この相対的に大きなスケールでの挙動は一般に長時間緩和となる。
+
+ヒステリシス挙動はこのスケールでしか発現しないのであろうか。 
+\end{block}
+
+
+\begin{alertblock}{\Large シミュレーションでやりたいこと}
+我々は、よりミクロな分子鎖描像からも、力学的ヒステリシスによる破壊耐性の向上の可能性があるのではないかと考えている。
+\begin{itemize}
+\item
+単純化したモデルから始めたい。
+\end{itemize}
+\centering
+\Large
+\alert{「オッカムの剃刀」}
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{本発表の内容}
+
+\begin{exampleblock}{本研究の目標}
+ソフトマターの構造材料への展開
+
+\begin{itemize}
+\item
+標語的に言えば、
+
+「脆性破壊を伴いがちな剛直性から、設計された延性に基づく高耐久性を示す『しなやかな強さ』へのパラダイムシフト」
+\item
+この設計された延性に必要な要件を明確にすることが本研究の目的である。
+\end{itemize}
+\end{exampleblock}
+
+\begin{block}{本発表の内容}
+先行研究である Everaers らの方法に従った規則構造を有するネットワークの分子動力学（MD）シミュレーションによりそのゴム弾性挙動の変形速度依存性と緩和時間との関連について検討を行い、時間温度換算則が成り立つような線形粘弾性の枠組みでのヒステリシスを考察した。
+\end{block}
+\end{frame}
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{MD シミュレーション}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+\begin{frame}
+\LARGE{MD シミュレーション}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{検討の対象}
+
+\begin{block}{}
+	\begin{itemize}
+	\item KG ポリマーによるネットワーク
+		\begin{itemize}
+		\item ビーズ間には LJ ポテンシャル、ボンドに FENE-LJ ポテンシャル
+		\item 「排除体積効果」「絡み合い」および「伸びきり鎖」も評価。
+		\end{itemize}
+	\item ネットワーク構造
+		\begin{itemize}
+		\item ダイヤモンド構造ベースの 4-Chain モデル
+	%	\item 単純格子ベースの 6-Chain モデル
+	%	\item 体心立方ベースの 8-Chain モデル
+		\end{itemize}
+	\item IPNによる密度の調整
+
+	ストランド長を理想状態での末端間距離としてシステムの密度を設定（$\rho = 0.85$）するため、ネットワークを多重化（IPN）した。
+	\end{itemize}
+\end{block}
+
+\vspace{-1mm}
+\begin{table}[htb]
+ \centering
+	\scriptsize
+ \begin{tabular} {|c|c|c|c|c|c|c|c|} \hline
+Segments	& Bonds	& Strand Length	& Cell Size	& \multicolumn{4}{|c|}{$\rho$}			\\ \cline{5-8}
+b/w J.P. 	& b/w J.P.	& $r$		& $a$				& $n=1$	& $n=2$	& $\cdots$	& $n=9$	\\ \hline \hline
+%1			&	2	&	1.372		& 3.168		& 0.755	& 1.510	& 2.265	& 3.019	\\ \hline
+%2			&	3	&	1.680		& 3.880		& 0.685	& 1.370	& 2.054	& 2.739 \\ \hline
+%$\vdots$	& \multicolumn{7}{|c|}{} \\ \hline
+%9			&	10	&	3.067		& 7.084		& 0.428	& {\color{red}0.855}	& 1.283	& 1.710	\\ \hline
+%$\vdots$	& \multicolumn{7}{|c|}{} \\ \hline
+%23			&	24	&	4.752		&	10.974	& 0.284	& 0.569	& {\color{red}0.853}	& 1.138	\\ \hline
+%$\vdots$	& \multicolumn{7}{|c|}{} \\ \hline
+44			&	45	&	8.484		&	19.593	& 0.0947	& 0.189	& $\cdots$	& {\color{red}0.852} 		\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{先行研究}
+R. Everaers, New J. Phys. 1999, 1, 12.
+\end{alertblock}
+
+\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{MD シミュレーション}
+
+OCTA 上の Cognac により、MD シミュレーションを実施。
+
+\begin{columns}[T, totalwidth=1\linewidth]
+\column{.5\linewidth}
+\begin{block}{\large シミュレーション条件}
+	\begin{itemize}
+	\item
+	KG モデル
+	\item
+	構造：ダイヤモンド構造
+%	\begin{itemize}
+%		\item
+%		ストランド長：44
+%%		\item
+%%		架橋点/ ユニット：8
+%%		\item
+%%		ストランド/ ユニット：16
+%		\item
+%		ユニット数：$2 \times 2 \times 2$
+%%		\item
+%%		多重度：9
+%		\item
+%		密度 $\rho =0.85$
+%	\end{itemize}
+	
+	\item
+	緩和条件：\\
+	NPTで所定の密度 $\Rightarrow$ NVT
+	\end{itemize} 
+\end{block}
+\vspace{5mm}
+
+\centering
+\includegraphics[width=0.6\columnwidth]{./fig/dia_green_2.png}
+
+\column{.01\linewidth}
+\column{.45\linewidth}
+初期状態（$\rho \simeq 0.2$）
+\includegraphics[width=\columnwidth]{./fig/Init.png}
+
+\vspace{-3mm}
+\begin{center}
+$\Downarrow$ NPT
+\end{center}
+\vspace{-3mm}
+
+初期緩和後（$\rho =0.85$）
+\includegraphics[width=\columnwidth]{./fig/after.png}
+\end{columns}
+\end{frame}
+
+%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{シミュレーション結果}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\Large{シミュレーション結果}
+\end{frame}
+
+\subsection{線形粘弾性}
+
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{粘弾性スペクトル}
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.48\textwidth}
+
+\begin{block}{応力緩和スペクトル}
+\begin{itemize}
+\small
+\item
+Green-Kubo form. により、応力緩和スペクトルを算出
+\end{itemize}
+
+\end{block}
+
+\centering
+\includegraphics[width=\columnwidth]{./fig/Gt_loglog.pdf}
+
+\column{.02\textwidth}
+
+\column{.48\textwidth}
+\begin{exampleblock}{動的粘弾性スペクトル}
+\begin{itemize}
+\small
+\item
+応力緩和スペクトルより算出
+\item
+ずり変形より算出（離散値）
+\end{itemize}
+\end{exampleblock}
+
+\centering
+\includegraphics[width=\columnwidth]{./fig/N_44_Freq_Sweep.pdf}
+
+\end{columns}
+
+ストランドと同等な自由鎖（N=46）のラウス緩和（最長ラウス緩和時間 $\tau_R = 2700$）についても示している。
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{一軸伸長}
+
+%%
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{一軸伸長}
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.45\textwidth}
+
+\begin{block}{一軸伸長}
+\begin{itemize}
+\item
+変形速度 
+
+$5 \times 10^{-4} \sim 1 \times 10^{-5} \lambda/\tau$
+
+\item
+伸長速度の低減
+
+$\lambda<2$ 程度の小さなひずみでネオフッキアンモデルに合致
+
+\item
+ステップ変形からの緩和
+
+最長緩和時間が自由鎖の $\tau_R$ と同程度であることを確認
+\end{itemize}
+
+\end{block}
+
+\column{.05\textwidth}
+\column{.5\textwidth}
+%\centering
+\includegraphics[width=\columnwidth]{./fig/N44_SS.pdf}
+
+\vspace{-5mm}
+
+%\tiny
+\footnotesize
+\begin{align*}
+\sigma_{T} &= \sigma_{zz} -\dfrac{1}{2}(\sigma_{xx}+\sigma{yy}) \notag \\
+\sigma_{NH} &= \nu k_B T \left(\lambda - \dfrac{1}{\lambda^2} \right)
+\end{align*}
+
+\end{columns}
+
+\end{frame}
+
+\subsection{力学的ヒステリシス}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{力学的ヒステリシス}
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.48\textwidth}
+
+最長緩和時間の逆数程度のオーダーである変形速度（$5E^{-4}\lambda/\tau$）での一軸伸長において、任意の変形量（$\lambda = 1.2, 1.5, 2.0, 2.5$）まで伸長した後に同等の変形速度で圧縮を行い、力学的ヒステリシスを測定した
+
+
+また、伸長速度を遅くすることにより、ヒステリシス強度が減少することも確認できた。
+
+\column{.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./fig/N44_rev_SS.pdf}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{おわりに}
+
+本報告においては、単純な規則構造を有するネットワークの線形緩和現象と任意の変形速度での力学応答との関係から力学的ヒステリシスが生じることを確認し、その発現メカニズムがストランドの緩和現象に起因するものであることを推定した。
+
+実際の破壊現象はこれほど単純ではなく、大変形時の非線形応答を考慮する必要は大きいと考えている。
+
+さらなる検討を進めていきたい。
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{伸長度小（$\lambda \leq 3$）での挙動}
+
+\small
+\begin{alertblock}{ムーニー・リブリンプロット}
+伸長速度 $\sigma/\tau = 1E^{-5}$ [$\sigma/\tau$] において、$C2 \simeq 0$
+
+ネオフッキアンモデルに合致することが確認できた。
+\end{alertblock}
+
+\begin{columns}[T, totalwidth=0.96\linewidth]
+\column{.47\linewidth}
+
+\includegraphics[width=\columnwidth]{./fig/MR_1e-5.pdf}
+\column{.47\linewidth}
+
+\includegraphics[width=\columnwidth]{./fig/SS_w_MR_1e-5.pdf}
+\end{columns}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Edwards Vilgis model}
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.5\textwidth}
+
+\tiny
+絡み合いの効果を考慮したモデルとして、下式の Edwards Vilgis model が知られている。
+
+$\eta$ は、絡み合いに起因したポリマー鎖の摩擦を表す因子
+
+$\alpha$ は、伸び切り鎖の寄与を表す因子
+
+\begin{align*}
+f
+	&= N_c D \left[ \dfrac{1-\alpha^2}{(1-\alpha^2 \phi)^2} - \dfrac{\alpha^2}{1-\alpha^2 \phi} \right]\notag \\
+	&\quad + N_e \left[
+			\dfrac{(1+\eta)(1-\alpha^2)\alpha^2D}{(1-\alpha^2 \phi)^2} \left\{ \dfrac{\lambda^2}{1+\eta \lambda^2}
+				+\dfrac{2}{\lambda+\eta} \right\} \right. \notag \\
+			&\quad\quad + \dfrac{1}{1-\alpha^2\phi} \left( \dfrac{\lambda}{(1+\eta \lambda^2)^2} -\dfrac{1}{(\lambda+\eta)^2} \right) \notag \\
+			&\quad\quad \left. + \eta \dfrac{D \lambda}{(1+\eta\lambda^2)(\lambda + \eta)} -D\alpha^2\dfrac{1}{1-\alpha^2\phi}
+		\right]
+\end{align*}
+なお、$\phi=\lambda^2-\dfrac{2}{\lambda}, D=\dfrac{\diff \phi}{\diff \lambda}$ である。
+
+\column{.5\textwidth}
+\begin{center}
+伸長速度 $1E^{-5}$ [$\lambda/\tau$]
+\end{center}
+\vspace{-3mm}
+\includegraphics[width=\columnwidth]{./fig/E_V.pdf}
+\end{columns}
+\vspace{3mm}
+\footnotesize
+S. F. Edwards and Th. Vilgis, Polymer, 484, Vol 27 (1986)
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Edwards Vilgis model}
+
+\footnotesize
+\begin{itemize}
+\item
+$\eta$ は、絡み合いに起因したポリマー鎖の摩擦を表す因子
+\item
+$\alpha$ は、伸び切り鎖の寄与を表す因子
+\item
+N$_c$, N$_s$ は、それぞれ、クロスリンク、スリップリンクの数を表す。
+\end{itemize}
+
+\vspace{-3mm}
+
+
+\begin{columns}[totalwidth=1\textwidth]
+\column{.5\textwidth}
+\begin{center}
+伸長速度 $\sigma/\tau = 1E^{-5}$ [$\sigma/\tau$]
+\end{center}
+\vspace{-3mm}
+\includegraphics[width=\columnwidth]{./fig/E_V.pdf}
+
+\column{.5\textwidth}
+\begin{center}
+伸長速度 $\sigma/\tau = 5E^{-4}$ [$\sigma/\tau$]
+\end{center}
+\vspace{-3mm}
+\includegraphics[width=\columnwidth]{./fig/E_V_5e-4.pdf}
+\end{columns}
+\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{KG 鎖の特徴的なふるまいも考慮して}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\Large{シミュレーション結果\\KG 鎖の特徴的なふるまいも考慮して}
+%%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%
+%%
+%%
+%%%%%%%%%%%%%%%
+%\begin{frame}
+%%[shrink squeeze]
+%%[allowframebreaks]
+%\frametitle{自由連結鎖に換算}
+%
+%\begin{columns}[totalwidth=1\textwidth]
+%\column{.48\textwidth}
+%\small
+%\begin{alertblock}{\large }
+%\begin{itemize}
+%\item
+%KG 鎖を自由連結鎖に換算
+%	\begin{itemize}
+%	\item
+%	平均アングルは、$\tilde{\theta} \simeq 74$
+%	\item
+%	クーンセグメント数は、$N_K\simeq16.6$
+%	\end{itemize}
+%\item
+%シミュレーション結果
+%	\begin{itemize}
+%	\item
+%	伸びきり発現が遅い
+%	\item
+%	$N\simeq21$ 程度に相当
+%	\item
+%	この原因は？
+%	\end{itemize}
+%
+%\end{itemize}
+%\end{alertblock}
+%
+%\column{.5\textwidth}
+%\centering
+%\includegraphics[width=\columnwidth]{./fig/SS_w_model.pdf}
+%
+%\end{columns}
+%\vspace{2mm}
+%\centering
+%\footnotesize
+%4-Chain model
+%\vspace{-4mm}
+%\begin{align*}
+%\sigma_{8ch}
+%	&= \dfrac{\nu k_B T }{3}\sqrt{N}
+%			\mathcal{L}^{-1} \left(\dfrac{\lambda_{chain}}{ \sqrt{N} } \right)
+%			\dfrac{\lambda-\dfrac{1}{\lambda^2}}{\lambda_{chain}} 
+%\end{align*}
+%
+%\end{frame}
+%
+%%%%%%%%%%%%%%%
+%\begin{frame}
+%\frametitle{KG鎖のアングル}
+%
+%\small
+%KG 鎖のアングルは、1,3 位に働く LJ ポテンシャル の反発により定まる。\\
+%アングルの平均値は以下のように見積もれる。
+%
+%\begin{columns}[totalwidth=1\textwidth]
+%\column{.6\textwidth}
+%\vspace{-2mm}
+%\tiny
+%\begin{align*}
+%&\langle \cos (\theta) \rangle 
+%= \dfrac{
+%\displaystyle \int_0^{\pi} \rm{d} \theta 
+%\sin(\theta) 
+%\color{red}
+%\cos(\theta)
+%\color{black} 
+%\exp \left(-\dfrac{U_{LJ}(r(\theta))}{k_B T}\right)
+%}
+%{\displaystyle \int_0^{\pi} \rm{d} \theta 
+%\sin(\theta) \exp \left(-\dfrac{U_{LJ}(r(\theta))}{k_B T}\right)}
+%\simeq 0.274 \notag \\
+%&\theta \simeq 74.1
+%\end{align*}
+%
+%ただし、
+%\vspace{-2mm}
+%\begin{align*}
+%r(\theta)&=2b \sin \left( \dfrac{\pi-\theta}{2} \right) \notag \\[12pt]
+%U_{LJ}(r) &= 
+%\begin{cases}
+%4 \epsilon\left[\left(\dfrac{\sigma}{r}\right)^{12} - \left(\dfrac{\sigma}{r}\right)^{6} + \dfrac{1}{4} \right] \;\;\; & r< 2^{1/6} \sigma \\[8pt]
+%0 \;\;\; & r \geq 2^{1/6} \sigma
+%\end{cases}
+%\end{align*}
+%
+%\column{.4\textwidth}
+%%\begin{center}
+%%\small
+%%アングルのヒストグラム
+%%\end{center}
+%%\vspace{-10mm}
+%
+%\centering
+%\includegraphics[width=50mm]{./fig/Angle_Init.pdf}
+%\vspace{2mm}
+%
+%\includegraphics[width=35mm]{./fig/KG_1_3.png}
+%\end{columns}
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%
+%\begin{frame}
+%%[shrink squeeze]
+%%[allowframebreaks]
+%\frametitle{伸長時のアングル}
+%
+%\begin{columns}[totalwidth=1\textwidth]
+%\column{.5\textwidth}
+%
+%\begin{block}{\large アングルの分布関数}
+%\begin{itemize}
+%\item
+%高伸長比において、アングルの分布関数が変化。
+%\item
+%開いたアングル成分が増加
+%\item
+%KG 鎖のアングルは、1, 3 位の LJ ポテンシャル由来の反発
+%\item
+%ストランドの引き延ばしにより、分布が変化したものと推定できる。
+%\end{itemize}
+%\end{block}
+%
+%\column{.5\textwidth}
+%\centering
+%\includegraphics[width=\columnwidth]{./fig/Angle_Step.pdf}
+%
+%\end{columns}
+%
+%\begin{exampleblock}{\Large ストランドの振る舞い}
+%\begin{itemize}
+%\item
+%ボンド長は伸びないが、アングルが増加。
+%\item
+%その結果として、クーン・セグメント数は増加。
+%\end{itemize}
+%\end{exampleblock}
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%
+%\begin{frame}
+%%[shrink squeeze]
+%%[allowframebreaks]
+%\frametitle{アングルポテンシャルの導入}
+%
+%\small
+%\begin{alertblock}{\large KG 鎖にアングルポテンシャルを導入}
+%\begin{itemize}
+%\item
+%$\theta =74$ となるように、アングルポテンシャルを導入
+%\item
+%同様に一軸伸長シミュレーション
+%\end{itemize}
+%\end{alertblock}
+%
+%\begin{columns}[totalwidth=1\textwidth]
+%\column{.48\textwidth}
+%\centering
+%\includegraphics[width=\columnwidth]{./fig/C_ratio.pdf}
+%
+%\column{.02\textwidth}
+%\column{.5\textwidth}
+%\centering
+%\includegraphics[width=\columnwidth]{./fig/SS_N44_w_Angle.pdf}
+%
+%\end{columns}
+%%\centering
+%%\footnotesize
+%%4-Chain model
+%%\begin{align*}
+%%\sigma_{8ch}
+%%	&= \dfrac{\nu k_B T }{3}\sqrt{N}
+%%			\mathcal{L}^{-1} \left(\dfrac{\lambda_{chain}}{ \sqrt{N} } \right)
+%%			\dfrac{\lambda-\dfrac{1}{\lambda^2}}{\lambda_{chain}} 
+%%\end{align*}
+%
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%
+%\section{おわりに}
+%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%
+%\begin{frame}
+%\frametitle{おわりに}
+%
+%\begin{exampleblock}{本研究の目標とアプローチ}
+%\begin{itemize}
+%\item
+%目標\\
+%破壊耐性に優れた軽量材料の創成とその設計指針の明確化
+%\item
+%アプローチ
+%	\begin{itemize}
+%	\item
+%	可逆性に優れた材料としてゴム材料を選択。
+%	\item
+%	構造明確なネットワークの構築のために超分子ネットワーク。
+%	\item
+%	既知のモデルとの整合性を確認。
+%	\item
+%	\color{red}シミュレーションの併用でマルチスケールモデルを構築\color{black}
+%	\end{itemize}
+%\end{itemize}
+%\end{exampleblock}
+%
+%
+%\begin{block}{KG 鎖のネットワークのMDシミュレーション}
+%KG 鎖によるネットワークのMDシミュレーションを行い、
+%\begin{itemize}
+%\item
+%KG 鎖ネットワークのモデルでメゾスケールと構成方程式はつながる。
+%\item
+%KG 鎖の特徴を考慮すれば、ミクロなふるまいも検討可能。
+%\item
+%詳細な緩和時間の検討を進めたい。
+%\end{itemize}
+%\end{block}
+%
+%\end{frame}
+%
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{appendix}
+%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\LARGE{補足資料}
+%%\end{frame}
+%%%%%%%%%%%%%%%%%%
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\section{KG鎖}
+%%\subsection{KG鎖}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{KG鎖の平衡シミュレーションの条件}
+%%
+%%長さの異なるKG鎖の平衡シミュレーションの条件
+%%
+%%\begin{itemize}
+%%\item
+%%初期緩和：\\$\tau_{E2E}$ の 20 倍程度
+%%\item
+%%本計算：\\$0.1 \times \tau_{E2E} \times$ 800 ステップ
+%%\end{itemize}
+%%
+%%それぞれの長さの場合の計算条件を示した。
+%%
+%%\begin{table}[htb]
+%%\begin{center}
+%%{
+%%\begin{tabular}{c c c c c} \hline
+%%Seg.	& 本数	& $\tau_{E2E}$	& Init. Relux.($\tau$)	& Main ($\tau$)	\\ \hline \hline	
+%%10		& 200	& 1.0E2			& 1.0E4				&	1.0E1 $\times$ 800 steps \\ \hline	
+%%20		& 200	& 4.1E2			& 5.0E4				&	5.0E2 $\times$ 800 steps \\ \hline	
+%%30		& 200	& 1.1E3			& 1.0E5				&	1.0E2 $\times$ 800 steps \\ \hline	
+%%40		& 200	& 1.9E3			& 2.0E5				&	2.0E2 $\times$ 800 steps \\ \hline	
+%%50		& 200	& 3.6E3			& 4.0E5				&	4.0E2 $\times$ 800 steps \\ \hline
+%%\end{tabular}
+%%}
+%%\end{center}
+%%\end{table}
+%%
+%%\end{frame}
+%%
+%%
+%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{平衡シミュレーションの結果}
+%%
+%%長さの異なるKG鎖の平衡シミュレーションの結果を以下に示した。
+%%
+%%\begin{table}[htb]
+%% \centering
+%% \begin{tabular}{c c c c c} \hline
+%%Seg.	& Bonds	& Ave. Bond Len.	& $\langle R^2 \rangle$	& $C_{N}$	\\ \hline \hline	
+%%10		& 9		& 0.965				& 13.0			& 1.55			\\ \hline	
+%%20		& 19	& 0.965				& 29.3			& 1.65			\\ \hline	
+%%30		& 29	& 0.965				& 46.2			& 1.71			\\ \hline	
+%%40		& 39	& 0.965				& 63.7			& 1.75			\\ \hline	
+%%40		& 49	& 0.965				& 79.9			& 1.75			\\ \hline
+%% \end{tabular}
+%%\end{table}
+%%
+%%\vspace{-5mm}
+%%\begin{align*}
+%%C_{\infty} = \dfrac{\langle R^2 \rangle}{N b^2}
+%%\end{align*}
+%%\end{frame}
+%%
+%%%%%%%%
+%%\begin{frame}
+%%%[shrink squeeze]
+%%%[allowframebreaks]
+%%\frametitle{KG 鎖のポテンシャル}
+%%
+%%\small
+%%非結合ポテンシャル：ビーズ間に LJ ポテンシャル $U_{LJ}(r)$
+%%\begin{align*}
+%%U_{LJ}(r) &= 
+%%\begin{cases}
+%%4 \epsilon\left[\left(\dfrac{\sigma}{r}\right)^{12} - \left(\dfrac{\sigma}{r}\right)^{6} + \dfrac{1}{4} \right] \;\;\; & r< 2^{1/6} \sigma \\[8pt]
+%%0 \;\;\; & r \geq 2^{1/6} \sigma
+%%\end{cases}
+%%\end{align*}
+%%
+%%ボンドポテンシャル：FENE-LJ ポテンシャル $U_{FENE}$
+%%\begin{align*}
+%%U_{FENE}(r) &= 
+%%\begin{cases}
+%%-\dfrac{K}{2}\dfrac{\epsilon R_0^2}{\sigma^2} \ln \left[1-\left(\dfrac{r}{R_0}\right)^2 \right] \;\;\; & if \; r< R_0 \\[8pt]
+%%\infty \;\;\; & otherwise
+%%\end{cases}
+%%\end{align*}
+%%
+%%なお、一般的なパラメタセットは、
+%%\begin{align*}
+%% \begin{cases}
+%%	\epsilon = \sigma = 1 \\
+%%	R_0 = 1.5 \\
+%%	K=30
+%% \end{cases}
+%%\end{align*}
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\subsection{各種特性}
+%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{KG鎖のアングル}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%\footnotesize
+%%\begin{itemize}
+%%\item
+%%生データをヤコビアンで処理したものと合わせて示した。
+%%\item
+%%ビーズ間の 1,3 位の反発により、アングルが規制されていた。
+%%\item
+%%単純に算術平均した場合の値を図中に示した。
+%%\end{itemize}
+%%
+%%
+%%\column{.5\textwidth}
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=60mm]{./fig/Angle_N40.pdf}
+%%\end{figure}
+%%\end{columns}
+%%
+%%\end{frame}
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{KG 鎖の特性比}
+%%
+%%\footnotesize
+%%1,3 位の反発をポテンシャルに基づき考慮すると、アングルの平均値は以下のように見積もれる。
+%%
+%%\begin{align*}
+%%&\langle \cos (\theta) \rangle 
+%%= \dfrac{
+%%\displaystyle \int_0^{\pi} \rm{d} \theta 
+%%\sin(\theta) 
+%%\color{red}
+%%\cos(\theta)
+%%\color{black} 
+%%\exp \left(-\dfrac{U_{LJ}(r(\theta))}{k_B T}\right)
+%%}
+%%{\displaystyle \int_0^{\pi} \rm{d} \theta 
+%%\sin(\theta) \exp \left(-\dfrac{U_{LJ}(r(\theta))}{k_B T}\right)}
+%%\simeq 0.274 \notag \\
+%%&\theta \simeq 74.1
+%%\end{align*}
+%%
+%%%ただし、
+%%%\begin{align*}
+%%%r(\theta)&=2b \sin \left( \dfrac{\pi-\theta}{2} \right) \notag \\[12pt]
+%%%U_{LJ}(r) &= 
+%%%\begin{cases}
+%%%4 \epsilon\left[\left(\dfrac{\sigma}{r}\right)^{12} - \left(\dfrac{\sigma}{r}\right)^{6} + \dfrac{1}{4} \right] \;\;\; & r< 2^{1/6} \sigma \\[8pt]
+%%%0 \;\;\; & r \geq 2^{1/6} \sigma
+%%%\end{cases}
+%%%\end{align*}
+%%
+%%したがって、
+%%\begin{align*}
+%%\langle R^2 \rangle
+%%&= (N-1) b^2
+%%\left( 
+%%\dfrac{1+ \langle \cos (\theta) \rangle}{1 - \langle \cos (\theta) \rangle}
+%%-\dfrac{1}{N-1}
+%%\dfrac{2 \langle \cos (\theta) \rangle(1-\langle \cos (\theta) \rangle^{N-1})}
+%%{(1-\langle \cos (\theta) \rangle)^2}
+%%\right) \\
+%%\therefore 
+%%C_{N} &= 
+%%\left( 
+%%\dfrac{1+ \langle \cos (\theta) \rangle}{1 - \langle \cos (\theta) \rangle}
+%%-\dfrac{1}{N-1}
+%%\dfrac{2 \langle \cos (\theta) \rangle(1-\langle \cos (\theta) \rangle^{N-1})}
+%%{(1-\langle \cos (\theta) \rangle)^2}
+%%\right)
+%%\end{align*}
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{KG 鎖の特性比}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%\footnotesize
+%%長さの異なるKG鎖の平衡シミュレーションの結果を以下に示した。
+%%
+%%\begin{table}[htb]
+%% \centering
+%% \begin{tabular}{c c c c c} \hline
+%%Seg.	& Bond Len.	& $\langle R^2 \rangle$	& $C_{N}$	\\ \hline \hline	
+%%10		& 0.965		& 13.0			& 1.55			\\ \hline	
+%%20		& 0.965		& 29.3			& 1.65			\\ \hline	
+%%30		& 0.965		& 46.2			& 1.71			\\ \hline	
+%%40		& 0.965		& 63.7			& 1.75			\\ \hline	
+%%40		& 0.965		& 79.9			& 1.75			\\ \hline
+%% \end{tabular}
+%%\end{table}
+%%
+%%\vspace{-5mm}
+%%\begin{align*}
+%%C_{N} = \dfrac{\langle R^2 \rangle}{N b^2}
+%%\end{align*}
+%%
+%%J.C.P.の論文記載のデータも併せて示した。
+%%
+%%\column{.5\textwidth}
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=60mm]{./fig/C_ratio.pdf}
+%%\end{figure}
+%%\end{columns}
+%%\end{frame}
+%%
+%%%%%%%
+%%\begin{frame}
+%%\frametitle{ボンドポテンシャル}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%
+%%\scriptsize
+%%\column{.5\textwidth}
+%%
+%%KG 鎖においてのボンドポテンシャルは、LJ ポテンシャル $U_{LJ}$ と伸びきりバネの FENE ポテンシャル $U_{FENE}$ との和である $U_{FENE-LJ}(r)$ を用いている。
+%%\begin{align*}
+%%U_{FENE-LJ}(r) &= 
+%%U_{LJ} + U_{FENE}
+%%\end{align*}
+%%
+%%これを、伸びきりの無い線形バネポテンシャル $U_{Harm}$ と組み合わせることもできる。
+%%\begin{align*}
+%%U_{Harm} = \dfrac{K}{2}(r-r_0)^2 
+%%\end{align*}
+%%
+%%$K=100, R_0=1.0$ のポテンシャルも併せて示した。
+%%\column{.5\textwidth}
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=60mm]{./fig/FENE.pdf}
+%%\end{figure}
+%%\end{columns}
+%%\end{frame}
+%%
+%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{鎖の交差}
+%%\footnotesize
+%%$U_{FENE-LJ}(r)$ の二つのポテンシャルを設定することにより、KG 鎖においては鎖同士のすり抜けを抑制している。
+%%この抑制効果を、上述のポテンシャルからエネルギー的に確認しよう。
+%%
+%%\scriptsize
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%二本のポリマー鎖が、任意のボンドが直交するように接近した場合を考える。
+%%
+%%エネルギーバリアーが最大となる場合は、ボンドが直角に重なった場合と考えられるので、この時のボンド長を $l$ とすると、異なる鎖に属するビーズ間の距離は、$\dfrac{\sqrt{2}}{2}l$ となる。ボンドは二本あり、非結合相互作用は四個あるので、一本の鎖当たりでは、
+%%\tiny
+%%\begin{align*}
+%%U_{cross}
+%%	&=U_{FENE}(r=l) +  2\times U_{LJ}(r=\dfrac{\sqrt{2}}{2}l)
+%%\end{align*}
+%%
+%%\column{.5\textwidth}
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=50mm]{./fig/Cross_KG.pdf}
+%%\end{figure}
+%%\end{columns}
+%%
+%%したがって、鎖の交差に対するポテンシャルは、約 $60 k_BT$ 程度と見積もれた。
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{アングルポテンシャルの導入}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%非結合ポテンシャルを切って、$U_{FENE-LJ}$ のみを働かせると、自由連結鎖としての振る舞いを示すことは、すでに確認している。
+%%
+%%ここに、アングルポテンシャルを入れてみる。
+%%\column{.5\textwidth}
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=60mm]{./fig/C_ratio_angle.pdf}
+%%\end{figure}
+%%\end{columns}
+%%
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{ボンドポテンシャルの変更}
+%%
+%%ボンドポテンシャルとして、線形バネを用いることを考える。
+%%
+%%\scriptsize
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%二本のポリマー鎖が、任意のボンドが直交するように接近した場合を考える。
+%%
+%%エネルギーバリアーが最大となる場合は、ボンドが直角に重なった場合と考えられるので、この時のボンド長を $l$ とすると、異なる鎖に属するビーズ間の距離は、$\dfrac{\sqrt{2}}{2}l$ となる。ボンドは二本あり、非結合相互作用は四個あるので、一本の鎖当たりでは、
+%%\tiny
+%%\begin{align*}
+%%U_{cross}
+%%	&=U_{Harm}(r=l) +  2\times U_{LJ}(r=\dfrac{\sqrt{2}}{2}l)
+%%\end{align*}
+%%
+%%このとき、
+%%\begin{align*}
+%%U_{Harm} = \dfrac{K}{2}(r-r_0)^2 
+%%\end{align*}
+%%
+%%\column{.5\textwidth}
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=50mm]{./fig/Cross_Harm_LJ.pdf}
+%%\end{figure}
+%%\end{columns}
+%%
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\section{ファントムネットワークの理論}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\subsection{ファントムネットワークの振る舞い}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{ファントムネットワークのゆらぎ}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.47\textwidth}
+%%\scriptsize
+%%\begin{block}{ゆらぎの入ったポテンシャル}
+%%ストランドの末端間ベクトル $\bm{R}_{nm}$ を、\\架橋点の位置ベクトル $\bm{r}_n$ を用いて、
+%%\vspace{-3mm}
+%%\begin{equation*}
+%%\bm{R}_{nm} \equiv \bm{r}_n-\bm{r}_m
+%%\end{equation*}
+%%
+%%系のポテンシャルエネルギーは、
+%%\vspace{-3mm}
+%%\begin{equation*}
+%%U=\dfrac{k}{2} \sum_{\langle nm \rangle} \bm{R}_{nm}^2
+%%\end{equation*}
+%%
+%%これは、自然長で決まる定数項と、ゆらぎに起因した第二項に分割でき、その和で以下となる。
+%%\vspace{-3mm}
+%%\begin{equation*}
+%%U=\dfrac{k}{2} \sum_{\langle nm \rangle} {\bm{R}_{nm}^{(0)}}^2 + \dfrac{k}{2} \sum_{\langle nm \rangle} \Delta \bm{R}_{nm}^2
+%%\end{equation*}
+%%\end{block}
+%%
+%%\column{.47\textwidth}
+%%\scriptsize
+%%\begin{block}{アンサンブル平均の二つの表式}
+%%\vspace{-5mm}
+%%\begin{align*}
+%% \begin{cases}
+%%	\langle U \rangle = N_{strands} \dfrac{k}{2} \langle \Delta \bm{R}^2 \rangle \\
+%%	\langle U \rangle = 3(N_{nodes}-1) \dfrac{1}{2} k_B T
+%% \end{cases}
+%%\end{align*}
+%%なお、第二式は等分配側より導出した。
+%%\end{block}
+%%
+%%\begin{exampleblock}{ファントムネットワークでのゆらぎ}
+%%架橋点数 $N_{nodes}$、架橋点官能基数 $f$ とすれば、規則格子での一般式として、
+%%\vspace{-3mm}
+%%\begin{equation*}
+%%\langle \Delta \bm{R}^2 \rangle = \dfrac{3k_B T}{k} \dfrac{2}{f} \left( 1-\dfrac{1}{N_{nodes}} \right)
+%%\end{equation*}
+%%
+%%適切な条件で、ストランドの自然長 $R_0$\\
+%%を用いて、
+%%\vspace{-3mm}
+%%\begin{equation*}
+%%\color{red}
+%%\langle \Delta \bm{R}^2 \rangle = \dfrac{2}{f} R_0^2
+%%\end{equation*}
+%%\vspace{-6mm}
+%%\end{exampleblock}
+%%
+%%\end{columns}
+%%
+%%\end{frame}
+%%
+%%
+%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{ファントムネットワークの振る舞い}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.47\textwidth}
+%%\scriptsize
+%%\begin{block}{ストランドの末端間距離}
+%%ストランドの末端間距離の分布関数は、畳み込み積分の形で、
+%%\vspace{-3mm}
+%%\begin{equation*}
+%%\Omega(\bm{R}) = \Phi(\bar{\bm{R}}) + \Psi(\bm{\Delta R})
+%%\end{equation*}
+%%
+%%ダイヤモンド構造でのストランド末端間距離の $x$ 成分の分布関数 $P_{strand}(x)$ は、\vspace{-3mm}
+%%\begin{align*}
+%%P_{strand}(x) 
+%%&= \dfrac{1}{2}\dfrac{1}{\sqrt{2\pi}\Delta_{\lambda}^x} \\
+%%&\times \left[ \exp\left(-\dfrac{(x-X_{\lambda})^2}{2(\Delta_{\lambda}^x)^2} \right) \right. \\
+%%&\quad \left. + \exp\left(-\dfrac{(x+X_{\lambda})^2}{2(\Delta_{\lambda}^x)^2} \right) \right]
+%%\end{align*}
+%%なお、$X_{\lambda}$、$\Delta_{\lambda}^x$ は、伸長比 $\lambda$ である時の、ストランド長及びゆらぎの $x$ 成分を表す。
+%%\end{block}
+%%
+%%\column{.47\textwidth}
+%%\scriptsize
+%%\begin{block}{ずり弾性率 $G_{ph}$}
+%%ファントムネットワークでのずり弾性率 $G_{ph}$ は、以下の表式で表される。
+%%\vspace{-3mm}
+%%\begin{align*}
+%%G_{ph} &= \dfrac{1}{3} \dfrac{1}{V} \left. \dfrac{d^2 F_{ph}}{d \lambda^2} \right|_{\lambda = 1}\\
+%%&=\dfrac{\langle R_{strand}^2 \rangle}{\langle R_0^2 \rangle} \nu k_B T
+%%\end{align*}
+%%ここで、$\nu$ は、ストランドの数密度である。
+%%
+%%\vspace{3mm}
+%%ダイヤモンド構造のように規則構造からなるネットワークにおいて、各ストランド長がガウス鎖の二乗平均末端距離となるようにシステムサイズを設定した場合、$\langle R_{strand}^2 \rangle = \langle R_0^2 \rangle$ であるので、
+%%\vspace{-3mm}
+%%\begin{align*}
+%%\color{red}
+%%G_{ph}= \nu k_B T
+%%\end{align*}
+%%
+%%\end{block}
+%%\end{columns}
+%%
+%%\end{frame}
+%%
+%%
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%\subsection{伸長時の振る舞い}
+%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{伸長時（$\lambda =2$）の振る舞い}
+%%
+%%\begin{columns}[T, totalwidth=0.96\linewidth]
+%%\column{.47\linewidth}
+%%
+%%伸長時 $\lambda =2$
+%%
+%%\includegraphics[width=55mm]{./fig/L2_Rz.pdf}
+%%
+%%\column{.47\linewidth}
+%%未伸長
+%%
+%%\includegraphics[width=55mm]{./fig/L1_Rx.pdf}
+%%\end{columns}
+%%
+%%\small
+%%\begin{exampleblock}{未伸長との比較}
+%%$z$ 軸方向に伸長した場合の一次元での末端間距離は、正確に二倍になった。
+%%
+%%一方、ゆらぎは、理論的には不変なのであるが、5 \% 程度減少していた。
+%%\end{exampleblock}
+%%
+%%\end{frame}
+%%
+%%\section{その他}
+%%
+%%
+%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%%[shrink squeeze]
+%%\frametitle{高分子材料の疲労と破壊}
+%%
+%%ガラス状態の高分子材料を考えた場合。
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.6\textwidth}
+%%\begin{block}{破壊のモード（巨視的）}
+%%脆性破壊 $\Leftrightarrow$ 延性破壊\\
+%%脆性破壊は、降伏前にミクロなクラックが進展した破壊とも考えられる。
+%%\end{block}
+%%\column{.4\textwidth}
+%%	\centering
+%%	\includegraphics[width=35mm]{./fig/S_S_Curve.png}
+%%\end{columns}
+%%
+%%
+%%\begin{exampleblock}{降伏と劣化}
+%%	\begin{itemize}
+%%	\item
+%%	靭性向上のため
+%%	\begin{itemize}
+%%		\item
+%%		{\color{red} 局所的な降伏}が必須。（クレイズのような局所的な破壊も含む）
+%%		\item 
+%%		一般に、高分子材料の{\color{red} 降伏は不可逆}。
+%%	\end{itemize}
+%%	\item
+%%	降伏による劣化
+%%		\begin{itemize}
+%%			\item 
+%%			降伏 $\Leftrightarrow$ {\color{red} 本質的には、少しずつ破壊。}
+%%			\item
+%%			{\color{red} 破壊領域への水分の浸透 $\Leftarrow$ 長期耐久性の欠如}
+%%		\end{itemize}
+%%	\end{itemize}
+%%\end{exampleblock}
+%%\end{frame}
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{架橋点の近傍}
+%%
+%%\centering
+%%\includegraphics[width=80mm]{./fig/Lake_Thomas.png}
+%%
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%%[shrink squeeze]
+%%%[allowframebreaks]
+%%\frametitle{ダイヤモンド構造のジオメトリ}
+%%
+%%\begin{columns}[T, totalwidth=1\textwidth]
+%%\column{.47\textwidth}
+%%ダイヤモンド構造で、ストランド長 $r$、ユニットセル長さ $a$ とし、右下の緑の立方体に着目。
+%%
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=40mm]{./fig/dia_green_2.png}
+%%\end{figure}
+%%
+%%\column{.47\textwidth}
+%%この部分は、半径 $r$ の球に内接する正四面体であり、緑の立方体の対角線の長さは $2r$ となる。
+%%\begin{figure}
+%%\centering
+%%\includegraphics[width=40mm]{./fig/dia_mini_2.png}
+%%\end{figure}
+%%\end{columns}
+%%
+%%\vspace{3mm}
+%%\centering
+%%したがって、三平方の定理を使って、
+%%\vspace{-2mm}
+%%\begin{align*}
+%%\sqrt{3} \dfrac{a}{2} = 2r \Rightarrow {\color{red} a= \dfrac{4 r}{\sqrt{3}} }
+%%\end{align*}
+%%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{架橋点近傍の拘束状態に基づく二つのモデル}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%ストランドと架橋点の模式図
+%%%\centering
+%%\includegraphics[width=55mm]{./fig/JP_vicinity.png}
+%%
+%%架橋点はストランド経由で直接連結した架橋点（図中の黒丸）以外の、近接する多数のストランド及び架橋点（図中の×）に囲まれている。
+%%
+%%\column{.5\textwidth}
+%%\begin{itemize}
+%%\item
+%%``Affine NW Model''\\
+%%架橋点は周辺に強く拘束され巨視的変形と相似に移動。\\（Affine 変形）
+%%\footnotesize
+%%\begin{equation*}
+%%G=\nu k_B T
+%%\end{equation*}
+%%\normalsize
+%%$\nu$ は、ストランドの数密度
+%%\item
+%%``Phantom NW Model''\\
+%%架橋点が大きく揺らぎ、実効的なずり弾性率（$G$）が低下。
+%%\footnotesize
+%%\begin{align*}
+%%G&=\xi \nu k_B T \\
+%%\xi&= 1 -\dfrac{2}{f}
+%%\end{align*}
+%%\normalsize
+%%$f$ は架橋点の分岐数
+%%\end{itemize}
+%%\end{columns}
+%%
+%%\end{frame}
+%%
+%%%%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{伸び切り鎖のモデル}
+%%
+%%図から明らかなように、``3-Chain model'' は、一軸伸長において、伸長方向への伸びきり効果を過剰評価している。
+%%
+%%積分の形とした ''Full-Chain model'' においても、その効果は大きいようである。
+%%
+%%しかしながら、''8-Chain model'' の過小評価が妥当かどうかもはっきりしない。
+%%
+%%\centering
+%%\includegraphics[width=100mm]{./fig/Stretched_Chain.png}
+%%
+%%\end{frame}
+%%
+%%
+%%
+%%\begin{frame}
+%%\frametitle{MD シミュレーションの応力}
+%%
+%%\begin{align*}
+%%\overleftrightarrow{\sigma} V
+%%&=\sum_i m_i \bm{v}_i \bigotimes m_i \bm{v}_i \\
+%%&+\sum_{(i<j)} \dfrac{\bm{r}_{ij} \bigotimes \bm{r}_{ij}}{\bm{r}_{ij}}
+%%\left( \dfrac{\diff U_{FENE}(\bm{r})}{\diff \bm{r}} \right)_{r=r_{ij}} \\
+%%&+\sum{(i<j)} \dfrac{\bm{r}_{ij} \bigotimes \bm{r}_{ij}}{\bm{r}_{ij}}
+%%\left( \dfrac{\diff U_{LJ}(\bm{r})}{\diff \bm{r}} \right)_{r=r_{ij}}
+%%\end{align*}
+%%
+%%\end{frame}
+%%
+%%
+%%
+%%%%%%%%%%%%%%%
+%%\begin{frame}
+%%\frametitle{伸長速度の比較}
+%%
+%%\begin{columns}[totalwidth=1\textwidth]
+%%\column{.5\textwidth}
+%%\tiny
+%%\begin{align*}
+%%\overleftrightarrow{\sigma} V
+%%&=\sum_i m_i \bm{v}_i \bigotimes m_i \bm{v}_i \\
+%%&+\sum_{(i<j)} \dfrac{\bm{r}_{ij} \bigotimes \bm{r}_{ij}}{\bm{r}_{ij}}
+%%\left( \dfrac{\diff U_{FENE}(\bm{r})}{\diff \bm{r}} \right)_{r=r_{ij}} \\
+%%&+\sum{(i<j)} \dfrac{\bm{r}_{ij} \bigotimes \bm{r}_{ij}}{\bm{r}_{ij}}
+%%\left( \dfrac{\diff U_{LJ}(\bm{r})}{\diff \bm{r}} \right)_{r=r_{ij}}
+%%\end{align*}
+%%
+%%\column{.5\textwidth}
+%%\includegraphics[width=\columnwidth]{./fig/SS_bond.pdf}
+%%\end{columns}
+%%
+%%\begin{block}{KG 鎖の振る舞い}
+%%\begin{itemize}
+%%\item
+%%伸長速度 $\sigma/\tau = 5E^{-4}$ [$\sigma/\tau$] では、ノンボンドの寄与が大きく増加
+%%\item
+%%セグメント間での相互作用が応力の増加に寄与。
+%%\end{itemize}
+%%\end{block}
+%%
+%%\end{frame}
+%%
+%%
+%%\end{appendix}
+
+\end{document}

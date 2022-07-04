@@ -1,0 +1,18 @@
+発表テーマ: S4. 高分子材料破壊機構の解明
+発表分野: 2) 高分子材料破壊の理論及びシミュレーション
+発表形式: 口頭発表 
+ 
+題目(日本語)*    分子動力学シミュレーションによるネットワークポリマーのゴ
+ム弾性
+題目(英語)*    Evaluation of Rubber Elasticity of Network Polymers using 
+Molecular Dynamics Simulations
+
+概要(日本語)*  100字程度で記入して下さい。
+KGポリマー鎖をストランドに用いたネットワークポリマーの分子動力学シミュレー
+ションを行い、ネットワークポリマーのゴム弾性挙動について検討を行った。本発
+表では、動的粘弾性特性とストランドの緩和挙動との関連について報告する。 
+概要(英語)*  100 words程度で記入して下さい。
+Using molecular dynamics simulation method employing KG polymer chain as 
+strands, the rubber elastcity characteristics of network polymers was 
+investigated. In this work reluxation of strands was disucussed in 
+correlation with dynamic rheological properties. 
