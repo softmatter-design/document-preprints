@@ -14,7 +14,7 @@
 \abovecaptionskip=-1pt
 %\belowcaptionskip=-1pt
 %
-\renewcommand{\baselinestretch}{0.83} %全体の行間調整
+\renewcommand{\baselinestretch}{0.84} %全体の行間調整
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Tab.}
 %
@@ -134,10 +134,9 @@ Tel: +81-52-611-9923, e-mail: hiroshi\_sasaki$@$mail.toagosei.co.jp
 % % \end{wrapfigure}
 
 \subsection{力学応答の評価}
-変形速度の異なるせん断変形（1e-3 $\sim$ 5e-5/$\tau$）時の SS カーブを、各種モデルの理論曲線と共に Fig. \ref{fig:deform} に示した。
+4 分岐のネットワークポリマーに対して、変形速度の異なるせん断変形（1e-2 $\sim$ 5e-5 $\lambda/\tau$）時の SS カーブを、各種モデルの理論曲線と共に Fig. \ref{fig:deform} に示した。
 変形速度の低減により、$\lambda<1$ 程度の小さなひずみでは PNM に漸近していた。
-
-最長緩和時間の逆数程度のオーダーである変形速度（5e-4/$\tau$）で周期的なせん断変形（$\lambda = 1$）を付与した場合の力学的ヒステリシスを測定した結果を Fig. \ref{fig:hyst} に示した。
+PNM へと漸近する変形速度 (2e-4 $\lambda/\tau$) で周期的なせん断変形 ($\lambda = 1$) を付与した結果（Fig. \ref{fig:hyst}）においても、複数回の変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 35\%) を示すことが確認できた。
 % また、伸長速度を遅くすることにより、ヒステリシス強度が減少することも確認できた。
 
 変形モードの違いによって上記の挙動が変化することも見出しており、その詳細についても報告予定である。
@@ -176,15 +175,15 @@ Tel: +81-52-611-9923, e-mail: hiroshi\_sasaki$@$mail.toagosei.co.jp
 \begin{figure}[hb]
     \begin{minipage}{0.5\hsize}
         \begin{center}
-        \includegraphics[width=.8\textwidth]{shear_random_4_N20.png}
-        \caption{Stress-Strain Curves for 4-chain NW at varied shear rate (1e-3 $\sim$ 5e-5/$\tau$).}
+        \includegraphics[width=.7\textwidth]{Shear_Random_4chain_N20.png}
+        \caption{Stress-Strain Curves for 4-chain NW at varied shear rate (1e-2 $\sim$ 5e-5 $\lambda/\tau$)}
         \label{fig:deform}
         \end{center}
     \end{minipage}
     \begin{minipage}{0.5\hsize}
         \begin{center}
-        \includegraphics[width=.8\textwidth]{cyclic_shear_5e-4.png}
-        \caption{Hysteresis Curves for 4-chain NW by Cyclic Shear: shear rate 5e-4}
+        \includegraphics[width=.7\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+        \caption{Hysteresis Curves for 4-chain NW by Cyclic Shear ($\lambda = 1$): shear rate 2e-4 $\lambda/\tau$}
         \label{fig:hyst}
         \end{center}
     \end{minipage}
