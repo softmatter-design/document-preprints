@@ -47,10 +47,8 @@ Toagosei Co., Ltd
 \begin{spacing}{0.95}
 ABSTRACT: 
 Existence of mechanical hysteresis is believed to be one of a key to achieve high durability for rubber materials.
-% For hysteresis cycle, added fillers are known to play an important roll in meso-scale region response against local stress.
-% Our question is ``Is there any other mechanism to enhance durability in micro-scale region such as size of polymer chains?''.
-
 ``Phantom Network Model'', in which fluctuation of junction point is rather high, seems to be a good candidate for micro-scale energy dissipation.
+
 Employing molecular dynamics simulation method, relaxation characteristics of ``Phantom Network Model'' was investigated.
 \end{spacing}
 
@@ -101,16 +99,6 @@ Employing molecular dynamics simulation method, relaxation characteristics of ``
 トポロジーモデルに対応して実空間の構造作成。
 \end{enumerate}
 
-% \vspace{-8mm}
-% \begin{figure}[htb]
-% 	\begin{center}
-% 	\includegraphics[width=.42\textwidth]{bond_exchg.png}
-% 	\caption{Strand Exchange Procedure}
-% 	\label{fig:exc}
-% 	\end{center}
-% \end{figure}
-% \vspace{-5mm}
-
 \subsection{初期構造の作成}
 セグメント数 N=20 のストランドを用いネットワークの多重度を 3 とすることで、KG 鎖の一般的な密度 ($\rho$=0.85) の四分岐モデルを作成した。
 
@@ -128,56 +116,55 @@ Kr\"{o}ger らの方法~\cite{Kroger} によりストランド同士の絡み合
 
 \begin{figure}[htb]
 	\begin{center}
-	\includegraphics[width=.42\textwidth]{Shear_Random_4chain_N20.png}
+	\includegraphics[width=.43\textwidth]{Shear_Random_4chain_N20.png}
 	\caption{Stress-Strain Curves for 4-chain NW at varied shear rate ($\dot{\gamma}: 1e^{-2} \sim 5^{e-5}$)}
 	\label{fig:deform}
 	\end{center}
 \end{figure}
 \vspace{-5mm}
-
 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは PNM に漸近していた。
 
 
 \vspace{-2mm}
 \begin{figure}[htb]
 	\begin{center}
-	\includegraphics[width=.42\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+	\includegraphics[width=.43\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
 	\caption{Hysteresis Curves for 4-chain NW by Cyclic Shear ($\gamma = 1$) = shear rate $\dot{\gamma} = 2e^{-4}$}
 	\label{fig:hyst}
 	\end{center}
 \end{figure}
 \vspace{-5mm}
-
 PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で周期的な変形 ($\gamma = 1$) を付与した結果を示した (Fig. \ref{fig:hyst})。
-
 複数回の変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示すことが確認できた。
 
 \vspace{-2mm}
 \begin{figure}[htb]
 \centering
-	\includegraphics[width=.42\textwidth]{hyst_shear.png}
+	\includegraphics[width=.43\textwidth]{hyst_shear.png}
 \caption{Hysteresis losses for varied shear rates and maximum strains}
 \label{fig:hystloss}
 \end{figure}
 \vspace{-5mm}
-
 各種の変形条件での力学的ヒステリシスの振る舞いを、Fig. \ref{fig:hystloss} に示した。
 
-変形速度の低下に伴いヒステリシスロスは減少し、$\dot{\gamma} \sim 1e^{-5}$ 程度の時間スケールで消失するようであった。
+変形速度の低下に伴いヒステリシスロスは減少し、$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失するようであった。
 
 \subsection{最長緩和時間の検討}
+長時間緩和後の平衡構造において、ラウスモード（p=1）の自己相関関数 $C_p(t)$ から最長緩和時間 ($\tau$) について評価した結果を Fig. \ref{fig:ac-xp} に示した。
+\begin{align*}
+	C_p(t) = \langle X_p(t)X_p(0) \rangle/\langle X_p^2 \rangle
+\end{align*}
 
-長時間緩和後の平衡構造において、ラウスモード（p=1）の自己相関関数から最長緩和時間 ($\tau$) について評価した結果を Fig. \ref{fig:ac-xp} に示した。
-なお、ネットワークのストランドは空間的に拘束されておりその相関は長時間極限で一定値に収束するため、それを差し引いて緩和成分の評価を行い、$\tau \simeq 6.5e^{4}$ を得た。
-\vspace{-1mm}
+なお、ネットワークのストランドは空間的に拘束されておりその相関は長時間極限で一定値に収束するため、その値 $C_p(\infty)$ を差し引いて指数関数により緩和成分の評価を行い、$\tau \simeq 6.5e^{4}$ を得た。
+
+\vspace{-2mm}
 \begin{figure}[htb]
 \centering
-	\includegraphics[width=.42\textwidth]{Xp_1_org.png}
+	\includegraphics[width=.44\textwidth]{Xp_1_org.png}
 \caption{Auto Correlation of Rouse mode (p=1) for equilibrated structure}
 \label{fig:ac-xp}
 \end{figure}
 \vspace{-5mm}
-
 この緩和時間の長時間化はネットワーク構造に起因した架橋点の運動性の低下によるものと想定でき、長鎖のホモポリマーメルトでの絡み合いに起因したラウスモードのふるまい~\cite{rubinstein} と合致していた。
 また、この値の逆数は前述のヒステリシスロスが消失する変形速度と対応するものと考えられた。
 
@@ -185,14 +172,12 @@ PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で周期的な変
 また、高次のラウスモードの緩和について検討した結果についても、報告する予定である。
 
 \begin{thebibliography}{99}
-	\bibitem{andrews} E. H. Andrews, Y. Fukahori, Journal of Materials Science, 12, 1307 (1977)
-	\bibitem{smith} T. L. Smith, R. A. Dickie, Journal of Polymer Science Part A-2: Polymer Physics, 7, 635 (1969)
-	\bibitem{flory} P. J. Flory, Proceedings of the Royal Society of London. Series A, 351, 351 (1976)
-	\bibitem{sasaki} 佐々木裕, 第69回レオロジー討論会 要旨集 (2021)
-	\bibitem{Auhl} R. Auhl et al., Journal of Chemical Physics, 119, 12718 (2003)
-	\bibitem{Kroger} S. Shanbhag, M. Kr\"{o}ger, Macromolecules 40 2897 (2007)
-	\bibitem{rubinstein} J. T. Kalathi et al., Macromolecules 47 6925 (2014)
+    \bibitem{andrews} E. H. Andrews, Y. Fukahori, J. of Mat. Sci., 12, 1307 (1977)
+    \bibitem{smith} T. L. Smith, R. A. Dickie, J. of Polym. Sci. A-2: Polym. Phys., 7, 635 (1969)
+    \bibitem{flory} P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)
+    \bibitem{sasaki} 佐々木裕, 第69回レオロジー討論会 (2021)
+    \bibitem{Auhl} R. Auhl et al., J. of Chem. Phys., 119, 12718 (2003)
+    \bibitem{Kroger} S. Shanbhag, M. Kr\"{o}ger, Macromol. 40 2897 (2007)
+    \bibitem{rubinstein} J. T. Kalathi et al., Macromol. 47 6925 (2014)
 \end{thebibliography}
-% \bibliographystyle{../achemso}
-% \bibliography{C:/texlive/texmf-local/bibtex/bib/library.bib}
 \end{document}
