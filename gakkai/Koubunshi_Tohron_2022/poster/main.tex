@@ -1,11 +1,12 @@
 \documentclass[final,dvipdfmx]{beamer}
 \mode<presentation> {
-  \usetheme{Berlin}
+	\usetheme{Berlin}
 }
 \usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
 \usepackage[japanese]{babel}
 \usepackage{caption}
 \usepackage{ascmac}
+
 
 \usefonttheme{professionalfonts}
 \usefonttheme[onlymath]{serif}
@@ -19,7 +20,7 @@
 \captionsetup[table]{name=表}
 \setbeamertemplate{caption}[numbered] % 図や表のキャプションに図1，図2，図3．．．などをつける
 
-\graphicspath{{img/}}
+\graphicspath{{../../../figures/}}
 
 \setbeamertemplate{navigation symbols}{}   % ナビゲーションバーを表示しません
 
@@ -34,7 +35,30 @@
 \setbeamercolor{frametitle}{fg=black,bg=white}
 \setbeamercolor{block body}{bg=white}
 
-\graphicspath{{../../../figures/}}
+\definecolor{royalblue}{RGB}{1,72,152}
+\setbeamercolor{footline}{fg=white,bg=royalblue}
+\setbeamercolor{conference in headline}{fg=white}
+
+\setbeamertemplate{footline}{%
+		\begin{beamercolorbox}[wd=\paperwidth,ht=11ex]{footline}
+		\leavevmode%
+		\begin{columns}[T]
+				\begin{column}{0.7\paperwidth}
+					\centering
+					\usebeamercolor{conference in headline}{%
+								\color{fg}\large{高分子討論会ポスター}
+						}
+				\end{column}
+				\begin{column}{0.3\paperwidth}
+					\centering
+						\usebeamercolor{conference in headline}{%
+								\color{fg}\large{hiroshi\_sasaki@toagosei.co.jp}
+						}
+				\end{column}
+		\end{columns}
+		\vskip3ex
+		\end{beamercolorbox}
+}
 
 \title[Fancy Posters]{Making Really Fancy Posters with \LaTeX}
 \author[Dreuw \& Deselaers]{Philippe Dreuw and Thomas Deselaers}
@@ -43,6 +67,8 @@
 
 \begin{document}
 \input{myPoster}
+
+
 \end{document}
 
 
