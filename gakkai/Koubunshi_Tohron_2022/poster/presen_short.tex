@@ -1,0 +1,592 @@
+\documentclass[12pt, dvipdfmx]{beamer}
+
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+%%%%%%%%%%%  package  %%%%%%%%%%%
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{pxjahyper}% 日本語で'しおり'したい
+
+\usepackage{amssymb,amsmath,ascmac}
+
+\usepackage{multirow}
+\usepackage{bm}
+
+\graphicspath{{../../../figures/}}
+
+\usepackage{tikz}
+\usepackage{xparse}
+
+\usepackage{multimedia}
+
+\usetikzlibrary{shapes,arrows}
+%% define fancy arrow. \tikzfancyarrow[<option>]{<text>}. ex: \tikzfancyarrow[fill=red!5]{hoge}
+\tikzset{arrowstyle/.style n args={2}{inner ysep=0.1ex, inner xsep=0.5em, minimum height=2em, draw=#2, fill=black!20, font=\sffamily\bfseries, single arrow, single arrow head extend=0.4em, #1,}}
+\NewDocumentCommand{\tikzfancyarrow}{O{fill=black!20} O{none}  m}{
+\tikz[baseline=-0.5ex]\node [arrowstyle={#1}{#2}] {#3 \mathstrut};}
+
+%微分関連のマクロ
+%
+\newcommand{\diff}{\mathrm d}
+\newcommand{\difd}[2]{\dfrac{\diff #1}{\diff #2}}
+\newcommand{\difp}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\difdd}[2]{\dfrac{\diff^2 #1}{\diff #2^2}}
+\newcommand{\difpp}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+
+%目次スライド
+\AtBeginSection[]{
+  \frame{\tableofcontents[currentsection]}
+}
+
+%アペンディックスのページ番号除去
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\newcommand{\rmd}{\mathrm{d}}
+\newcommand{\dd}[1]{\dfrac{\mathrm{d} #1}{\mathrm{d} x}}
+
+%%%%%%%%%%%  theme  %%%%%%%%%%%
+\usetheme{Copenhagen}
+% \usetheme{Metropolis}
+% \usetheme{CambridgeUS}
+% \usetheme{Berlin}
+
+%%%%%%%%%%%  inner theme  %%%%%%%%%%%
+% \useinnertheme{default}
+
+% %%%%%%%%%%%  outer theme  %%%%%%%%%%%
+\useoutertheme{default}
+% \useoutertheme{infolines}
+
+%%%%%%%%%%%  color theme  %%%%%%%%%%%
+%\usecolortheme{structure}
+
+%%%%%%%%%%%  font theme  %%%%%%%%%%%
+\usefonttheme{professionalfonts}
+%\usefonttheme{default}
+
+%%%%%%%%%%%  degree of transparency  %%%%%%%%%%%
+%\setbeamercovered{transparent=30}
+
+% \setbeamertemplate{items}[default]
+
+%%%%%%%%%%%  numbering  %%%%%%%%%%%
+% \setbeamertemplate{numbered}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title
+[ランダムな接続性を有するネットワークポリマーの緩和挙動]
+{ランダムな接続性を有する\\ネットワークポリマーの緩和挙動}
+\author[東亞合成　佐々木]{佐々木裕}
+\institute[東亞合成]{東亞合成}
+\date{October 21, 2021}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}\frametitle{}
+	\titlepage
+\end{frame}
+% %%%%%%%%%%%%%%%%%%%%%
+% \section*{}
+% %
+% \begin{frame}
+% %[allowframebreaks]
+% {Outline}
+% 	\tableofcontents
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{はじめに}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{背景}
+
+\begin{frame}
+	\frametitle{高分子材料でマルチマテリアル化}
+        \begin{itemize}
+            \item \alert{高い比強度}の有効利用
+            \item {\color{red} 「接着接合」}への高分子の利用
+                \begin{itemize}
+                    \item 柔らかさを生かした{\color{red} 「弾性接着接合」}
+                    \item 耐久性、可逆性に優れた\alert{ゴム材料に注目}
+                \end{itemize}
+            \item {\color{blue}耐久性が不明確（特に疲労破壊に対して）}
+        \end{itemize}
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{本研究の目標とアプローチ}
+%         \begin{block}{目標}
+%                 \begin{itemize}
+%                     \item 高分子材料の破壊耐性向上の設計指針を得たい。
+%                     \item 耐久性、可逆性に優れた材料としてゴム材料を選択
+%                 \end{itemize}
+%         \end{block}
+% 		\begin{exampleblock}{アプローチ}
+%             \begin{itemize}
+%                 \item 実験的アプローチ
+%                 \begin{itemize}
+%                     \item 構造明確な\alert{三分岐}ネットワークを超分子で構築
+%                     \item フィラー無添加での\alert{高い破断伸びと強度}
+%                     \item 既知のモデルとの多数の整合点と、\alert{よくわからない点}。
+%                 \end{itemize}
+%                 \item マルチスケールシミュレーションで\color{red}モデル\color{black}を構築
+%                 \begin{itemize}
+%                     \item 単純化したモデルで小さなスケールから始めたい。
+%                     \item \alert{長さの揃ったストランドで MD シミュレーション}
+%                     % \item 最終的に、亀裂先端の挙動を FEM シミュレーション
+%                 \end{itemize}
+%             \end{itemize}
+% 		\end{exampleblock}
+% \end{frame}
+
+\begin{frame}
+    \frametitle{力学的ヒステリシス}
+
+    \begin{columns}[totalwidth=1\textwidth]
+    \column{.58\textwidth}
+        \begin{itemize}
+            \item 力学的ヒステリシス
+            \begin{itemize}
+                \item
+                除荷時の応力が低下
+                % \item
+                % ヒステリシスロス：\\変形時のエネルギー散逸
+            \end{itemize}
+            \item 破壊靭性との関係
+            \begin{itemize}
+                \item
+                Andrews 理論
+                % \item
+                % ヒステリシスロスが重要
+            \end{itemize}
+        \end{itemize}
+    \column{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{hysteresis_curve.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{ゴムの破壊と粘弾性}
+		
+		\vspace{2mm}
+		\begin{columns}[T, totalwidth=\textwidth]
+			\column{.58\textwidth}
+                \begin{alertblock}{ゴムの破壊}
+                    大変形を伴う非線形現象だが、\\時間温度換算則の成立が多数報告
+                \end{alertblock}
+			\column{.4\textwidth}
+
+				\includegraphics[width=.8\textwidth]{Time_Temp_2.png}
+		\end{columns}
+\end{frame}
+
+% \begin{frame}
+%     %[shrink squeeze]
+%     \frametitle{ゴムの破断強度の時間温度依存}
+    
+%     %\begin{alertblock}{時間温度換算則で考えてみれば？}
+%     %NR の適正な変形速度・温度と SBR のそれとの違い
+%     %\end{alertblock}
+%     %
+    
+%     \begin{columns}[T, totalwidth=\textwidth]
+%     \column{.53\textwidth}
+%     \begin{itemize}
+% 		\item \alert{粘弾性極限において}\\
+% 		（高温・低速）
+% 	\end{itemize}
+%     \includegraphics[width=\textwidth]{Lake_Thomas.png}
+    
+%     \column{.45\textwidth}
+%     \begin{itemize}
+% 		\item 変形速度、温度に依存\\
+% 		\alert{破壊包絡線}
+% 	\end{itemize}
+% 	\begin{center}
+% 		\includegraphics[width=.48\textwidth]{Time_Temp_3.png}
+
+% 		{\tiny Smith T., Stedry P., J. Appl. Phys. (1960) 31 1892}
+% 	\end{center}
+%     \end{columns}
+%     \begin{alertblock}{ゴムの引き裂きエネルギー}
+% 		\vspace{-5mm}
+% 		\begin{align*}
+% 			&\mathcal{T}=\mathcal{T}_0 \times \Phi(\dot{c}, T, \epsilon_0) \\
+% 			&\text{where $\dot{c}$ is crack velocity and $\epsilon_0$ is applied strain}
+% 		\end{align*}
+%     % $\mathcal{T}=\mathcal{T}_0 \Phi(\dot{c}, T, \epsilon_0)$
+%     \end{alertblock}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Andrews 理論}
+	\begin{columns}[totalwidth=1\textwidth]
+		\column{.65\textwidth}
+		\begin{exampleblock}{Andrews 理論}
+		%クラック成長時の応力場の考察より
+			\begin{itemize}
+			\item
+			\alert{ヒステリシス}を示す材料
+				\begin{itemize}
+				\item
+				\textcolor{red}{Loading 場}と\textcolor{blue}{Unloading 場}の差
+				\item
+				全体の変形に要したエネルギーの多くを\textcolor{red}{散逸}
+				\item
+			鎖の破断へのエネルギーが低減 $\Rightarrow$ \alert{強靭さの起源。}
+				\end{itemize}	
+			\item
+			\textcolor{green}{実験的に、$\Phi$ を求めている。}
+			\end{itemize}
+		\end{exampleblock}
+		\column{.35\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./crack.png}
+	\end{columns}
+	
+	\begin{alertblock}{クラック先端での力学的ヒステリシス}
+	\alert{ミクロな緩和現象}がマクロな耐久性向上と繋がる？
+	\end{alertblock}
+\end{frame}
+
+\subsection{ランダムな接続性を有するネットワーク}
+
+\begin{frame}
+	\frametitle{架橋点近傍の拘束状態に基づく二つのモデル}
+		\begin{columns}[totalwidth=1\textwidth]
+			\column{.33\textwidth}
+                \includegraphics[width=\textwidth]{JP_vicinity.png}
+                架橋点は、\alert{近接する多数のストランド（図中の×）に囲まれている。}
+			\column{.33\textwidth}
+                \begin{itemize}
+                    \item 接続性を不均一に
+                        % \begin{itemize}
+                        %     \item 接続に\alert{位置依存性}
+                        % \end{itemize}
+                    \item \textcolor{blue}{巨視的な変形後}
+                        \begin{itemize}
+                            \item 結節点のゆらぎが\\不均一
+                            \item 多様な緩和モード
+                            % \item \alert{緩和の長時間化？}
+                        % \item ファントムネットワークモデルの諸特性の発現？
+                        \end{itemize}
+                \end{itemize}
+            \column{.33\textwidth}
+				\includegraphics[width=\textwidth]{random_NW.png}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{本発表の内容}
+		\begin{exampleblock}{ランダムな接続性を有するネットワークポリマー}
+			\begin{itemize}
+				\item ネットワーク構造の接続性にランダム性を導入
+				\begin{itemize}
+					\item 各ノードごとにランダムな結合性を導入
+					\item ストランドの末端間距離がガウス分布
+					% する\\ランダムネットワーク構造
+				\end{itemize}
+			\item ランダムネットワーク構造の力学的応答
+				\begin{itemize}
+					\item 応力緩和関数
+					\item 一軸伸長での変形速度依存性
+				\end{itemize}
+				\item 絡み合いの影響を確認
+				\begin{itemize}
+					\item PPA での絡み合いの可視化
+					\item Z1-code による比較
+				\end{itemize}
+				\item ヒステリシスの確認
+				% \begin{itemize}
+				% 	\item PPA での絡み合いの可視化
+				% 	\item Z1-code による比較
+				% \end{itemize}
+			\end{itemize}
+		\end{exampleblock}
+\end{frame}
+
+\section{KG鎖でのシミュレーション結果}
+
+\subsection{ランダムな接続性を有するネットワークポリマー}
+\begin{frame}
+	\frametitle{ランダムな接続性を有するネットワーク}
+	\vspace{-1mm}
+		\begin{exampleblock}{作成のアルゴリズム}
+			\begin{enumerate}
+				\item \alert{実空間}で8-Chain Model で初期構造を作成。
+					\begin{itemize}
+						% \item \alert{実空間}で8-Chain Model で初期構造を作成。
+						% \item 所望の分岐数に\alert{ランダム}に選択した\alert{結合を除去}
+						\item 除去したジオメトリーに対応した\alert{トポロジーモデル}
+					\end{itemize}
+				\item トポロジー空間でランダム性の導入
+					\begin{itemize}
+						% \item ラプラシアン行列で全体の接続性を確認しながら、
+						\item \alert{エッジ交換}して、ネットワーク構造にランダムな接続性を導入
+					\end{itemize}	
+				\item 対応する\alert{実空間でのネットワーク初期構造}を作成
+				\item \alert{ストランド長がホモポリマーに対応}するように多重度設定して、\alert{Slow Push Off により初期構造を緩和}
+			\end{enumerate}
+		\end{exampleblock}
+		\vspace{-1mm}
+		\begin{columns}[T, onlytextwidth]
+			\column{.33\linewidth}
+				\includegraphics[width=\textwidth]{8_per.png}
+			\column{.33\linewidth}
+				\vspace{-5mm}
+				\begin{center}
+					\includegraphics[width=.6\textwidth]{Network.png}
+				\end{center}
+			\column{.33\linewidth}
+				\includegraphics[width=\textwidth]{bond_exchg.png}
+		\end{columns}
+\end{frame}
+
+\subsection{力学的な応答}
+\begin{frame}
+	\frametitle{四分岐ネットワークの力学応答}
+		\begin{columns}[T, onlytextwidth]
+			\column{.48\linewidth}
+				\begin{block}{一軸伸張結果}
+					\begin{itemize}
+						\item 伸張速度の低下によりネオフッキアンに漸近
+						\item ANMよりも応力は高い
+					\end{itemize}
+					\includegraphics[width=\textwidth]{N48_C4_M3.png}
+				\end{block}
+				
+			\column{.48\linewidth}
+				\begin{block}{応力緩和関数 $G(t)$}
+					\begin{itemize}
+						\item ステップ変形（$\lambda=2.0$）
+						\item 最長緩和の長時間化
+						\item ANM よりも高弾性率
+					\end{itemize}
+					\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
+				\end{block}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Z1-code での確認}
+        \vspace{-3mm}
+        \begin{columns}[T, onlytextwidth]
+            \column{.4\linewidth}
+                \includegraphics[width=\textwidth]{z_cord_4Chain.png}
+                Z1-code での絡み合い
+            \column{.56\linewidth}
+            \begin{block}{ホモポリマーとの比較}
+                \begin{itemize}
+                    \item Z は一本鎖あたりの絡み合い
+                    \item 今回のネットワークは、\\ \alert{ホモポリマーと同等}
+                \end{itemize}
+                \scriptsize
+                \begin{center}
+                    \begin{tabular}{c||c|c} \hline
+                        &Homo & 4 Chain NW \\ \hline \hline
+                        Segments& 50& 48 \\ \hline
+                        Chains & 200& 768 \\ \hline
+                        Entanglements& 204& 800\\ \hline
+                        Entangled Chains&134&557 \\ \hline
+                        \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
+                    \end{tabular}
+                \end{center}
+            \end{block}
+        \end{columns}
+    \begin{alertblock}{Z1-codeとは}
+        \begin{itemize}
+            \item 絡み合いを可視化、定量化するアルゴリズム\footnote{
+                M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
+                % \begin{itemize}
+                %     \item M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
+                %     \item S. Shanbhag, M. Kröger, Macromolecules 40, 2897(2007)
+                %     \item R. Hoy, K. Foteinopoulou, M. Kröger, Phys. Rev. E, 31803 (2009)
+                % \end{itemize}
+            }
+        %    N.C. Karayiannis, M. Kröger, Int. J. Mol. Sci. 10, 5054 (2009)
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\subsection{絡み合いを低減したネットワーク}
+\begin{frame}
+	\frametitle{絡み合いを低減したネットワーク}
+		\begin{exampleblock}{NPT 計算での初期構造の緩和}
+			\begin{itemize}
+				\item 密度の低い初期状態から \textcolor{blue}{NPT 計算により圧縮}して、
+				\item \alert{絡み合いを極力排除した初期構造}を作成した。
+			\end{itemize}
+		\end{exampleblock}
+
+		\begin{columns}[T, onlytextwidth]
+			\column{.48\linewidth}
+				\includegraphics[width=.9\textwidth]{NPT_00.png}
+			\column{.48\linewidth}
+				\includegraphics[width=.9\textwidth]{NPT_11.png}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{絡み合いを低減したネットワーク}
+        \vspace{-3mm}
+		\begin{columns}[T, onlytextwidth]
+            \column{.4\linewidth}
+			\begin{exampleblock}{PPAでの絡み合い}
+				\small
+				\begin{itemize}
+					\item 4-Chain-\alert{NPT}
+					
+					\includegraphics[width=.58\textwidth]{NPT_PPA.png}
+					\item 4-Chain-NVT
+					
+					\includegraphics[width=.58\textwidth]{N48_f4_PPA.png}
+				\end{itemize}
+			\end{exampleblock}
+                
+			\column{.56\linewidth}
+			\begin{block}{応力緩和関数 $G(t)$}
+				\begin{itemize}
+					\item ステップ変形（$\lambda=2.0$）
+					\item \alert{弾性率がPNMに漸近}
+					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
+				\end{itemize}
+				\vspace{6mm}
+					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
+					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
+				\end{block}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{絡み合いの効果について}
+	\footnotesize
+		M. Rubinstein, S. Panyukov, Macromolecules, 35, 6670 (2002)
+			\begin{align*}
+				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
+				&\text{where $\nu$ is the number density of network chains,} \\
+				& \text{and L is the number of slip-links per network chain}
+			\end{align*}
+		\vspace{-10mm}
+		\begin{columns}[c, onlytextwidth]
+			\column{.3\linewidth}
+				\vspace{-3mm}
+				\begin{center}
+					% \includegraphics[width=\textwidth]{gt_4chain_comp.png}
+					
+					% \vspace{3mm}
+					\includegraphics[width=.9\textwidth]{z_cord_NPT_4Chain.png}
+
+					\scriptsize
+					Z1-code for NPT
+				\end{center}
+			\column{.65\linewidth}
+				\scriptsize
+				\begin{center}
+					\begin{tabular}{c|c|c} \hline
+						&NPT & NVT \\ \hline \hline
+						\textcolor{blue}{Chains} & \multicolumn{2}{|c}{\textcolor{blue}{768}}\\ \hline
+						\textcolor{blue}{$\nu$}& \multicolumn{2}{|c}{\textcolor{blue}{0.018}}\\ \hline
+						\textcolor{blue}{$G_c = \nu \times (1-2/4)$}&\multicolumn{2}{|c}{\textcolor{blue}{0.009}} \\ \hline \hline
+						Entanglements& 278& 800\\ \hline
+						Entangled Chains&249&557 \\ \hline
+						\textcolor{green}{L} & \textcolor{green}{278/768=0.36} & \textcolor{green}{800/768=1.04} \\ \hline
+						$G_e=4/7 \times \nu \times L $ & 0.004 & 0.011 \\ \hline \hline
+						\alert{$G_{calcd.}=G_c + G_e$} & \alert{0.013} & \alert{0.020} \\ \hline \hline
+						$G_{measd.}$ & 0.013 & 0.022 \\ \hline
+					\end{tabular}
+				\end{center}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{TetraPEG gel での先行研究}
+	\vspace{-2mm}
+	\begin{exampleblock}{濃度依存での力学応答の変化}
+		\begin{itemize}
+			\item 合成時の濃度に依存して、
+			\begin{itemize}
+				\item Phantom Network model から、
+				\item Affine Network model へと遷移
+			\end{itemize}
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=.5\textwidth]{sakai_affine_phantom.png}
+
+			Y. Akagi et al, Macromolecules 46, 3, 1035 (2013)
+		\end{center}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ヒステリシスの検討}
+        \begin{block}{計算条件}
+            \begin{itemize}
+                \item 変形：一軸伸長、コーシーひずみ
+                \item 伸張速度：$\dot{\lambda} = 1E-4 [1/\tau]$
+            \end{itemize}
+        \end{block}
+    \begin{columns}[T, onlytextwidth]
+        \column{.48\linewidth}
+        \begin{itemize}
+            \item 4-Chain-NVT
+        \end{itemize}
+            \includegraphics[width= \textwidth]{hyst_4Chain.png}
+        \column{.48\linewidth}
+        \begin{itemize}
+            \item 4-Chain-NPT
+        \end{itemize}
+            \includegraphics[width=\textwidth]{hyst_NPT_4Chain.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Constrained Junction Model}
+	\begin{exampleblock}{伸長時の緩和現象}
+		\begin{itemize}
+			\item 伸長時に
+			\begin{itemize}
+				\item ストランドに直交する他の鎖の影響が緩む
+				\item 架橋点およびストランドへの規制が緩和
+			\end{itemize}
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=.7\textwidth]{Constrained_Juntion.pdf}
+
+			P.J.Flory, J.C.P., 66 5720 (1977)
+		\end{center}
+	\end{exampleblock}
+\end{frame}		
+
+\begin{frame}
+	\frametitle{おわりに}
+		\begin{block}{本発表の内容}
+			\begin{itemize}
+			\item ネットワーク構造の接続性にランダム性を導入
+				\begin{itemize}
+					\item 各ノードごとにランダムな結合性を導入
+					\item ストランドの末端間距離がホモポリマーと対応するランダムなネットワーク構造
+				\end{itemize}
+			\item ランダムネットワーク構造の力学的応答
+				\begin{itemize}
+					\item 比較的長時間での緩和を確認
+					\item アフィンネットワークモデル程度の高い弾性率
+				\end{itemize}
+			\item 絡み合いを低減したネットワーク構造との比較で、
+				\begin{itemize}
+					% \item 比較的長時間での緩和を確認
+					\item Trapped Entanglements が緩和後の弾性率に影響 
+					\item ファントムネットワークモデルへと漸近
+					\item ヒステリシスの発現が増加
+				\end{itemize}
+			\end{itemize}
+		\end{block}
+\end{frame}
+
+\end{document}
