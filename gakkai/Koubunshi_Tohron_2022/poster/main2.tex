@@ -1,18 +1,16 @@
 \documentclass[final,dvipdfmx]{beamer}
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
-\usetheme[
-    footertext={第80回 高分子討論会}
-    ]{SimplePoster}
-
 \usepackage{ascmac}
+
+\usetheme{SimplePoster}
+
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Tab.}
+\setbeamertemplate{caption}[numbered]
 
 \graphicspath{{../../../figures/}}
 
-\title{MD シミュレーションによるネットワークポリマーの緩和挙動}
-\subtitle{Relaxation Characteristics of Network Polymers using Molecular Dynamics Simulations}
-\author{東亞合成株式会社 佐々木裕}
-\institute{Toagosei Co., Ltd. H. SASAKI mail:hiroshi\_sasaki@toagosei.co.jp}
-\date{September 7, 2022}
+\input{title}
 
 \begin{document}
     \input{myPoster}

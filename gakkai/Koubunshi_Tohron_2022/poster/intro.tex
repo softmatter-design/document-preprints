@@ -1,59 +1,114 @@
+\begin{columns}[totalwidth=.85\linewidth]
+	\column{\textwidth}
+		\begin{boxnote}
+			\textbf{高分子材料でマルチマテリアル化 $\Leftrightarrow$ 高い比強度の有効利用}
+			\begin{itemize}
+				\item {\color{red} 「接着接合」}への高分子の利用
+					\begin{itemize}
+						\normalsize
+						\item 柔らかさを生かした{\color{red} 「弾性接着接合」}
+						\item 耐久性、可逆性に優れた\alert{ゴム材料に注目}
+					\end{itemize}
+				\item {\color{blue}耐久性が不明確}
+					\begin{itemize}
+						\normalsize
+						\item とくに疲労破壊に対して
+					\end{itemize}
+			\end{itemize}
+		\end{boxnote}
 
-\begin{columns}[T]
-    \begin{column}{.33\linewidth}
-        \begin{itemize}
-            \item 高分子材料の破壊耐性向上の設計指針
-            \item 耐久性、可逆性に優れたゴム材料
-            \item 破壊工学的$\Rightarrow$クラック進展を抑制
-        \end{itemize}
-        \centering
-        \includegraphics[width=.4\textwidth]{hysteresis_curve.png} 
-    \end{column}
-    \begin{column}{.33\linewidth}
-        \begin{itembox}[l]{Andrews 理論\cite{andrews}}
-            \begin{columns}[totalwidth=.9\textwidth]
-                \column{.8\textwidth}
-                    クラックの微小進展時に、
-                    \begin{itemize}
-                    \item
-                    \textcolor{blue}{Loading 場とUnloading 場}
-                    \item
-                    \alert{この差}が、全体の変形に要したエネルギーを\alert{散逸}
-                    \item
-                    鎖破断のエネルギーが低減 $\Rightarrow$ \alert{強靭さの起源。}
-                    \end{itemize}	
-                \column{.2\textwidth}
-                    \includegraphics[width=\textwidth]{crack.png}     
-            \end{columns}
-        \end{itembox}
-    \end{column}
-    \begin{column}{.33\linewidth}
-        \begin{itembox}[l]{ランダム構造とは？}
-            \begin{columns}[totalwidth=.9\textwidth]
-                \column{.6\textwidth}
-                        \begin{itemize}
-                            \item 連結性を不均一に
-                                \begin{itemize}
-                                    \item 連結に\alert{位置依存性}
-                                \end{itemize}
-                            \item 巨視的な変形後
-                                \begin{itemize}
-                                    \item 結節点のゆらぎが不均一
-                                    \item 多様な緩和モード
-                                    % \item \alert{緩和の長時間化？}
-                                % \item ファントムネットワークモデルの諸特性の発現？
-                                \end{itemize}
-                            % \item \alert{解析を容易}に、
-                            % 	\begin{itemize}
-                            % 		\item 既往研究で反応系
-                            % 		\item ストランド長と結合数を一定
-                            % 	\end{itemize}
-                        \end{itemize}
-                \column{.3\textwidth}
-                    % ランダム構造の模式図
-                    % \vspace{10mm}
-                    \includegraphics[width=\textwidth]{random_NW.png}
-            \end{columns}
-        \end{itembox}
-    \end{column}
+		\begin{itembox}[l]{ヒステリシスと破壊靭性}
+			\begin{columns}[totalwidth=\linewidth]
+				\column{.7\textwidth}
+					\begin{itemize}
+						\item 力学的ヒステリシス
+						\begin{itemize}
+							\normalsize
+							\item
+							印荷時に比べて、除荷時の応力が低下
+							\item
+							ヒステリシスロス：変形時のエネルギー散逸
+						\end{itemize}
+						\item 破壊靭性との関係
+						\begin{itemize}
+							\normalsize
+							\item
+							Andrews 理論：ヒステリシスロスの重要性が指摘
+						\end{itemize}
+					\end{itemize}
+				\column{.3\textwidth}
+					\centering
+					\includegraphics[width=.7\textwidth]{hysteresis_curve.png}
+				\end{columns}
+		\end{itembox}
+
+		\begin{itembox}[l]{Andrews 理論\cite{andrews}}
+			\begin{columns}[totalwidth=\textwidth]
+				\column{.8\textwidth}
+					クラックの微小進展時に、
+					\begin{itemize}
+						\item
+						\textcolor{red}{Loading 場}と\textcolor{blue}{Unloading 場}のひずみエネルギーの差
+						\item
+						全体の変形に要したエネルギーの多くを\textcolor{red}{散逸}
+						\item
+						鎖の破断へのエネルギーが低減 $\Rightarrow$ \alert{強靭さの起源。}
+					\end{itemize}	
+				\column{.2\textwidth}
+					\includegraphics[width=.6\textwidth]{crack.png}     
+			\end{columns}
+		\end{itembox}
+
+		\begin{itembox}[l]{ゴムの破断強度の時間温度依存}
+			\begin{columns}[totalwidth=\textwidth]
+				\column{.5\textwidth}
+				\begin{itemize}
+					\item \alert{粘弾性極限}\cite{lake}（高温・低速）
+					
+				\end{itemize}
+				\includegraphics[width=.8\textwidth]{Lake_Thomas.png}
+				
+				\column{.5\textwidth}
+				\begin{itemize}
+					\item 変形速度、温度\cite{smith} で\alert{破壊包絡線}
+				\end{itemize}
+				\begin{columns}[\textwidth]
+					\column{.48\linewidth}
+						\centering
+						\includegraphics[width=.8\textwidth]{Time_Temp_2.png}
+					\column{.48\linewidth}
+						\centering
+						\includegraphics[width=.6\textwidth]{Time_Temp_3.png}
+					\end{columns}
+				\end{columns}
+		\end{itembox}
+
+		\begin{itembox}[l]{架橋点の環境とランダムな接続性\cite{flory}}
+			\begin{columns}[totalwidth=\textwidth]
+				\column{.35\textwidth}
+				\centering
+					\includegraphics[width=.8\textwidth]{JP_vicinity.png}
+
+					\small
+					架橋点は\alert{多数のストランド}に\\囲まれている。
+				\column{.4\textwidth}
+					\begin{itemize}
+						\item 接続性を不均一に
+							% \begin{itemize}
+							%     \item 接続に\alert{位置依存性}
+							% \end{itemize}
+						\item 巨視的な変形後
+							\begin{itemize}
+								% \normalsize
+								\item \alert{結節点のゆらぎが不均一}
+								\item 多様な緩和モード
+								% \item \alert{緩和の長時間化？}
+							\item \alert{ファントムネットワークの\\諸特性が発現}
+							\end{itemize}
+					\end{itemize}
+				\column{.25\textwidth}
+					\centering
+					\includegraphics[width=.8\textwidth]{random_NW.png}
+			\end{columns}
+		\end{itembox}
 \end{columns}
