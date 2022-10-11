@@ -126,7 +126,7 @@
                     \item フィラー無添加での\alert{高い破断伸びと強度}
                     \item 既知のモデルとの多数の整合点と、\alert{よくわからない点}。
                 \end{itemize}
-                \item マルチスケールシミュレーションで\color{red}モデル\color{black}を構築
+                \item シミュレーションでモデルを構築
                 \begin{itemize}
                     \item 単純化したモデルで小さなスケールから始めたい。
                     \item \alert{長さの揃ったストランドで MD シミュレーション}
@@ -140,19 +140,22 @@
 \begin{frame}
 	\frametitle{ゴムの強靭性}
 	\vspace{-3mm}
-		\begin{columns}[totalwidth=\textwidth]
+		\begin{columns}[T, totalwidth=\textwidth]
 			\column{.48\textwidth}
 				\begin{exampleblock}{破壊工学的な考え方}
 					\begin{itemize}
 						\item クラックの進展を\alert{抑制}
 						\item Andrews 理論\footnote{
 							\scriptsize
-				{Andrews, E. H. and Fukahori, Y. \\J. of Mat. Sci. 12, 1307 (1977)}
+				{E. H. Andrews and Y. Fukahori, \\J. of Mat. Sci. 12, 1307 (1977)}
 						}
 							\begin{itemize}
-								\item クラックの応力場
-								\item クラック進展時に、{\color{red} エネルギー散逸}
-								\item \alert{ヒステリシスに由来}
+								\item クラック近傍応力場
+								\item クラック進展時に、
+								\begin{itemize}
+									\item \alert{ヒステリシス}由来
+									\item {\color{red} エネルギー散逸}
+								\end{itemize}
 							\end{itemize}	
 					\end{itemize}
 					% \includegraphics[width=.4\textwidth]{crack.png}
@@ -164,11 +167,11 @@
 				\begin{itemize}
 					\item 発生の起源と効果
 					\begin{itemize}
-						\item フィラーの添加効果\footnote{
-							\scriptsize{K. A. Grosch et al. \\Rub. Chem. and Tech.41, 1157 (1968)}
+						\item フィラー添加効果\footnote{
+							\scriptsize{K. A. Grosch et al., \\Rub. Chem. and Tech.41, 1157 (1968)}
 						}
-						\item フィラー近傍での\\ナノキャビティーの\\開閉\footnote{
-							\scriptsize{H. Zhang et al. \\Macromolecules 46, 900 (2013)}
+						\item フィラー近傍でナノ-\\キャビティーの開閉\footnote{
+							\scriptsize{H. Zhang et al., \\Macromolecules 46, 900 (2013)}
 						}
 					\end{itemize}
 				\end{itemize}
@@ -511,33 +514,33 @@
 		\end{columns}
 \end{frame}
 
-% \subsection{KG鎖でのシミュレーション結果}
 
 \begin{frame}
 	\frametitle{KG 鎖の力学応答}
 	\vspace{-3mm}
-	\begin{alertblock}{排除体積効果のある四分岐ランダムネットワーク}
-		\begin{columns}[T, onlytextwidth]
-			\column{.48\linewidth}
-				\begin{block}{一軸伸張結果}
-					\begin{itemize}
-						\item 伸張速度の低下によりネオフッキアンに漸近
-						\item ANMよりも応力は高い
-					\end{itemize}
-					\includegraphics[width=\textwidth]{N48_C4_M3.png}
-				\end{block}
-				
-			\column{.48\linewidth}
-				\begin{block}{応力緩和関数 $G(t)$}
-					\begin{itemize}
-						\item ステップ変形（$\lambda=2.0$）
-						\item 最長緩和の長時間化
-						\item ANM よりも高弾性率
-					\end{itemize}
-					\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
-				\end{block}
-		\end{columns}
+	\begin{alertblock}{KG 鎖の四分岐ランダムネットワーク}
+		LJ ポテンシャルによる排除体積効果
 	\end{alertblock}
+	\vspace{-4mm}
+	\begin{columns}[T, onlytextwidth]
+		\column{.48\linewidth}
+			\begin{block}{一軸伸張結果}
+				\begin{itemize}
+					\item ネオフッキアンに漸近
+					\item ANMよりも応力は高い
+				\end{itemize}
+				\includegraphics[width=\textwidth]{N48_C4_M3.png}
+			\end{block}
+			
+		\column{.48\linewidth}
+			\begin{block}{応力緩和関数 $G(t)$}
+				\begin{itemize}
+					\item ステップ変形（$\lambda=2.0$）
+					\item ANM よりも高弾性率
+				\end{itemize}
+				\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
+			\end{block}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -582,24 +585,6 @@
     \end{alertblock}
 \end{frame}
 
-% \subsection{絡み合いを低減したネットワーク}
-% \begin{frame}
-% 	\frametitle{絡み合いを低減したネットワーク}
-% 		\begin{exampleblock}{NPT 計算での初期構造の緩和}
-% 			\begin{itemize}
-% 				\item \alert{密度の低い初期状態}から NPT 計算により圧縮して、
-% 				\item 絡み合いを極力排除した初期構造を作成した。
-% 			\end{itemize}
-% 		\end{exampleblock}
-
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.48\linewidth}
-% 				\includegraphics[width=.9\textwidth]{NPT_00.png}
-% 			\column{.48\linewidth}
-% 				\includegraphics[width=.9\textwidth]{NPT_11.png}
-% 		\end{columns}
-% \end{frame}
-
 \begin{frame}
     \frametitle{絡み合いを低減したネットワーク}
         \vspace{-3mm}
@@ -627,7 +612,7 @@
 
 \begin{frame}
     \frametitle{絡み合いの効果について}
-	\vspace{-2mm}
+	\vspace{-3mm}
 	\begin{alertblock}{絡み合い効果}
 		% \begin{columns}[onlytextwidth]
 		% 	\column{.8\linewidth}
@@ -643,11 +628,17 @@
 				& \text{and L is the number of slip-links per network chain}
 			\end{align*}
 	\end{alertblock}
-	\vspace{-2mm}
+	% \vspace{-1mm}
 	\begin{columns}[onlytextwidth]
-		\column{.75\linewidth}
+		\column{.2\linewidth}
+			\centering
+			\vspace{3mm}
+			\includegraphics[width=.8\textwidth]{z_cord_NPT_4Chain.png}
+			\vspace{2mm}
+				\includegraphics[width=.8\textwidth]{z_cord_4Chain.png}
+		\column{.8\linewidth}
 		\scriptsize
-		\begin{center}
+			\centering
 			\begin{tabular}{c|c|c} \hline
 				&NPT & NVT \\ \hline \hline
 				\textcolor{blue}{Chains, $\nu$} & \multicolumn{2}{|c}{\textcolor{blue}{768, 0.018}}\\ \hline
@@ -660,14 +651,6 @@
 				\alert{$G_{calcd.}=G_c + G_e$} & \alert{0.013} & \alert{0.020} \\ \hline \hline
 				$G_{measd.}$ & 0.013 & 0.022 \\ \hline
 			\end{tabular}
-		\end{center}
-		\column{.2\linewidth}
-		% 
-			\centering
-			% \vspace{2mm}
-			\includegraphics[width=.8\textwidth]{z_cord_NPT_4Chain.png}
-			\vspace{2mm}
-				\includegraphics[width=.8\textwidth]{z_cord_4Chain.png}
 	\end{columns}
 \end{frame}
 
