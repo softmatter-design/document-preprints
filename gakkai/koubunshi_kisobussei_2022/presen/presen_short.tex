@@ -48,7 +48,7 @@
    \addtocounter{framenumber}{\value{framenumberappendix}} 
 }
 
-
+\renewcommand{\thefootnote}{\alph{footnote}}
 
 %%%%%%%%%%%  theme  %%%%%%%%%%%
 \usetheme{Copenhagen}
@@ -123,7 +123,7 @@
             \begin{itemize}
                 \item 実験的アプローチ
                 \begin{itemize}
-                    \item 超分子前駆体から構造明確な\alert{三分岐}ネットワーク
+                    \item 超分子前駆体から構造明確な三分岐ネットワーク
                     \item フィラー無添加での\alert{高い破断伸びと強度}
                     \item 既知のモデルとの多数の整合点と、\alert{よくわからない点}。
                 \end{itemize}
@@ -162,6 +162,7 @@
 						}
 						\begin{itemize}
 							\item \alert{粘弾性に基づくもの}
+							\color{blue}
 							\item 結晶化に由来するもの
 							\item 添加したフィラーに起因
 						\end{itemize}
@@ -245,7 +246,7 @@
 			\begin{itemize}
 				\item \alert{可逆的}であることが望ましい。\textcolor{blue}{$\neq$ 犠牲結合}
 				\item 変形の周期に対応できるように、\alert{回復速度}も重要。
-				\item 粘弾性挙動としてのヒステリシスロス$\Leftrightarrow$緩和挙動
+				\item \alert{粘弾性挙動としてのヒステリシスロス$\Leftrightarrow$緩和挙動}
 			\end{itemize}
 		\end{alertblock}
 \end{frame}
@@ -261,7 +262,7 @@
 			\begin{align*}
 				\dfrac{F}{V} = W 
 				% &= \sum_{i,j = 0}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j \\[-2mm]
-				&= C_0 + {\color{green}C_1(I_1-3)} + C_2(I_2-3) + {\color{red}\sum_{i,j = 1}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j}
+				&= C_0 + \underbrace{{\color{green}C_1(I_1-3)} + {\color{red}C_2(I_2-3)}}_{\color{red}Mooney-Rivlin Model} + \sum_{i,j = 1}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j
 			\end{align*}  
 		\end{block}
 		\vspace{-5mm}
@@ -331,85 +332,50 @@
 		\vspace{-2mm}
 		\begin{alertblock}{Vicinity of Junction Point}
 			\begin{columns}[totalwidth=1\textwidth]
-				\column{.72\textwidth}
+				\column{.75\textwidth}
 				\vspace{-3mm}
 				\begin{itemize}
-					\item Junction points are \alert{surrounded by many of adjacent strands(x in fig.).}
-					\item Because of surrounding strands, \alert{fluctuation of junctions are suppressed}. 
+					\item Junction points are surrounded by many of \alert{adjacent strands(x in fig.).}
+					\item %Because of surrounding strands, 
+					Fluctuation of junctions are \alert{suppressed}. 
 				\end{itemize}
-				\column{.25\textwidth}
+				\column{.22\textwidth}
 				\centering
 				\includegraphics[width=\textwidth]{JP_vicinity.png}
 			\end{columns}
 		\end{alertblock}
-		\vspace{-2mm}
-		% \begin{block}{Constraind Junction Model}
-		% 	\vspace{-2mm}
+		\vspace{-1mm}
+		Storage modulus $G$ is \alert{combination of $G_c$ and $G_e$}
+		\vspace{-1mm}
 			\begin{columns}[totalwidth=1\textwidth]
 				\column{.65\textwidth}
 				\begin{itemize}
 					\item Constraind Junction Model
 					\begin{itemize}
-						\item With increased strain, constraints are reduced and act as PNM.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
+						\item Constraints are reduced and $G$ approaches to $G_c$.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
 					\end{itemize}
 					\item Topological relationships
 					\begin{itemize}
 						\item Contribution of entanglement.\footnote{\tiny{D.S.Pearson and W.Graessley, Macromol., 11, 3, 528 (1978)}}
 						\vspace{-2mm}
+						\scriptsize
 						\begin{align*}
 							G_e = T_e G_N^0
 						\end{align*}
 					\end{itemize}
 				\end{itemize}
-				\column{.32\textwidth}
+				\column{.3\textwidth}
+				\vspace{-2mm}
 				\includegraphics[width=\textwidth]{Constrained_Juntion.pdf}
 
-				\vspace{5mm}
+				\vspace{3mm}
 				\includegraphics[width=\textwidth]{topological_effect_ring.png}
 			\end{columns}
 		% \end{block}
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{Resent approach for Constraints(Entanglements)}
-% 		\vspace{-2mm}
-% 		\begin{alertblock}{Slip-tube Model}
-% 			\begin{columns}[totalwidth=1\textwidth]
-% 				\column{.7\textwidth}
-% 				\small
-% 				\begin{itemize}
-% 					\item Diffused-Constraint Model
-% 					\small
-% 					\begin{itemize}
-% 						\item Confining potential affect all points along the chain.\footnote{\tiny{A. Kloczkowski, J.E. Mark, B. Erman, Macromol., 28, 5089 (1995)}}
-% 					\end{itemize}
-% 					\item Nonaffine Tube Model
-% 					\small
-% 					\begin{itemize}
-% 						\item Improved model of "Edwards’ Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
-% 					\end{itemize}
-% 					\item Slip-tube Model
-% 					\small
-% 					\begin{itemize}
-% 						\item Like slip-link models, a pairwise interaction of chains.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
-% 					\end{itemize}
-% 				\end{itemize}
-% 				\scriptsize
-% 				\begin{align*}
-% 					&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
-% 					&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L
-% 					% &\text{where $\nu$ is the number density of network chains,} \\
-% 					% & \text{and L is the number of slip-links per network chain}
-% 				\end{align*}
-% 				\column{.25\textwidth}
-% 				\includegraphics[width=\textwidth]{NW_model_rubinstein.png}
-% 			\end{columns}
-% 		\end{alertblock}
-% \end{frame}
-
-
 \begin{frame}
-	\frametitle{Resent approach for Constraints(Entanglements)}
+	\frametitle{Recent approach for Constraints (Entanglements)}
 	
 		\begin{itemize}
 			\item Diffused-Constraint Model
@@ -426,7 +392,7 @@
 			\end{itemize}
 		\end{itemize}
 
-		\begin{alertblock}{Slip-tube Model(Simple analytical appoximation)}
+		% \begin{alertblock}{Slip-tube Model(Simple analytical appoximation)}
 			\begin{columns}[totalwidth=1\textwidth]
 				\column{.7\textwidth}
 				\scriptsize
@@ -439,503 +405,446 @@
 				\column{.25\textwidth}
 				\includegraphics[width=.9\textwidth]{NW_model_rubinstein.png}
 			\end{columns}
-		\end{alertblock}	
+		% \end{alertblock}	
+\end{frame}
+
+\section{ランダムネットワークの検討}
+\subsection{ランダムネットワークについて}
+
+\begin{frame}
+	\frametitle{ランダムネットワークの検討}
+		% \begin{block}{}
+			\begin{itemize}
+				\item 前述のモデルの問題点
+				\begin{itemize}
+					\item 変形速度依存性の議論が陽に行われていない。
+					\item 基本となるPNMの再現が必須。
+				\end{itemize}
+				\item ネットワーク構造の連結性に\alert{ランダム性を導入}
+                    \begin{itemize}
+						\item \alert{Flory のファントムネットワークの要件に合致}\footnote{
+							\scriptsize{P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)}
+						}
+						\begin{itemize}
+							\item ストランドが独立に等方的にゆらぐ
+							\item ストランドの末端間距離がガウス分布
+							\item ゆらぎがひずみの影響を受けない
+						\end{itemize}
+					\end{itemize}
+				\item 既往研究
+				\begin{itemize}
+					\item Random end-crosslink for telechelic polymers\footnote{
+						\scriptsize{G.S. Grest, et.al., Non-Cryst. Solids, 274, 139 (2000)}
+						}
+					\item Primitive Chain Network Simulation\footnote{
+						\scriptsize{Y. Masubuchi, Nihon Reoroji Gakkaishi, 49, 2, 73 (2021)}
+					}
+				\end{itemize}
+			\end{itemize}
+		% \end{block}
+\end{frame}
+
+\subsection{ランダムネットワークの作成}
+\begin{frame}
+	\frametitle{ランダムネットワークの作成}
+	\vspace{-3mm}
+	\begin{block}{初期構造の作成}
+		\begin{enumerate}
+			\item \alert{実空間}で8-Chain Model から初期構造を作成。
+				\begin{itemize}
+					\normalsize
+					\item 所望の分岐数に\alert{ランダム}に選択した\alert{結合を除去}
+					\item 除去したジオメトリー$\Rightarrow$\alert{トポロジーモデル}
+				\end{itemize}
+			\item トポロジー空間でランダム性の導入
+				\begin{itemize}
+					\normalsize
+					\item \alert{エッジ交換}でノードごとにランダムな接続性導入
+				\end{itemize}	
+			\item 対応する\alert{実空間でのネットワーク初期構造}を作成
+			\item \alert{適正なストランド長}となるように多重度設定
+			\item \alert{Slow Push Offにより初期構造を緩和}
+		\end{enumerate}
+
+		\vspace{-1mm}
+		\begin{columns}[T, onlytextwidth]
+			\column{.33\linewidth}
+				\includegraphics[width=\textwidth]{8_per.png}
+			\column{.33\linewidth}
+				\vspace{-5mm}
+				\begin{center}
+					\includegraphics[width=.6\textwidth]{Network.png}
+				\end{center}
+			\column{.33\linewidth}
+				\includegraphics[width=\textwidth]{bond_exchg.png}
+		\end{columns}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{初期構造の緩和}
+        \vspace{-2mm}
+		\begin{block}{KG 鎖をストランドとするネットワーク}
+			\begin{itemize}
+				\item KG鎖は「非素抜け」なので、\alert{初期構造の緩和}が重要。
+					\fontsize{6pt}{0pt}
+					\begin{align*}
+						&U_{KG}(r) = 
+						\begin{cases}
+						U_{nonbond} = U_{LJ} \;\text{where } r_c = 2^{(1/6)}\sigma \\
+						U_{bond} = U_{LJ} + U_{FENE}
+						\end{cases} 
+					\end{align*}
+			\end{itemize}
+		\end{block}
+		\vspace{-3mm}
+		\begin{columns}[T, onlytextwidth]
+			\column{.66\linewidth}
+				\begin{exampleblock}{初期構造の緩和}
+					\begin{itemize}
+						\item Auhl 等の方法\footnote{
+							\scriptsize{R. Auhl et al. J. of Chem. Phys., 119, 12718 (2003)}
+						}に従い、
+						\begin{itemize}
+							\item force-capped-LJ ポテンシャル
+							\item Slow Push Off で初期構造を緩和
+						\end{itemize}
+					\end{itemize}
+					\fontsize{6pt}{0pt}
+					\begin{align*}
+						&U_{FCLJ}(r) = 
+						\begin{cases}
+						(r-r_{fc})*U_{LJ}^{\prime}(r_{fc}) + U_{LJ}(r_{fc}) \; &r< r_{fc} \\
+						U_{LJ}   \;\;\;\;\;\;\; &r \geq r_{fc}
+						\end{cases} 
+					\end{align*}
+				\end{exampleblock}
+			\column{.32\linewidth}
+				\vspace{2mm}
+				\begin{center}
+					\includegraphics[width=1.2\textwidth]{Ev_fcLJ.png}
+				\end{center}
+				\vspace{-3mm}
+				\scriptsize
+				\begin{itemize}
+					\item force-capped-LJ Pot.
+					\item 素抜け⇒絡み合い
+				\end{itemize}
+		\end{columns}
+\end{frame}
+
+\subsection{ランダムネットワークのシミュレーション}
+\begin{frame}
+	\frametitle{「素抜け鎖」の力学応答}
+		\begin{alertblock}{「素抜け鎖」でのランダムネットワーク}
+			\begin{itemize}
+				% \item ストランド：す抜け鎖
+				\item \alert{「排除体積効果および絡み合いのない」}ネットワーク
+			\end{itemize}
+        \end{alertblock}
+        \vspace{-3mm}
+		\begin{columns}[totalwidth=\linewidth]
+			\column{.48\linewidth}
+				\begin{block}{一軸伸張結果}
+					\begin{itemize}
+						\item 伸張速度低下で\\\alert{ファントム応答}に漸近
+						% \item 低伸張率から伸び切り
+                    \end{itemize}
+                    \begin{center}
+                        \includegraphics[width=.9\columnwidth]{N48_sunuke.png}
+                    \end{center}
+				\end{block}
+			\column{.48\linewidth}
+				\begin{exampleblock}{ステップ変形の応力緩和}
+                    \begin{itemize}
+                        \item 高速伸長：$\dot{\gamma} = 1e^{-3}$
+                        \item 変位：$\lambda = 1.5$
+                    \end{itemize}
+					\begin{center}
+                        \includegraphics[width=.9\columnwidth]{gt_sunuke.png}
+                    \end{center}
+				\end{exampleblock}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{KG 鎖の力学応答}
+	\vspace{-3mm}
+	\begin{alertblock}{KG 鎖の四分岐ランダムネットワーク}
+		LJ ポテンシャルによる排除体積効果および絡み合い
+	\end{alertblock}
+	\vspace{-4mm}
+	\begin{columns}[T, onlytextwidth]
+		\column{.48\linewidth}
+			\begin{block}{一軸伸張結果}
+				\begin{itemize}
+					\item ネオフッキアンに漸近
+					\item ANMよりも応力は高い
+				\end{itemize}
+				\includegraphics[width=\textwidth]{N48_C4_M3.png}
+			\end{block}
+			
+		\column{.48\linewidth}
+			\begin{block}{応力緩和関数 $G(t)$}
+				\begin{itemize}
+					\item ステップ変形（$\lambda=2.0$）
+					\item ANM よりも高弾性率
+				\end{itemize}
+				\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
+			\end{block}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ランダムネットワークの絡み合い解析: Z1-code}
+        \vspace{-2mm}
+        \begin{columns}[onlytextwidth]
+            \column{.4\linewidth}
+                \includegraphics[width=.9\textwidth]{z_cord_4Chain.png}
+
+                Z1-code での絡み合い
+            \column{.56\linewidth}
+            \begin{block}{ホモポリマーとの比較}
+                \begin{itemize}
+                    \item Z は一本鎖あたりの絡み合い
+                    \item 今回のネットワークは、\\ホモポリマーと同等
+                \end{itemize}
+                \scriptsize
+                \begin{center}
+                    \begin{tabular}{c||c|c} \hline
+                        &Homo & 4 Chain NW \\ \hline \hline
+                        Segments& 50& 48 \\ \hline
+                        Chains & 200& 768 \\ \hline
+                        Entanglements& 204& 800\\ \hline
+                        Entangled Chains&134&557 \\ \hline
+                        \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
+                    \end{tabular}
+                \end{center}
+            \end{block}
+        \end{columns}
+    \begin{alertblock}{Z1-codeとは}
+        \begin{itemize}
+            \item 絡み合いを可視化するアルゴリズム\footnote{
+                M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
+                % \begin{itemize}
+                %     \item M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
+                %     \item S. Shanbhag, M. Kröger, Macromolecules 40, 2897(2007)
+                %     \item R. Hoy, K. Foteinopoulou, M. Kröger, Phys. Rev. E, 31803 (2009)
+                % \end{itemize}
+            }
+        %    N.C. Karayiannis, M. Kröger, Int. J. Mol. Sci. 10, 5054 (2009)
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
 
 % \begin{frame}
-% 	\frametitle{Resent approach for Constraints(Entanglements)}
-	
-		
-
-% 		\begin{alertblock}{Slip-tube Model}
-% 			\begin{itemize}
-% 				\item Diffused-Constraint Model
-% 				\begin{itemize}
-% 					\item Confining potential affect all points along the chain.\footnote{\tiny{A. Kloczkowski, J.E. Mark, B. Erman, Macromol., 28, 5089 (1995)}}
-% 				\end{itemize}
-% 				\item Nonaffine Tube Model
-% 				\begin{itemize}
-% 					\item Improved model of "Edwards' Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
-% 				\end{itemize}
-% 				\item Slip-tube Model
-% 				\begin{itemize}
-% 					\item A pairwise interaction of chains is introduced.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
-% 				\end{itemize}
-% 			\end{itemize}
-% 		\end{alertblock}	
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.7\textwidth}
-% 			\scriptsize
-% 			\begin{align*}
-% 				&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
-% 				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L\\
-% 				% &\text{where $\nu$ is the number density of network chains,} \\
-% 				% & \text{L is the number of slip-links per network chain}
-% 			\end{align*}
-% 			\column{.25\textwidth}
-% 			\includegraphics[width=.8\textwidth]{NW_model_rubinstein.png}
-% 		\end{columns}
-% \end{frame}
-
-% \section{ランダムネットワークの検討}
-% \subsection{ランダムネットワークについて}
-
-% \begin{frame}
-% 	\frametitle{規則構造からランダム構造へ}
-% 		\begin{alertblock}{規則構造でのシミュレーションでは}
-% 			\begin{itemize}
-% 				\item アフィンネットワークモデルでの単純な緩和挙動 
-% 				\begin{itemize}
-% 					\item ガラス転移終端近傍に主緩和
-% 					% \item ゆらぎの異方性が少ないためか？
-% 				\end{itemize}
-% 			\end{itemize}
-% 		\end{alertblock}
-% 		\begin{block}{ランダムネットワークの検討}
-% 			\begin{itemize}
-% 				\item ネットワーク構造の連結性に\alert{ランダム性を導入}
-%                     \begin{itemize}
-% 						\item \alert{Flory のファントムネットワークの要件に合致}\footnote{
-% 							P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)
-% 						}
-% 					\end{itemize}
-% 				\item ランダムネットワークモデルの特徴
-% 				\begin{itemize}
-% 					\item アフィン変形を抑制？
-% 					\item 架橋点のゆらぎに起因した多様な緩和モードが発現？
-% 					\item 緩和強度の増大、あるいは、長時間化？
-% 				\end{itemize}
-% 			\end{itemize}
-% 		\end{block}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{ランダム性の導入}
-%     \vspace{-3mm}
-% 		\begin{columns}[totalwidth=1\textwidth]
-% 			\column{.45\textwidth}
-% 				\begin{block}{連結のランダム性を導入}
-% 					\begin{itemize}
-% 						\item 連結性を不均一に
-% 							\begin{itemize}
-% 								\item 連結に\alert{位置依存性}
-% 							\end{itemize}
-% 						\item 巨視的な変形後
-% 							\begin{itemize}
-% 								\item 結節点のゆらぎが\\不均一
-% 								\item 多様な緩和モード
-% 								\item \alert{緩和の長時間化？}
-% 							% \item ファントムネットワークモデルの諸特性の発現？
-% 							\end{itemize}
-% 						\item \alert{解析を容易}に、
-%                             \begin{itemize}
-%                                 \item 既往研究で反応系
-% 								\item \alert{ストランド長と\\結合数を一定}
-% 							\end{itemize}
-% 					\end{itemize}
-% 				\end{block}
-% 			\column{.52\textwidth}
-% 				ランダム構造の模式図
-% 				\vspace{5mm}
-% 				\includegraphics[width=\textwidth]{random_NW.png}
-%     \end{columns}
-% \end{frame}
-
-% \subsection{ランダムネットワークの作成}
-% \begin{frame}
-% 	\frametitle{ランダムネットワークの作成}
-% 	\vspace{-3mm}
-% 	\begin{block}{初期構造の作成}
-% 		\begin{enumerate}
-% 			\item \alert{実空間}で8-Chain Model から初期構造を作成。
-% 				\begin{itemize}
-% 					\normalsize
-% 					\item 所望の分岐数に\alert{ランダム}に選択した\alert{結合を除去}
-% 					\item 除去したジオメトリー$\Rightarrow$\alert{トポロジーモデル}
-% 				\end{itemize}
-% 			\item トポロジー空間でランダム性の導入
-% 				\begin{itemize}
-% 					\normalsize
-% 					\item \alert{エッジ交換}でノードごとにランダムな接続性導入
-% 				\end{itemize}	
-% 			\item 対応する\alert{実空間でのネットワーク初期構造}を作成
-% 			\item \alert{適正なストランド長}となるように多重度設定
-% 			\item \alert{Slow Push Offにより初期構造を緩和}
-% 		\end{enumerate}
-
-% 		\vspace{-1mm}
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.33\linewidth}
-% 				\includegraphics[width=\textwidth]{8_per.png}
-% 			\column{.33\linewidth}
-% 				\vspace{-5mm}
-% 				\begin{center}
-% 					\includegraphics[width=.6\textwidth]{Network.png}
-% 				\end{center}
-% 			\column{.33\linewidth}
-% 				\includegraphics[width=\textwidth]{bond_exchg.png}
-% 		\end{columns}
-% 	\end{block}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{初期構造の緩和}
-%         \vspace{-2mm}
-% 		\begin{block}{KG 鎖をストランドとするネットワーク}
-% 			\begin{itemize}
-% 				\item KG鎖は「非素抜け」なので、\alert{初期構造の緩和}が重要。
-% 					\fontsize{6pt}{0pt}
-% 					\begin{align*}
-% 						&U_{KG}(r) = 
-% 						\begin{cases}
-% 						U_{nonbond} = U_{LJ} \;\text{where } r_c = 2^{(1/6)}\sigma \\
-% 						U_{bond} = U_{LJ} + U_{FENE}
-% 						\end{cases} 
-% 					\end{align*}
-% 			\end{itemize}
-% 		\end{block}
-% 		\vspace{-3mm}
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.66\linewidth}
-% 				\begin{exampleblock}{初期構造の緩和}
-% 					\begin{itemize}
-% 						\item Auhl 等の方法\footnote{
-% 							\scriptsize{R. Auhl et al. J. of Chem. Phys., 119, 12718 (2003)}
-% 						}に従い、
-% 						\begin{itemize}
-% 							\item force-capped-LJ ポテンシャル
-% 							\item Slow Push Off で初期構造を緩和
-% 						\end{itemize}
-% 					\end{itemize}
-% 					\fontsize{6pt}{0pt}
-% 					\begin{align*}
-% 						&U_{FCLJ}(r) = 
-% 						\begin{cases}
-% 						(r-r_{fc})*U_{LJ}^{\prime}(r_{fc}) + U_{LJ}(r_{fc}) \; &r< r_{fc} \\
-% 						U_{LJ}   \;\;\;\;\;\;\; &r \geq r_{fc}
-% 						\end{cases} 
-% 					\end{align*}
-% 				\end{exampleblock}
-% 			\column{.32\linewidth}
-% 				\vspace{2mm}
-% 				\begin{center}
-% 					\includegraphics[width=1.2\textwidth]{Ev_fcLJ.png}
-% 				\end{center}
-% 				\vspace{-3mm}
-% 				\scriptsize
-% 				\begin{itemize}
-% 					\item force-capped-LJ Pot.
-% 					\item 素抜け⇒絡み合い
-% 				\end{itemize}
-% 		\end{columns}
-% \end{frame}
-
-% \subsection{ランダムネットワークのシミュレーション}
-% \begin{frame}
-% 	\frametitle{「素抜け鎖」の力学応答}
-% 		\begin{alertblock}{「素抜け鎖」でのランダムネットワーク}
-% 			\begin{itemize}
-% 				% \item ストランド：す抜け鎖
-% 				\item \alert{「排除体積効果および絡み合いのない」}ネットワーク
-% 			\end{itemize}
-%         \end{alertblock}
+%     \frametitle{絡み合いを低減したネットワーク}
 %         \vspace{-3mm}
-% 		\begin{columns}[totalwidth=\linewidth]
-% 			\column{.48\linewidth}
-% 				\begin{block}{一軸伸張結果}
-% 					\begin{itemize}
-% 						\item 伸張速度低下で\\\alert{ファントム応答}に漸近
-% 						% \item 低伸張率から伸び切り
-%                     \end{itemize}
-%                     \begin{center}
-%                         \includegraphics[width=.9\columnwidth]{N48_sunuke.png}
-%                     \end{center}
-% 				\end{block}
-% 			\column{.48\linewidth}
-% 				\begin{exampleblock}{ステップ変形の応力緩和}
-%                     \begin{itemize}
-%                         \item 高速伸長：$\dot{\gamma} = 1e^{-3}$
-%                         \item 変位：$\lambda = 1.5$
-%                     \end{itemize}
-% 					\begin{center}
-%                         \includegraphics[width=.9\columnwidth]{gt_sunuke.png}
-%                     \end{center}
-% 				\end{exampleblock}
-% 		\end{columns}
-% \end{frame}
-
-% \begin{frame}
-% 	\frametitle{KG 鎖の力学応答}
-% 	\vspace{-3mm}
-% 	\begin{alertblock}{KG 鎖の四分岐ランダムネットワーク}
-% 		LJ ポテンシャルによる排除体積効果および絡み合い
-% 	\end{alertblock}
-% 	\vspace{-4mm}
-% 	\begin{columns}[T, onlytextwidth]
-% 		\column{.48\linewidth}
-% 			\begin{block}{一軸伸張結果}
+% 		\begin{columns}[T, onlytextwidth]
+%             \column{.45\linewidth}
+%                 \small
 % 				\begin{itemize}
-% 					\item ネオフッキアンに漸近
-% 					\item ANMよりも応力は高い
+% 					\item 4-Chain-\alert{NPT}
+% 					\includegraphics[width=.62\textwidth]{NPT_PPA.png}
+% 					\item 4-Chain-NVT
+% 					\includegraphics[width=.62\textwidth]{N48_f4_PPA.png}
 % 				\end{itemize}
-% 				\includegraphics[width=\textwidth]{N48_C4_M3.png}
-% 			\end{block}
-			
-% 		\column{.48\linewidth}
+% 			\column{.55\linewidth}
 % 			\begin{block}{応力緩和関数 $G(t)$}
 % 				\begin{itemize}
 % 					\item ステップ変形（$\lambda=2.0$）
-% 					\item ANM よりも高弾性率
+% 					\item 弾性率がPNMに漸近
+% 					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
 % 				\end{itemize}
-% 				\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
-% 			\end{block}
-% 	\end{columns}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{ランダムネットワークの絡み合い解析: Z1-code}
-%         \vspace{-2mm}
-%         \begin{columns}[onlytextwidth]
-%             \column{.4\linewidth}
-%                 \includegraphics[width=.9\textwidth]{z_cord_4Chain.png}
-
-%                 Z1-code での絡み合い
-%             \column{.56\linewidth}
-%             \begin{block}{ホモポリマーとの比較}
-%                 \begin{itemize}
-%                     \item Z は一本鎖あたりの絡み合い
-%                     \item 今回のネットワークは、\\ホモポリマーと同等
-%                 \end{itemize}
-%                 \scriptsize
-%                 \begin{center}
-%                     \begin{tabular}{c||c|c} \hline
-%                         &Homo & 4 Chain NW \\ \hline \hline
-%                         Segments& 50& 48 \\ \hline
-%                         Chains & 200& 768 \\ \hline
-%                         Entanglements& 204& 800\\ \hline
-%                         Entangled Chains&134&557 \\ \hline
-%                         \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
-%                     \end{tabular}
-%                 \end{center}
-%             \end{block}
-%         \end{columns}
-%     \begin{alertblock}{Z1-codeとは}
-%         \begin{itemize}
-%             \item 絡み合いを可視化するアルゴリズム\footnote{
-%                 M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
-%                 % \begin{itemize}
-%                 %     \item M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
-%                 %     \item S. Shanbhag, M. Kröger, Macromolecules 40, 2897(2007)
-%                 %     \item R. Hoy, K. Foteinopoulou, M. Kröger, Phys. Rev. E, 31803 (2009)
-%                 % \end{itemize}
-%             }
-%         %    N.C. Karayiannis, M. Kröger, Int. J. Mol. Sci. 10, 5054 (2009)
-%         \end{itemize}
-%     \end{alertblock}
-% \end{frame}
-
-% % \begin{frame}
-% %     \frametitle{絡み合いを低減したネットワーク}
-% %         \vspace{-3mm}
-% % 		\begin{columns}[T, onlytextwidth]
-% %             \column{.45\linewidth}
-% %                 \small
-% % 				\begin{itemize}
-% % 					\item 4-Chain-\alert{NPT}
-% % 					\includegraphics[width=.62\textwidth]{NPT_PPA.png}
-% % 					\item 4-Chain-NVT
-% % 					\includegraphics[width=.62\textwidth]{N48_f4_PPA.png}
-% % 				\end{itemize}
-% % 			\column{.55\linewidth}
-% % 			\begin{block}{応力緩和関数 $G(t)$}
-% % 				\begin{itemize}
-% % 					\item ステップ変形（$\lambda=2.0$）
-% % 					\item 弾性率がPNMに漸近
-% % 					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
-% % 				\end{itemize}
-% % 					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
-% % 					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
-% % 				\end{block}
-% % 		\end{columns}
-% % \end{frame}
-
-% \begin{frame}
-%     \frametitle{絡み合いの効果について}
-% 	\vspace{-3mm}
-% 	\begin{alertblock}{絡み合い効果}
-% 		% \begin{columns}[onlytextwidth]
-% 		% 	\column{.8\linewidth}
-% 			\small
-% 			Rubinstein らの先行研究\footnote{
-% 				\scriptsize{M. Rubinstein, S. Panyukov, Macromolecules, 35, 6670 (2002)}
-% 				}
-% 			\vspace{-3mm}
-% 			\scriptsize
-% 			\begin{align*}
-% 				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
-% 				&\text{where $\nu$ is the number density of network chains,} \\
-% 				& \text{and L is the number of slip-links per network chain}
-% 			\end{align*}
-% 	\end{alertblock}
-% 	% \vspace{-1mm}
-% 	\begin{columns}[onlytextwidth]
-% 		\column{.2\linewidth}
-% 			\centering
-% 			\vspace{3mm}
-% 			\includegraphics[width=.8\textwidth]{z_cord_NPT_4Chain.png}
-% 			\vspace{2mm}
-% 				\includegraphics[width=.8\textwidth]{z_cord_4Chain.png}
-% 		\column{.8\linewidth}
-% 		\scriptsize
-% 			\centering
-% 			\begin{tabular}{c|c|c} \hline
-% 				&NPT & NVT \\ \hline \hline
-% 				\textcolor{blue}{Chains, $\nu$} & \multicolumn{2}{|c}{\textcolor{blue}{768, 0.018}}\\ \hline
-% 				% \textcolor{blue}{$\nu$}& \multicolumn{2}{|c}{\textcolor{blue}{0.018}}\\ \hline
-% 				\textcolor{blue}{$G_c = \nu \times (1-2/4)$}&\multicolumn{2}{|c}{\textcolor{blue}{0.009}} \\ \hline \hline
-% 				Entanglements& 278& 800\\ \hline
-% 				Entangled Chains&249&557 \\ \hline
-% 				\textcolor{green}{L} & \textcolor{green}{278/768=0.36} & \textcolor{green}{800/768=1.04} \\ \hline
-% 				$G_e=4/7 \times \nu \times L $ & 0.004 & 0.011 \\ \hline \hline
-% 				\alert{$G_{calcd.}=G_c + G_e$} & \alert{0.013} & \alert{0.020} \\ \hline \hline
-% 				$G_{measd.}$ & 0.013 & 0.022 \\ \hline
-% 			\end{tabular}
-% 	\end{columns}
-% \end{frame}
-
-
-
-
-% \section{ランダムネットワークのせん断変形}
-% \subsection{分岐数の異なるネットワークのせん断変形}
-% \begin{frame}
-% 	\frametitle{シミュレーションによる評価}
-% 	\begin{enumerate}
-% 		\item 初期構造の確認
-% 			\begin{itemize}
-% 				\item Kr\"{o}ger らの方法により Z\_1 Code で絡み合いを評価\footnote[1]{
-% 					S. Shanbhag, M. Kr\"{o}ger, Macromol. 40 2897 (2007)
-% 				}
-% 				\item 対応するホモポリマーメルトと同程度であることを確認
-% 			\end{itemize}
-% 		\item 各種アンサンブル平均を評価
-% 		\item 力学特性の評価
-% 			\begin{itemize}
-% 				\item 一軸伸張において、生じる応力を評価
-% 				\item ステップ変形による応力緩和
-% 				\item \alert{Lees-Edwards 条件によりずりせん断}を付与し、生じる応力を評価
-% 				\item 連続した変形を付与して、ヒステリシスを評価
-% 			\end{itemize}	
-% 	\end{enumerate}
-% \end{frame}
-
-% \begin{frame}
-% 	\frametitle{分岐数の異なるネットワークのせん断変形}
-% 	\begin{itemize}
-%         \item 分岐数が異なるネットワークのせん断変形力学応答を評価した。
-% 		\item 変形速度を低減することで、分岐数によらず\\Phantom Network Model:PNM へと漸近
-% 	\end{itemize}
-
-% 	\begin{columns}[T, onlytextwidth]
-% 		\column{.33\linewidth}
-% 			\centering
-% 			\includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
-% 			4-Chain NW
-% 		\column{.33\linewidth}
-% 		\centering
-% 			\includegraphics[width=\textwidth]{Shear_Random_5chain_N20.png}
-% 			5-Chain NW
-% 		\column{.33\linewidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{Shear_Random_6chain_N20.png}
-% 		6-Chain NW
-% 	\end{columns}
-% \end{frame}
-
-% \subsection{4-Cain NW のせん断変形時のヒステリシス}
-% \begin{frame}
-% 	\frametitle{4-Cain NW のせん断変形時のヒステリシス}
-% 	\begin{itemize}
-% 		% \item 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは Phantom Network Model:PNM に漸近
-% 		\item PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で複数回の連続した変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示した。
-% 	\end{itemize}
-
-% 	\begin{columns}[totalwidth=\linewidth]
-% 		\column{.5\textwidth}
-% 			\centering
-% 				\includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
-% 				Stress-Strain Curves for 4-chain NW 
-% 		\column{.5\textwidth}
-% 			\centering
-% 				\includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
-% 				Hysteresis Response with Cyclic Deformations
+% 					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
+% 					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
+% 				\end{block}
 % 		\end{columns}
 % \end{frame}
 
+\begin{frame}
+    \frametitle{絡み合いの効果について}
+	\vspace{-3mm}
+	\begin{alertblock}{絡み合い効果}
+		% \begin{columns}[onlytextwidth]
+		% 	\column{.8\linewidth}
+			\small
+			Rubinstein らの先行研究\footnote{
+				\scriptsize{M. Rubinstein, S. Panyukov, Macromolecules, 35, 6670 (2002)}
+				}
+			\vspace{-3mm}
+			\scriptsize
+			\begin{align*}
+				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
+				&\text{where $\nu$ is the number density of network chains,} \\
+				& \text{and L is the number of slip-links per network chain}
+			\end{align*}
+	\end{alertblock}
+	% \vspace{-1mm}
+	\begin{columns}[onlytextwidth]
+		\column{.2\linewidth}
+			\centering
+			\vspace{3mm}
+			\includegraphics[width=.8\textwidth]{z_cord_NPT_4Chain.png}
+			\vspace{2mm}
+				\includegraphics[width=.8\textwidth]{z_cord_4Chain.png}
+		\column{.8\linewidth}
+		\scriptsize
+			\centering
+			\begin{tabular}{c|c|c} \hline
+				&NPT & NVT \\ \hline \hline
+				\textcolor{blue}{Chains, $\nu$} & \multicolumn{2}{|c}{\textcolor{blue}{768, 0.018}}\\ \hline
+				% \textcolor{blue}{$\nu$}& \multicolumn{2}{|c}{\textcolor{blue}{0.018}}\\ \hline
+				\textcolor{blue}{$G_c = \nu \times (1-2/4)$}&\multicolumn{2}{|c}{\textcolor{blue}{0.009}} \\ \hline \hline
+				Entanglements& 278& 800\\ \hline
+				Entangled Chains&249&557 \\ \hline
+				\textcolor{green}{L} & \textcolor{green}{278/768=0.36} & \textcolor{green}{800/768=1.04} \\ \hline
+				$G_e=4/7 \times \nu \times L $ & 0.004 & 0.011 \\ \hline \hline
+				\alert{$G_{calcd.}=G_c + G_e$} & \alert{0.013} & \alert{0.020} \\ \hline \hline
+				$G_{measd.}$ & 0.013 & 0.022 \\ \hline
+			\end{tabular}
+	\end{columns}
+\end{frame}
 
-% \begin{frame}
-% 	\frametitle{各種の変形条件での力学的ヒステリシス}
-% 		\centering
-% 			\includegraphics[width=\textwidth]{hyst_shear_all.png}
-% 			Hysteresis losses for valid shear rate and maximum deformation
-% \end{frame}
 
-% \begin{frame}
-% 	\frametitle{ヒステリシスロス}
-% 	\begin{itemize}
-% 		\item 変形速度の低下に伴いヒステリシスロスは減少
-% 		\item \textcolor{red}{$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失}
-% 	\end{itemize}
-% 			\centering
-% 				\includegraphics[width=.6\textwidth]{hyst_shear.png}\\
-% 					Comparison of Hysteresis losses for 4-Chain NW
-% \end{frame}
 
-% \begin{frame}
-% 	\frametitle{ラウスモードの最長緩和時間}
-% 		\begin{columns}[totalwidth=\linewidth]
-% 			\column{.5\textwidth}
-% 			\begin{itemize}
-% 				\item 最長緩和時間 ($\tau$) を評価
-% 				\item ストランドのラウスモード（p=1）の自己相関関数 $C_p(t)$
-% 				\begin{itemize}
-% 					\item 空間的な拘束のためストランドの相関は長時間極限で一定値に収束
-% 					\item その値 $C_p(\infty)$ を差し引いて評価
-% 					\item \textcolor{red}{$\tau \simeq 6.5e^{4}$}
-% 				\end{itemize}
-% 			\end{itemize}
 
-% 			\begin{align*}
-% 				C_p(t) = \langle X_p(t)X_p(0) \rangle/\langle X_p^2 \rangle
-% 			\end{align*}
+\section{ランダムネットワークのせん断変形}
+\subsection{分岐数の異なるネットワークのせん断変形}
+\begin{frame}
+	\frametitle{シミュレーションによる評価}
+	\begin{enumerate}
+		\item 初期構造の確認
+			\begin{itemize}
+				\item Kr\"{o}ger らの方法により Z\_1 Code で絡み合いを評価\footnote[1]{
+					S. Shanbhag, M. Kr\"{o}ger, Macromol. 40 2897 (2007)
+				}
+				\item 対応するホモポリマーメルトと同程度 ($\langle Z \rangle_{Z1} \simeq 0.15$)
+			\end{itemize}
+		\item 各種アンサンブル平均を評価
+		\item 力学特性の評価
+			\begin{itemize}
+				\item 一軸伸張において、生じる応力を評価
+				\item ステップ変形による応力緩和
+				\item \alert{Lees-Edwards 条件によりずりせん断}を付与し、生じる応力を評価
+				\item 連続した変形を付与して、ヒステリシスを評価
+			\end{itemize}	
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{分岐数の異なるネットワークのせん断変形}
+	\begin{alertblock}{「素抜け鎖」でのランダムネットワーク}
+		\begin{itemize}
+			% \item ストランド：す抜け鎖
+			\item \alert{「排除体積効果および絡み合いのない」}ネットワーク
+		\end{itemize}
+	\end{alertblock}
+	\begin{itemize}
+        \item 分岐数が異なるネットワークのせん断変形力学応答
+		\item 分岐数によらずPhantom Network Model:PNM へと漸近
+	\end{itemize}
+
+	\begin{columns}[T, onlytextwidth]
+		\column{.33\linewidth}
+			\centering
+			\includegraphics[width=\textwidth]{Shear_Random_4chain_N48.png}
+			4-Chain NW (N=48)
+		\column{.33\linewidth}
+		\centering
+			\includegraphics[width=\textwidth]{Shear_Random_5chain_N35.png}
+			5-Chain NW (N=35)
+		\column{.33\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Shear_Random_6chain_N48.png}
+		6-Chain NW (N=48)
+	\end{columns}
+\end{frame}
+
+\subsection{4-Cain NW のせん断変形時のヒステリシス}
+\begin{frame}
+	\frametitle{4-Cain NW のせん断変形時のヒステリシス}
+	\begin{itemize}
+		% \item 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは Phantom Network Model:PNM に漸近
+		\item PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で複数回の連続した変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示した。
+	\end{itemize}
+
+	\begin{columns}[totalwidth=\linewidth]
+		\column{.5\textwidth}
+			\centering
+				\includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
+				Stress-Strain Curves for 4-chain NW (N=20)
+		\column{.5\textwidth}
+			\centering
+				\includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+				Hysteresis Response with Cyclic Deformations
+		\end{columns}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{各種の変形条件での力学的ヒステリシス}
+		\centering
+			\includegraphics[width=\textwidth]{hyst_shear_all.png}
+			Hysteresis losses for valid shear rate and maximum deformation
+\end{frame}
+
+\begin{frame}
+	\frametitle{ヒステリシスロス}
+	\begin{itemize}
+		\item 変形速度の低下に伴いヒステリシスロスは減少
+		\item \textcolor{red}{$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失}
+	\end{itemize}
+			\centering
+				\includegraphics[width=.6\textwidth]{hyst_shear.png}\\
+					Comparison of Hysteresis losses \\for 4-Chain NW (N=20)
+\end{frame}
+
+\begin{frame}
+	\frametitle{ラウスモードの最長緩和時間}
+		\begin{columns}[totalwidth=\linewidth]
+			\column{.5\textwidth}
+			\begin{itemize}
+				\item 最長緩和時間 ($\tau$) を評価
+				\item ストランドのラウスモード（p=1）の自己相関関数 $C_p(t)$
+				\begin{itemize}
+					\item 空間的な拘束のためストランドの相関は長時間極限で一定値に収束
+					\item その値 $C_p(\infty)$ を差し引いて評価
+					\item \textcolor{red}{$\tau \simeq 6.5e^{4}$}
+				\end{itemize}
+			\end{itemize}
+
+			\begin{align*}
+				C_p(t) = \langle X_p(t)X_p(0) \rangle/\langle X_p^2 \rangle
+			\end{align*}
 			
-% 			\column{.5\textwidth}
-% 				\centering
-% 					\includegraphics[width=\textwidth]{Xp_1_org.png}\\
-% 					$C_{p1}(t)$ for equilibrated structure
+			\column{.5\textwidth}
+				\centering
+					\includegraphics[width=\textwidth]{Xp_1_org.png}\\
+					$C_{p1}(t)$ for equilibrated structure
 
-% 			\end{columns}
-% \end{frame}
+			\end{columns}
+\end{frame}
 
-% \subsection{おわりに}
-% \begin{frame}
-% 	\frametitle{おわりに}
-% 		\begin{block}{本発表の内容}
-% 			\begin{itemize}
-% 				\item ストランド長が揃った分岐数の異なるランダムネットワーク
-% 				\begin{itemize}
-% 					\item ずりせん断での力学応答を評価
-% 					\item 分岐数に応じたファントムネットワーク挙動を確認
-% 				\end{itemize}
-% 				\item 迅速な回復を伴った力学的ヒステリシスを確認
-% 				\begin{itemize}
-% 					\item ストランドの最長緩和時間が長時間化（$\tau \simeq 6.5e^{4}$）
-% 					\item ヒステリシスロスが消失する変形速度と対応
-% 				\end{itemize}
-%                 \item 今回の知見に基づき、一軸伸張での検討
-% 			\end{itemize}
-% 		\end{block}
-% \end{frame}
+\subsection{おわりに}
+\begin{frame}
+	\frametitle{おわりに}
+		\begin{block}{本発表の内容}
+			\begin{itemize}
+				\item ストランド長が揃った分岐数の異なるランダムネットワーク
+				\begin{itemize}
+					\item ずりせん断での力学応答を評価
+					\item 分岐数に応じたファントムネットワーク挙動を確認
+				\end{itemize}
+				\item 迅速な回復を伴った力学的ヒステリシスを確認
+				\begin{itemize}
+					\item ストランドの最長緩和時間が長時間化（$\tau \simeq 6.5e^{4}$）
+					\item ヒステリシスロスが消失する変形速度と対応
+				\end{itemize}
+                \item 今回の知見に基づき、一軸伸張での検討
+			\end{itemize}
+		\end{block}
+\end{frame}
 
 
 
@@ -1409,6 +1318,41 @@
 
 
 % \section{ランダムネットワークについて}
+
+% \begin{frame}
+%     \frametitle{ランダム性の導入}
+%     \vspace{-3mm}
+% 		\begin{columns}[totalwidth=1\textwidth]
+% 			\column{.45\textwidth}
+% 				\begin{block}{連結のランダム性を導入}
+% 					\begin{itemize}
+% 						\item 連結性を不均一に
+% 							\begin{itemize}
+% 								\item 連結に\alert{位置依存性}
+% 							\end{itemize}
+% 						\item 巨視的な変形後
+% 							\begin{itemize}
+% 								\item 結節点のゆらぎが\\不均一
+% 								\item 多様な緩和モード
+% 								\item \alert{緩和の長時間化？}
+% 							% \item ファントムネットワークモデルの諸特性の発現？
+% 							\end{itemize}
+% 						\item \alert{解析を容易}に、
+%                             \begin{itemize}
+%                                 \item 既往研究で反応系
+% 								\item \alert{ストランド長と\\結合数を一定}
+% 							\end{itemize}
+% 					\end{itemize}
+% 				\end{block}
+% 			\column{.52\textwidth}
+% 				ランダム構造の模式図
+% 				\vspace{5mm}
+% 				\includegraphics[width=\textwidth]{random_NW.png}
+%     \end{columns}
+% \end{frame}
+
+
+
 
 % \subsection{ランダムネットワークの作成}
 % \begin{frame}
