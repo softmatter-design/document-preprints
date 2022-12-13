@@ -130,7 +130,7 @@
                 \item シミュレーションでモデルを構築
                 \begin{itemize}
                     \item 単純化したモデルで小さなスケールから始めたい。
-                    \item \alert{長さの揃ったストランドで MD シミュレーション}
+                    \item {長さの揃ったストランドで MD シミュレーション}
                     % \item 最終的に、亀裂先端の挙動を FEM シミュレーション
                 \end{itemize}
             \end{itemize}
@@ -207,7 +207,7 @@
 				\item \alert{低温、高速変形}でSBRでも伸びきり効果が発現\footnote{
 					{\footnotesize Smith TL., Dickie RA., J. Pol. Sci. part A-2 (1969) 7 635}
 				}
-				\item 時間温度換算則で考えてみれば？
+				\item 時間（変形速度）温度換算則で考えてみれば？
 			\end{itemize}
 
 			\centering
@@ -350,7 +350,7 @@
 			\begin{columns}[totalwidth=1\textwidth]
 				\column{.65\textwidth}
 				\begin{itemize}
-					\item Constraind Junction Model
+					\item Constrained Junction Model
 					\begin{itemize}
 						\item Constraints are reduced and $G$ approaches to $G_c$.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
 					\end{itemize}
@@ -701,7 +701,7 @@
 				\textcolor{green}{L} & \textcolor{green}{278/768=0.36} & \textcolor{green}{800/768=1.04} \\ \hline
 				$G_e=4/7 \times \nu \times L $ & 0.004 & 0.011 \\ \hline \hline
 				\alert{$G_{calcd.}=G_c + G_e$} & \alert{0.013} & \alert{0.020} \\ \hline \hline
-				$G_{measd.}$ & 0.013 & 0.022 \\ \hline
+				\textcolor{blue}{$G_{measd.}$} & \textcolor{blue}{0.013} & \textcolor{blue}{0.022} \\ \hline
 			\end{tabular}
 	\end{columns}
 \end{frame}
@@ -714,19 +714,26 @@
 \begin{frame}
 	\frametitle{シミュレーションによる評価}
 	\begin{enumerate}
-		\item 初期構造の確認
+		\item KG 鎖 (N=20) 初期構造の確認
 			\begin{itemize}
 				\item Kr\"{o}ger らの方法により Z\_1 Code で絡み合いを評価\footnote[1]{
-					S. Shanbhag, M. Kr\"{o}ger, Macromol. 40 2897 (2007)
+					\scriptsize{S. Shanbhag, M. Kr\"{o}ger, Macromol. 40 2897 (2007)}
 				}
-				\item 対応するホモポリマーメルトと同程度 ($\langle Z \rangle_{Z1} \simeq 0.15$)
+				\begin{itemize}
+					\item 対応するホモポリマーメルトと同程度 ($\langle Z \rangle_{Z1} \simeq 0.15$)
+					\item 鎖長が短いので絡み合いは少ない
+				\end{itemize}
 			\end{itemize}
 		\item 各種アンサンブル平均を評価
+			\begin{itemize}
+				\item ストランド長の分布関数
+				\item 鎖に沿ったセグメント間距離
+			\end{itemize}
 		\item 力学特性の評価
 			\begin{itemize}
 				\item 一軸伸張において、生じる応力を評価
 				\item ステップ変形による応力緩和
-				\item \alert{Lees-Edwards 条件によりずりせん断}を付与し、生じる応力を評価
+				\item \alert{Lees-Edwards 条件によりずりせん断}を付与し、\\生じる応力を評価
 				\item 連続した変形を付与して、ヒステリシスを評価
 			\end{itemize}	
 	\end{enumerate}
@@ -763,7 +770,7 @@
 
 \subsection{4-Cain NW のせん断変形時のヒステリシス}
 \begin{frame}
-	\frametitle{4-Cain NW のせん断変形時のヒステリシス}
+	\frametitle{4-Cain NW (KG Chain: N=20) のせん断変形}
 	\begin{itemize}
 		% \item 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは Phantom Network Model:PNM に漸近
 		\item PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で複数回の連続した変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示した。
@@ -801,29 +808,38 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{ラウスモードの最長緩和時間}
+	\frametitle{ストランドの最長緩和時間}
+	\begin{exampleblock}{最長緩和時間 ($\tau$) を評価}
 		\begin{columns}[totalwidth=\linewidth]
-			\column{.5\textwidth}
+			\column{.65\textwidth}
 			\begin{itemize}
-				\item 最長緩和時間 ($\tau$) を評価
 				\item ストランドのラウスモード（p=1）の自己相関関数 $C_p(t)$
+				\small
+				\begin{align*}
+					C_p(t) = \langle X_p(t)X_p(0) \rangle/\langle X_p^2 \rangle
+				\end{align*}
+				\normalsize
+				\item 相関関数の振る舞い
 				\begin{itemize}
-					\item 空間的な拘束のためストランドの相関は長時間極限で一定値に収束
-					\item その値 $C_p(\infty)$ を差し引いて評価
-					\item \textcolor{red}{$\tau \simeq 6.5e^{4}$}
+					\item 長時間極限で一定値に収束
+					\item 空間的な拘束のため
+					\item $C_p(\infty)$ を差し引いて評価
+					\small
+					\begin{align*}
+						\textcolor{red}{\tau \simeq 6.5e^{4}}
+					\end{align*}
+					\normalsize
 				\end{itemize}
 			\end{itemize}
-
-			\begin{align*}
-				C_p(t) = \langle X_p(t)X_p(0) \rangle/\langle X_p^2 \rangle
-			\end{align*}
-			
-			\column{.5\textwidth}
+			\column{.33\textwidth}
 				\centering
 					\includegraphics[width=\textwidth]{Xp_1_org.png}\\
-					$C_{p1}(t)$ for equilibrated structure
+					\scriptsize{$C_{p1}(t)$ for equilibrated structure}
+		\end{columns}
 
-			\end{columns}
+		\alert{ヒステリシスロスが消失する変形速度 ($\sim 1e^{-5}$) と対応}
+	\end{exampleblock}
+		
 \end{frame}
 
 \subsection{おわりに}
@@ -831,7 +847,7 @@
 	\frametitle{おわりに}
 		\begin{block}{本発表の内容}
 			\begin{itemize}
-				\item ストランド長が揃った分岐数の異なるランダムネットワーク
+				\item ストランド長が揃った分岐数の異なる\\ランダムネットワーク
 				\begin{itemize}
 					\item ずりせん断での力学応答を評価
 					\item 分岐数に応じたファントムネットワーク挙動を確認
