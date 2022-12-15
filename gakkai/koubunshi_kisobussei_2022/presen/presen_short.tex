@@ -139,11 +139,11 @@
 
 \subsection{ゴムの強靭性}
 \begin{frame}
-	\frametitle{ヒステリシスロスと破壊エネルギー}
+	\frametitle{破壊エネルギーとヒステリシスロス}
 	\vspace{-1mm}
 		% \begin{block}{}
 			\begin{columns}[T, onlytextwidth]
-				\column{.63\linewidth}
+				\column{.7\linewidth}
 					\begin{itemize}
 						\item ヒステリシスロス
 							\begin{itemize}
@@ -155,7 +155,7 @@
 							}
 							\begin{itemize}
 								\item \alert{変形温度}にも強く依存
-								\item ガラス転移温度との距離？
+								\item SBRのガラス転移温度との距離？
 							\end{itemize}
 						\item ヒステリシスロス発生の起源\footnote{
 							\scriptsize{A.R.Payne, J.Poly.Sci.:Sympo., 48, 169(1974)}
@@ -167,7 +167,7 @@
 							\item 添加したフィラーに起因
 						\end{itemize}
 					\end{itemize}
-				\column{.35\linewidth}
+				\column{.3\linewidth}
 				\begin{center}
 					\vspace{-2mm}
 					\includegraphics[width=\textwidth]{hysteresis_curve.png}
@@ -177,6 +177,29 @@
 				\end{center}
 			\end{columns}
 		% \end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{S-S curves for SBR at veried temp. and speed}
+		% \begin{alertblock}{Strain-stress curves for SBR at veried temp. and speed}
+
+			\begin{columns}[T, onlytextwidth]
+				\column{.45\linewidth}
+				\centering
+				\includegraphics[width=\textwidth]{SBR_lowTemp.png}
+				\column{.45\linewidth}
+				\centering
+				\includegraphics[width=\textwidth]{SBR_lowTemp_2.png}
+			\end{columns}
+
+			\begin{itemize}
+				\item \alert{低温、高速変形}でSBRでも伸びきり効果が発現\footnote{
+					{\footnotesize T.L. Smith, R.A. Dickie, J. Pol. Sci. part A-2, 7 635 (1969)}
+				}
+				% \item 時間（変形速度）温度換算則で考えてみれば？
+			\end{itemize}
+
+		% \end{alertblock}
 \end{frame}
 
 \begin{frame}
@@ -200,20 +223,7 @@
 		\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{SBRの伸びきり効果}
-		\begin{alertblock}{室温で伸び切りが出ないはずのSBR}
-			\begin{itemize}
-				\item \alert{低温、高速変形}でSBRでも伸びきり効果が発現\footnote{
-					{\footnotesize T.L. Smith, R.A. Dickie, J. Pol. Sci. part A-2, 7 635 (1969)}
-				}
-				\item 時間（変形速度）温度換算則で考えてみれば？
-			\end{itemize}
 
-			\centering
-			\includegraphics[width=.6\textwidth]{SBR_lowTemp_2.png}
-		\end{alertblock}
-\end{frame}
 
 \begin{frame}
 	\frametitle{ゴムの破壊耐性}
@@ -374,6 +384,8 @@
 		% \end{block}
 \end{frame}
 
+\setcounter{footnote}{0}
+
 \begin{frame}
 	\frametitle{Recent approach for Constraints (Entanglements)}
 	
@@ -408,6 +420,7 @@
 		% \end{alertblock}	
 \end{frame}
 
+\setcounter{footnote}{0}
 \section{ランダムネットワークの検討}
 \subsection{ランダムネットワークについて}
 
@@ -871,6 +884,7 @@
 		\end{block}
 \end{frame}
 
+\setcounter{section}{0}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 
@@ -1001,19 +1015,6 @@
 				時間温度換算則の成立
 				\includegraphics[width=.8\textwidth]{Time_Temp_2.png}
 		\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{SBRでの伸びきり効果}
-		\includegraphics[width=.8\textwidth]{SBR_lowTemp_2.png}
-
-		{\footnotesize Smith TL., Dickie RA., J. Pol. Sci. part A-2 (1969) 7 635}
-		\begin{alertblock}{室温で伸び切りが出ないはずのSBR}
-			\begin{itemize}
-				\item 低温、高速変形でSBRでも伸びきり効果が発現
-				\item 時間温度換算則で考えてみれば？
-			\end{itemize}
-		\end{alertblock}
 \end{frame}
 
 \begin{frame}
@@ -1191,7 +1192,7 @@
 
 % \subsection{ファントムネットワークの理論}
 \begin{frame}
-	\frametitle{有限サイズ効果}
+	\frametitle{Phantom Network Model (System size effect)}
 		\begin{columns}[totalwidth=1\textwidth]
 			\column{.48\textwidth}
 				\begin{block}{末端の壁面固定の効果}
