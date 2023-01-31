@@ -1,0 +1,14 @@
+粗視化MDシミュレーションによるランダムネットワークの緩和挙動の検討
+
+ランダムネットワークの力学的応答を粗視化MDシミュレーションを用いて検討し、その緩和挙動について検討を行った。
+ランダムネットワーク構造は、任意の分岐数を有するノードを用いて、トポロジー空間においてネットワークの接続性を確認しながらエッジ交換を行うことで作成した。
+変形速度を変えながら周期的な変形を付与してヒステリシス挙動を観測し、低いひずみ速度に至るヒステリシスロスの発生を確認した。
+この特徴時間は、ストランドのRouse最長緩和時間に対応するものであった。
+
+
+Relaxation Behavior Study of Random Networks Using Coarse-Grained MD Simulation
+
+The mechanical response of the random network was studied using coarse-grained MD simulations to examine its relaxation behavior.
+The random network structure was created by using nodes with arbitrary number of branches(3 to 6) and performing edge exchange while checking the network connectivity in topological space.
+The hysteresis behavior was observed by imposing periodic deformations with varying deformation rates, and the hysteresis loss leading to low strain rates was observed.
+The observed characteristic time corresponded to the Rouse longest relaxation time of the strand.
