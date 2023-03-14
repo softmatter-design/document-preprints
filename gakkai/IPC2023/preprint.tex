@@ -20,7 +20,7 @@
 \abovecaptionskip=-1pt
 %\belowcaptionskip=-1pt
 %
-\renewcommand{\baselinestretch}{0.8} %全体の行間調整
+\renewcommand{\baselinestretch}{0.96} %全体の行間調整
 % \renewcommand{\figurename}{Fig.}
 % \renewcommand{\tablename}{Tab.}
 %
@@ -64,65 +64,75 @@ We have been investigating the possibility that this nodal fluctuation-derived d
 We previously reported that PNM can be reproduced by changing the connectivity of a regular structure network to random [3].
 Here, we report the results of an MD simulation study of the relaxation behavior of network polymers with random connectivity.
 
+\begin{wrapfigure}[12]{r}[0pt]{0.45\textwidth}
+	\centering
+	\includegraphics[width=.45\textwidth]{Shear_Random_4chain_N20.png}
+    \vspace{2mm}
+    \caption{SS Curves for 4-chain NW of KG Strands(N=40)}
+    \label{fig:deform}
+
+    \vspace{3mm}
+    \includegraphics[width=.45\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+    \vspace{2mm}
+    \caption{Hysteresis Curves for 4-chain NW (N=40) by Cyclic Shear ($\lambda = 1$)}
+    \label{fig:hyst}
+\end{wrapfigure}
+
 \section*{Results and Discussion}
 
-% \begin{wrapfigure}{r}[0pt]{0.4\textwidth}
-% 	\centering
-% 	\includegraphics[width=.4\textwidth]{Shear_Random_4chain_N20.png}
-%     \vspace{2mm}
-%     \caption{SS Curves for 4-chain NW of Phantom Strands}
-%     \label{fig:deform}
-% \end{wrapfigure}
+(Simulation) 
 
-
-
-
-
-(Simulation) A network of 3-, 4-, and 6-branches with random connectivity was created according to a previous report [3].
+A network of 3-, 4- and 6-branches with random connectivity was created according to a previous report [3].
 As network strands, we used KG strands with LJ interactions introduced between segments and phantom strands without interactions.
-Its behavior at equilibrium and during deformation (uniaxial elongation and shear) was evaluated by molecular dynamics simulations using the COGNAC simulator on OCTA.
+Its behavior at equilibrium and during deformation, uniaxial elongation or shear, was evaluated by molecular dynamics simulations using the COGNAC simulator on OCTA.
 
+(Evaluation of mechanical response) 
 
-% \begin{wrapfigure}{r}[0pt]{0.4\textwidth}
+When phantom chains with no inter-segmental interactions were used, the response was similar to that of the theoretical phantom network. 
+% due to the reduction in shear rate.
+For KG chains, the modulus of elasticity was about twice that of the PNM model, G, at shear rates where the deformation rate dependence disappears.
+
+% \begin{wrapfigure}{r}[0pt]{0.45\textwidth}
 % 	\centering
-% 	\includegraphics[width=.4\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+% 	\includegraphics[width=.45\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
 %     \vspace{2mm}
 %     \caption{Hysteresis Curves for 4-chain NW by Cyclic Shear ($\lambda = 1$)}
 %     \label{fig:hyst}
 % \end{wrapfigure}
 
+(Hysteresis)
 
-(Evaluation of mechanical response) When phantom chains with no intersegmental interactions were used, the response was similar to that of the theoretical phantom network due to the reduction in shear rate.
-For KG chains, the modulus of elasticity was about twice that of the PNM model, G, at shear rates where the deformation rate dependence disappears.
+The difference in elastic modulus was estimated to be due to both intersegmental interaction and entanglement.
 The difference in elastic modulus was estimated to be due to both intersegmental interaction and entanglement.
 
-
-\begin{figure}[hb]
-    \begin{minipage}{0.33\hsize}
-        \begin{center}
-        \includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
-        \vspace{1mm}
-        \caption{SS Curves for 4-chain \\NW of Phantom Strands}
-        \label{fig:deform}
-        \end{center}
-    \end{minipage}
-    \begin{minipage}{0.33\hsize}
-        \begin{center}
-        \includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
-        \vspace{1mm}
-        \caption{Hysteresis Curves for \\4-chain NW by Cyclic Shear ($\lambda = 1$)}
-        \label{fig:hyst}
-        \end{center}
-    \end{minipage}
-    \begin{minipage}{0.33\hsize}
-        \begin{center}
-        \includegraphics[width=\textwidth]{hyst_4Chain.png}
-        \vspace{1mm}
-        \caption{Strand Exchange Procedure}
-        \label{fig:exc}
-        \end{center}
-    \end{minipage}
-\end{figure}
+% \begin{figure}[hb]
+%     \begin{minipage}{0.45\hsize}
+%         \begin{center}
+%         \includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
+%         \vspace{1mm}
+%         \caption{SS Curves for 4-chain NW of \\Phantom Strands}
+%         \label{fig:deform}
+%         \end{center}
+%     \end{minipage}
+%     \begin{minipage}{0.1\hsize}
+%     \end{minipage}
+%     \begin{minipage}{0.45\hsize}
+%         \begin{center}
+%         \includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+%         \vspace{1mm}
+%         \caption{Hysteresis Curves for 4-chain NW by Cyclic Shear ($\lambda = 1$)}
+%         \label{fig:hyst}
+%         \end{center}
+%     \end{minipage}
+%     \begin{minipage}{0.33\hsize}
+%         \begin{center}
+%         \includegraphics[width=\textwidth]{hyst_4Chain.png}
+%         \vspace{1mm}
+%         \caption{Strand Exchange Procedure}
+%         \label{fig:exc}
+%         \end{center}
+%     \end{minipage}
+% \end{figure}
 
 % \vspace{-7mm}
 \begin{thebibliography}{99}
