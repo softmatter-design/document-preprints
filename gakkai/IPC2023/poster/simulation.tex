@@ -33,19 +33,21 @@
             \end{columns}
         \end{itembox}
 
-        \begin{itembox}[l]{各種特性の評価}
+        \begin{itembox}[l]{MD シミュレーション条件}
             \begin{enumerate}
-                \item 初期構造の確認
+                \item Phantom Chain
                     \begin{itemize}
                         \normalsize
-                        \item Kr\"{o}ger らの方法~\cite{kroger} により Z\_1 Code で絡み合いを評価
-                        \item 対応するホモポリマーメルトと同程度であることを確認
+                        \item セグメント間相互作用を設定しない
+                        \item Angle Potential に"Force Cap LJ"を設定
+                        \item ボンドはハーモニック（k=1000）
                     \end{itemize}
                 \item 力学特性の評価
                     \begin{itemize}
                         \normalsize
-                        \item Lees-Edwards 条件によりずりせん断を付与し、生じる応力を評価
-                        \item 連続した変形を付与して、ヒステリシスを評価
+                        \item ストランド長を理想状態での末端間距離と設定
+                        \item システムの密度を設定（ρ = 0.85）するため、
+                        \item ネットワークを多重化（IPN）
                     \end{itemize}	
             \end{enumerate}
         \end{itembox}
