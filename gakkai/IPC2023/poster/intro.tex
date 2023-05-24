@@ -98,11 +98,7 @@
 				\begin{columns}[T, onlytextwidth]
 					\column{.45\linewidth}
 					% \small
-					\color{blue}{Affine Network Model
-					% \footnote{
-					% 	\tiny{P.J. Flory, Principles of Polymer Chemistry, (1953)}
-					% }
-					}
+					\color{blue}{Affine Network Model\cite{flory1}}
 					% \vspace{-2mm}
 					\small
 					\begin{align*}
@@ -112,7 +108,7 @@
 					\end{align*}
 					\column{.45\linewidth}
 					% \small
-					\color{red}{Phantom Network Model
+					\color{red}{Phantom Network Model\cite{james}
 					% \footnote{
 					% 	\tiny{H.M. James, E.J. Guth, Chem. Phys., 21, 6, 1039 (1953)}
 					% }
@@ -167,36 +163,25 @@
 		\end{columns}
 	\end{itembox}
 
-	\begin{itembox}[l]{架橋点の環境とランダムな接続性\cite{flory}}
+	\begin{itembox}[l]{Random Connectivity\cite{flory2}}
 		\begin{columns}[totalwidth=\textwidth]
-			% \column{.35\textwidth}
-			% \centering
-			% 	\includegraphics[width=.8\textwidth]{JP_vicinity.png}
-
-			% 	\small
-			% 	架橋点は\alert{多数のストランド}に\\囲まれている。
-			\column{.6\textwidth}
+			\column{.65\textwidth}
 				\begin{itemize}
-					\item 規則構造を初期構造とする
+					\item Regular Structure as Initial Structure
 					\begin{itemize}
 						\normalsize
-						\item ストランドの長さを揃える
+						\item Same strand length for easy understanding
+						\item Easy to monitor the strand length distributions
 					\end{itemize}
-					\item 接続性を不均一に
+					\item Irregular Connectivity for each Junction Point
 						\begin{itemize}
 							\normalsize
-							\item 接続に\alert{位置依存性}
+							\item Random Connectivity
+							\item Fluctuations of Junction Points are assured
 						\end{itemize}
-					\item 巨視的な変形後
-						\begin{itemize}
-							\normalsize
-							\item \alert{結節点のゆらぎが不均一}
-							\item 多様な緩和モード
-							% \item \alert{緩和の長時間化？}
-						\item \alert{Phantom Network の諸特性が発現}
-						\end{itemize}
+					\item Phantom Network Requirement by Flory is fulfilled
 				\end{itemize}
-			\column{.35\textwidth}
+			\column{.3\textwidth}
 				\centering
 				\includegraphics[width=\textwidth]{random_NW.png}
 		\end{columns}
