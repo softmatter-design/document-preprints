@@ -114,8 +114,8 @@ Payneは、ヒステリシスロスの発現機構を、1) 粘弾性に基づく
 そのトポロジーモデルに対応するように、実空間の初期構造からストランドを除去。
 \end{enumerate}
 
-\subsection{初期構造の作成}
-任意のセグメント数のストランドを用いてストランドの末端間距離がホモポリマーメルトと同等になるようにユニットセル長と多重度を調整し、KG 鎖の一般的な密度 ($\rho$=0.85) となるモデルを作成した。
+% \subsection{初期構造の作成}
+% 任意のセグメント数のストランドを用いてストランドの末端間距離がホモポリマーメルトと同等になるようにユニットセル長と多重度を調整し、KG 鎖の一般的な密度 ($\rho$=0.85) となるモデルを作成した。
 
 \subsection{MD シミュレーション}
 セグメント間の非結合ポテンシャルに斥力（$r_c = 2^{1/6}\sigma$）である LJ ポテンシャル $U_{LJ}(r_{ij})$、ボンドポテンシャルには FENE-LJ ポテンシャルを用いて KG 鎖とした。
@@ -126,28 +126,24 @@ Payneは、ヒステリシスロスの発現機構を、1) 粘弾性に基づく
 \section{結果と考察}
 
 \subsection{PNMの確認}
-同一のストランド長（セグメント数: 20）を有する 3, 4, 6 分岐のネットワークポリマーにおける変形速度依存性が消失するせん断変形（$\dot{\gamma} \simeq 5e^{-5}$）での SS カーブ（Fig. \ref{fig:deform}）より、PNM が示す弾性率 $G$~\cite{flory}に比例する形での以下の関係が示された。
-\vspace{-2mm}
-\begin{align*}
-    &G = g \left(1-2/f\right) \nu k_BT \\ &\text{where $g \simeq$ 2}
-\end{align*}
-\vspace{-5mm}
+同一のストランド長（セグメント数: 50）を有する 3, 4, 6 分岐のネットワークポリマーにおける変形速度依存性が消失するせん断変形（$\dot{\gamma} \simeq 5e^{-6}$）での SS カーブ（Fig. \ref{fig:deform}）はほぼ線形応答となり、PNM から予想される値よりも高い弾性率は Trapped Entanglement を考慮したモデルで説明できた~\cite{rubinstein}。
+% \vspace{-2mm}
+% \begin{align*}
+%     &G = g \left(1-2/f\right) \nu k_BT \\ &\text{where $g \simeq$ 2}
+% \end{align*}
+% \vspace{-5mm}
 
-ここで示された 2 程度の定数因子 $g$ については、システムサイズ依存性は小さく、ストランド長および排除体積効果の影響が見られたが、詳細は検討中である。
+% ここで示された 2 程度の定数因子 $g$ については、システムサイズ依存性は小さく、ストランド長および排除体積効果の影響が見られたが、詳細は検討中である。
+\subsection{粘弾性スペクトル}
+ステップ変形による応力緩和関数 $G(t)$ より導出した粘弾性スペクトルをに示した。
+ガラス転移に伴う $\tan \delta$ は上述の変形速度依存性が消失する程度の時間スケールで減衰したが、同等な長さのホモポリマーの最長緩和時間よりは長時間化していた。
+この緩和時間の長時間化はネットワーク構造に起因した架橋点の運動性の低下によるものと想定でき、長鎖のホモポリマーメルトでの絡み合いに起因したラウスモードのふるまい~\cite{karathi} と合致していた。
 
 \subsection{ヒステリシスロスの速度依存性}
 
-4分岐のネットワークにおいてPNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で周期的な変形 ($\gamma = 1$) を付与した結果を Fig. \ref{fig:hyst} に示した。
-複数回の変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示すことが確認できた。
+4分岐のネットワークにおいてPNM へと漸近する変形速度 ($\dot{\gamma} = 5e^{-5}$) で周期的なせん断変形 ($\gamma = 1$) を付与した結果を Fig. \ref{fig:hyst} に示した。
+複数回の変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.36) を示すことが確認できた。
 
-各種の変形条件でのヒステリシスロスの振る舞いを、Fig. \ref{fig:hystloss} に示した。
-高速変形では大きな値を示したが変形速度の低下に伴い減少し、$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失するようであった。
-
-\subsection{最長緩和時間の検討}
-4分岐のネットワークの長時間緩和後の平衡構造において、ラウスモード（p=1）の自己相関関数 $C_p(t)$ から最長緩和時間 ($\tau$) について評価し、$\tau \simeq 6.5e^{4}$ を得た。
-
-この緩和時間の長時間化はネットワーク構造に起因した架橋点の運動性の低下によるものと想定でき、長鎖のホモポリマーメルトでの絡み合いに起因したラウスモードのふるまい~\cite{rubinstein} と合致していた。
-また、この値の逆数は前述のヒステリシスロスが消失する変形速度と対応するものと考えられた。
 \vspace{-1mm}
 \begin{figure}[hb]
 \begin{minipage}{0.33\hsize}
@@ -180,12 +176,13 @@ Payneは、ヒステリシスロスの発現機構を、1) 粘弾性に基づく
     \bibitem{payne2} A. R.Payne, J. Polym. Sci. Part C, Polym. Symp., 48(48), 169 (1974)
     \bibitem{zhang} H. Zhang et al. Macromolecules 46, 900 (2013)
     \bibitem{gong} J.P. Gong, Soft Matter, 6, 12, 2583 (2010)
-    \bibitem{smith} T. L. Smith, R. A. Dickie, J. of Polym. Sci. A-2: Polym. Phys., 7, 635 (1969)
     \bibitem{flory} P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)
+    \bibitem{smith} T. L. Smith, R. A. Dickie, J. of Polym. Sci. A-2: Polym. Phys., 7, 635 (1969)
     \bibitem{sasaki} 佐々木裕, 第69回レオロジー討論会 (2021)
     \bibitem{Auhl} R. Auhl et al., J. of Chem. Phys., 119, 12718 (2003)
     \bibitem{Kroger} S. Shanbhag, M. Kr\"{o}ger, Macromol. 40 2897 (2007)
-    \bibitem{rubinstein} J. T. Kalathi et al., Macromol. 47 6925 (2014)
+    \bibitem{rubinstein} M. Rubinstein, S. Panyukov, Macromolecules, 35, 17, 6670 (2002)
+    \bibitem{kalathi} J. T. Kalathi et al., Macromol. 47 6925 (2014)
 \end{thebibliography}
 
 
