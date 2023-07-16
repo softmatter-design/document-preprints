@@ -1,6 +1,14 @@
 \documentclass[12pt, dvipdfmx]{beamer}
 % \documentclass[aspectratio=169,11pt, dvipdfmx]{beamer}
 
+%% 発表ノート用の設定
+\usepackage{pgfpages}
+%\setbeameroption{hide notes} % スライドのみ作成
+%\setbeameroption{show only notes} % 発表ノートのみ作成
+\setbeameroption{show notes on second screen=right} % スライドと発表ノートを横並びに作成
+\setbeamertemplate{note page}[plain] % 発表ノートの設定 (ナビゲーションは非表示)
+
+
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 %%%%%%%%%%%  package  %%%%%%%%%%%
 \usepackage{bxdpx-beamer}% dvipdfmxなので必要
@@ -142,6 +150,13 @@
     \frametitle{本研究の目標とアプローチ}
 		\begin{columns}[T, onlytextwidth]
 			\column{.48\linewidth}
+					\centering
+						\includegraphics[width=\textwidth]{adhesive_car2.png}
+
+						\vspace{5mm}
+						\includegraphics[width=\textwidth]{adhesive_car.png}
+				
+			\column{.48\linewidth}
 			\begin{itemize}
 				\item {\color{red} 「接着接合」}への高分子の利用
 					\begin{itemize}
@@ -155,14 +170,17 @@
 						\item とくに疲労破壊に対して
 					\end{itemize}
 			\end{itemize}
-			\column{.48\linewidth}
-					\centering
-						\includegraphics[width=\textwidth]{adhesive_car2.png}
-
-						\vspace{5mm}
-						\includegraphics[width=\textwidth]{adhesive_car.png}
-				
+			
 		\end{columns}
+
+		% 発表ノート
+		\note{
+			can write as normal frame
+			\begin{enumerate}
+				\item item 1
+				\item item 2
+			\end{enumerate}
+		}
         % \begin{block}{目標}
         %         \begin{itemize}
         %             \item 高分子材料の破壊耐性向上の設計指針を得たい。

@@ -1,0 +1,96 @@
+% \documentclass[dvipdfmx,12pt]{beamer}
+% \usepackage{bxdpx-beamer}
+% \usepackage{pxjahyper}
+% % \usepackage[noto-otc]{pxchfon}
+% \renewcommand{\kanjifamilydefault}{\gtdefault}
+% \usepackage{pgfpages}
+% \setbeamertemplate{note page}{\pagecolor{yellow!5}\vfill\insertnote\vfill}
+% \setbeameroption{show notes on second screen=right}
+% \usetheme{metropolis}
+% \title{Beamerによるプレゼンテーションサンプル}
+% \author{柴田充也}
+% \institute{Ubuntu Japanse Team}
+% \date{2020年12月2日}
+% \begin{document}
+
+% \begin{frame}
+%   \titlepage
+% \end{frame}
+
+% \section{はじめに}
+% \begin{frame}\frametitle{本日お伝えしたいこと}
+%   \tableofcontents
+% \end{frame}
+
+% \section{重要なこと}
+% \begin{frame}\frametitle{いっこめ}
+%   \begin{itemize}[<+->]
+%     \item 項目1
+%     \item 項目2
+%       \note[item]{項目2について熱く語る}
+%     \item 項目3
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}\frametitle{にこめ}
+%   \begin{enumerate}
+%     \item 項目1
+%     \item 項目2
+%     \item 項目3
+%   \end{enumerate}
+% \end{frame}
+
+% \section{そこまで重要でないこと}
+% \begin{frame}\frametitle{さんこめ}
+%   \begin{itemize}
+%     \item 項目1
+%     \item 項目2
+%     \item 項目3
+%   \end{itemize}
+% \end{frame}
+
+% \end{document}
+
+
+
+
+\documentclass{beamer}
+\usetheme{default}
+
+%% 発表ノート用の設定
+\usepackage{pgfpages}
+%\setbeameroption{hide notes} % スライドのみ作成
+%\setbeameroption{show only notes} % 発表ノートのみ作成
+\setbeameroption{show notes on second screen=right} % スライドと発表ノートを横並びに作成
+\setbeamertemplate{note page}{\pagecolor{pink!50}\insertnote}  % 発表ノートの設定 (ナビゲーションは非表示)
+
+\title{Beamer: presenter notes}
+\author{charmie11}
+\date{}
+
+\begin{document}
+\begin{frame}[plain]
+    \maketitle
+    % 発表ノート
+    \note{
+        can write notes on title slide
+    }
+\end{frame}
+
+\begin{frame}{Frame Title}
+    \begin{itemize}
+        \item foo
+        \item bar
+    \end{itemize}
+
+    % 発表ノート
+    \note{
+        can write as normal frame
+        \begin{enumerate}
+            \item item 1
+            \item item 2
+        \end{enumerate}
+    }
+\end{frame}
+
+\end{document}
