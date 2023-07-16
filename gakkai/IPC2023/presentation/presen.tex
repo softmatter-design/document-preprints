@@ -116,58 +116,31 @@
 % \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%
-\section{はじめに}
+\section{Introduction}
 
-\subsection{本研究の目標とアプローチ}
+\subsection{Adhesive Bonding Technology as a Key to Multi-Materialization}
 \begin{frame}
-    \frametitle{本研究の目標とアプローチ}
-        \begin{block}{目標}
-                \begin{itemize}
-                    \item 高分子材料の破壊耐性向上の設計指針を得たい。
-                    \item 耐久性、可逆性に優れた材料として、\\
-					\alert{ゴム材料（柔らかいネットワーク）}をターゲット
-                \end{itemize}
-        \end{block}
-		\begin{exampleblock}{アプローチ}
-            \begin{itemize}
-                \item 実験的アプローチ
-                \begin{itemize}
-                    \item 超分子前駆体から構造明確な三分岐ネットワーク
-                    \item フィラー無添加での\alert{高い破断伸びと強度}
-                    \item 既知のモデルとの多数の整合点と、\alert{よくわからない点}。
-                \end{itemize}
-                \item シミュレーションでモデルを構築
-                \begin{itemize}
-                    \item 単純化したモデルで小さなスケールから始めたい。
-                    \item {長さの揃ったストランドで MD シミュレーション}
-                    % \item 最終的に、亀裂先端の挙動を FEM シミュレーション
-                \end{itemize}
-            \end{itemize}
-		\end{exampleblock}
-\end{frame}
-
-\begin{frame}
-    \frametitle{本研究の目標とアプローチ}
+    \frametitle{Adhesive Bonding Technology}
 		\begin{columns}[T, onlytextwidth]
-			\column{.48\linewidth}
+			\column{.4\linewidth}
 					\centering
 						\includegraphics[width=\textwidth]{adhesive_car2.png}
 
 						\vspace{5mm}
 						\includegraphics[width=\textwidth]{adhesive_car.png}
 				
-			\column{.48\linewidth}
+			\column{.55\linewidth}
 			\begin{itemize}
-				\item {\color{red} 「接着接合」}への高分子の利用
+				\item For {\color{red}Energy conservation}
 					\begin{itemize}
-						\normalsize
-						\item 柔らかさを生かした{\color{red} 「弾性接着接合」}
-						\item 耐久性、可逆性に優れた\alert{ゴム材料に注目}
+						\item weight reduction of cars
+						\item multi-materialization
+						\item adhesive bonding technology is a key
 					\end{itemize}
-				\item {\color{blue}耐久性が不明確}
+				\item durability in long-term use is important
 					\begin{itemize}
-						\normalsize
-						\item とくに疲労破壊に対して
+						\item Especially for fatigue tests
+						\item reliability of polymer materials is still ambiguous
 					\end{itemize}
 			\end{itemize}
 			
@@ -175,66 +148,57 @@
 
 		% 発表ノート
 		\note{
-			can write as normal frame
 			\begin{enumerate}
-				\item item 1
-				\item item 2
+				\item focusing on Energy conservation
+				\begin{itemize}
+					\item weight reduction of transportation equipment, especially automobiles is being considered.
+					\item for that purpose, multi-materialization using Aluminum, Magnesium, CFR(T)Ps is discussed.
+					\item these different colors
+					\item in the process, adhesive bonding technology is a big key.
+					\item for example, these red lines
+				\end{itemize}
+				\item requirements for network polymers used as adhesives are 
+				\begin{itemize}
+					\item not only high primary mechanical properties
+					\item but also the ability to withstand fatigue tests
+					\item ,  in which the polymer is repeatedly deformed at various deformation rates in order to ensure durability in long-term use.
+				\end{itemize}
 			\end{enumerate}
 		}
-        % \begin{block}{目標}
-        %         \begin{itemize}
-        %             \item 高分子材料の破壊耐性向上の設計指針を得たい。
-        %             \item 耐久性、可逆性に優れた材料として、\\
-		% 			\alert{ゴム材料（柔らかいネットワーク）}をターゲット
-        %         \end{itemize}
-        % \end{block}
-		% \begin{exampleblock}{アプローチ}
-        %     \begin{itemize}
-        %         \item 実験的アプローチ
-        %         \begin{itemize}
-        %             \item 超分子前駆体から構造明確な三分岐ネットワーク
-        %             \item フィラー無添加での\alert{高い破断伸びと強度}
-        %             \item 既知のモデルとの多数の整合点と、\alert{よくわからない点}。
-        %         \end{itemize}
-        %         \item シミュレーションでモデルを構築
-        %         \begin{itemize}
-        %             \item 単純化したモデルで小さなスケールから始めたい。
-        %             \item {長さの揃ったストランドで MD シミュレーション}
-        %             % \item 最終的に、亀裂先端の挙動を FEM シミュレーション
-        %         \end{itemize}
-        %     \end{itemize}
-		% \end{exampleblock}
 \end{frame}
 
 
-\subsection{ゴムの強靭性}
+\subsection{Durability of Rubber}
 \begin{frame}
-	\frametitle{破壊エネルギーとヒステリシスロス}
+	\frametitle{Mechanical Hysteresis Loss and Fracture Energy}
 	\vspace{-1mm}
 		% \begin{block}{}
 			\begin{columns}[T, onlytextwidth]
 				\column{.7\linewidth}
 					\begin{itemize}
-						\item ヒステリシスロス
+						\item Mechanical Hysteresis Loss 
 							\begin{itemize}
-								\item 変形履歴による力学応答変化
-								\item サイクル変形でエネルギー散逸
+								\item Reduced stress on unloading
+								\item Energy dissipation during cycle
+								\item \alert{Possitive correration} with fracture energy\footnote{
+									\scriptsize{K.A.Grosch, J.A.C.Harwood, A.R.Payne, \\Rub. Chem. Tech., 41, 1157(1968)}
+								}
 							\end{itemize}
-						\item 破壊エネルギーと\alert{正の相関}\footnote{
-								\scriptsize{K.A.Grosch, J.A.C.Harwood, A.R.Payne, \\Rub. Chem. Tech., 41, 1157(1968)}
-							}
-							\begin{itemize}
-								\item \alert{変形温度}にも強く依存
-								\item SBRのガラス転移温度との距離？
-							\end{itemize}
-						\item ヒステリシスロス発生の起源\footnote{
+						% \item \alert{Possitive correration} with fracture energy\footnote{
+						% 		\scriptsize{K.A.Grosch, J.A.C.Harwood, A.R.Payne, \\Rub. Chem. Tech., 41, 1157(1968)}
+						% 	}
+						% 	\begin{itemize}
+						% 		\item \alert{変形温度}にも強く依存
+						% 		\item SBRのガラス転移温度との距離？
+						% 	\end{itemize}
+						\item The origin of Hysteresis Loss\footnote{
 							\scriptsize{A.R.Payne, J.Poly.Sci.:Sympo., 48, 169(1974)}
 						}
 						\begin{itemize}
-							\item \alert{粘弾性に基づくもの}
+							\item \alert{Viscoelastics}
 							\color{blue}
-							\item 結晶化に由来するもの
-							\item 添加したフィラーに起因
+							\item Crystallization
+							\item Derived by added filler
 						\end{itemize}
 					\end{itemize}
 				\column{.3\linewidth}
@@ -246,286 +210,365 @@
 					\includegraphics[width=\textwidth]{hyst_break2.png}
 				\end{center}
 			\end{columns}
+		\note{
+			\begin{itemize}
+				\item hyst
+				\begin{itemize}
+					\item Mechanical Hysteresis is illustrated in this figure.
+					\item Reduced stress comes out on unloading compared with loading one.
+					\item this green area is equivalent to Energy dissipation during cycle
+					\item and the intensity of  hysteresis loss had been reported to have Possitive correration with fracture energy by Payne.
+				\end{itemize}
+				\item The origin of hysteresis loss is also categorized by Payne
+				\begin{itemize}
+					\item Viscoelasticity based
+					\item Crystallization 
+					\item Derived by added filler
+				\end{itemize}
+			\end{itemize}
+		}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{S-S curves for SBR at veried temp. and speed}
+% 		% \begin{alertblock}{Strain-stress curves for SBR at veried temp. and speed}
+
+% 			\begin{columns}[T, onlytextwidth]
+% 				\column{.45\linewidth}
+% 				\centering
+% 				\includegraphics[width=\textwidth]{SBR_lowTemp.png}
+% 				\column{.45\linewidth}
+% 				\centering
+% 				\includegraphics[width=\textwidth]{SBR_lowTemp_2.png}
+% 			\end{columns}
+
+% 			\begin{itemize}
+% 				\item \textcolor{blue}{At room temp.}, SBR show rather lower strength
+% 				\item \alert{Lower Temp. or Higher deformationrate improve strength}\footnote{
+% 					{\footnotesize T.L. Smith, R.A. Dickie, J. Pol. Sci. part A-2, 7 635 (1969)}
+% 				}
+% 				% \item 時間（変形速度）温度換算則で考えてみれば？
+% 			\end{itemize}
+
+% 		\note{
+% 			\begin{itemize}
+% 				\item At room temperature, SBR:Stylene Butadinen Rubber show rather lower strength
+% 				\item this blue one
+% 				\item but lowering temperature the strength much improved.
+% 				\item and also higher deformation rare.
+% 			\end{itemize}
+			 
+% 		}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{ゴムの破壊と時間温度換算則}
+% 		\begin{alertblock}{ゴムの破壊について}
+% 			クラック先端での大変形を伴う非線形現象だが、\\時間温度換算則の成立が多数報告\footnote{
+% 				Smith T., Stedry P., J. Appl. Phys., 31 1892 (1960)
+% 			}
+% 		\end{alertblock}
+% 		\vspace{-2mm}
+% 		\begin{columns}[T, totalwidth=\textwidth]
+% 			\column{.48\textwidth}
+% 				亀裂先端近傍での大変形
+% 				\vspace{-3mm}
+% 				\begin{center}
+% 					\includegraphics[width=.55\textwidth]{rubber_crack.png}
+% 				\end{center}
+% 			\column{.48\textwidth}
+% 				時間温度換算則の成立
+% 				\includegraphics[width=.8\textwidth]{Time_Temp_2.png}
+% 		\end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Andrews Theory for Rubber Toughness}
+	% \vspace{-2mm}
+		\begin{exampleblock}{Andrews Theory}
+			\begin{columns}[T, onlytextwidth]
+				\column{.75\linewidth}
+				\begin{itemize}
+					\item Focused on stress field around the crack\footnote{
+						\scriptsize
+			{E.H.Andrews, Y.Fukahori, J. of Mat. Sci. 12, 1307 (1977)}
+					}
+						\begin{itemize}
+							\item \color{blue}{Stress Loading field} and \color{red}{Unloading one}
+						\end{itemize}
+					\item On the progress of the crack, \color{green}{stress field is transit}
+						\begin{itemize}
+							\item Hysteresis Loss$\Rightarrow${Energy Dissipation}
+							\item \alert{Surpress} the progress of Crack
+						\end{itemize}
+				\end{itemize}
+				\column{.25\linewidth}
+					\begin{center}
+						\includegraphics[width=.85\textwidth]{crack.png}
+					\end{center}
+			\end{columns}
+		\end{exampleblock}
+		\vspace{-2mm}
+		\begin{alertblock}{疲労破壊も考慮すると}
+			\begin{itemize}
+				\item \alert{可逆的}であることが望ましい。\textcolor{blue}{$\neq$ 犠牲結合}
+				\item 変形の周期に対応できるように、\alert{回復速度}も重要。
+				\item \alert{粘弾性挙動としてのヒステリシスロス$\Leftrightarrow$緩和挙動}
+			\end{itemize}
+		\end{alertblock}
+
+		\note{
+			\begin{itemize}
+				\item On the fracture of rubber, Andrews proposed a model focused on Stress fields around the Crack top area
+				\item stress fields can be divide in twe regions, stress loading field and unloading one.
+				\item On the progress of the crack, \color{green}{stress field is transit}
+					\begin{itemize}
+						\item Hysteresis Loss$\Rightarrow${Energy Dissipation}
+						\item \alert{Surpress} the progress of Crack
+					\end{itemize}
+			\end{itemize}
+		}
+\end{frame}
+
+\subsection{ゴムのモデル化}
+\begin{frame}
+    \frametitle{Classical Theory of Rubber Elasticity}
+        \vspace{-2mm}
+		\begin{block}{Free Energy Density of Rubbers against Strain invariant}
+			\vspace{-2mm}
+			% 非圧縮性条件から第3不変量がおちて、
+			\scriptsize
+			\begin{align*}
+				\dfrac{F}{V} = W 
+				% &= \sum_{i,j = 0}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j \\[-2mm]
+				&= C_0 + \underbrace{{\color{green}C_1(I_1-3)} + {\color{red}C_2(I_2-3)}}_{\color{red}Mooney-Rivlin Model} + \sum_{i,j = 1}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j
+			\end{align*}  
+		\end{block}
+		\vspace{-5mm}
+		\begin{columns}[T, onlytextwidth]
+			\column{.48\linewidth}
+				\begin{exampleblock}{Neo-Hookean Model}
+					\vspace{-2mm}
+					% 第1不変量のみを対象
+						\scriptsize
+						\begin{align*}
+							&W = C_1 (I_1-3) \\
+							&\text{against Uniaxial elongation} \\
+							&\sigma_{nom} = 2 C_1\left(\lambda - \dfrac{1}{\lambda^2}\right) = G \left(\lambda - \dfrac{1}{\lambda^2}\right)
+						\end{align*}
+				\end{exampleblock}
+			\column{.48\linewidth}
+				\begin{alertblock}{Mooney-Rivlin Model}
+					\vspace{-2mm}
+					% 高次の項をおとす
+					\scriptsize
+					\begin{align*}
+						&W = C_1 (I_1-3) + C_2(I_2-3) \\
+						&\text{against Uniaxial elongation} \\
+						&\sigma_{nom} = 2 \left(C_1 + C_2\dfrac{1}{\lambda} \right) \left(\lambda - \dfrac{1}{\lambda^2}\right)
+					\end{align*}
+				\end{alertblock}
+		\end{columns}
+		\vspace{-1mm}
+		\begin{block}{With or without Junction Poinits fluctuation}
+			\vspace{1mm}
+			\begin{columns}[T, onlytextwidth]
+				\column{.48\linewidth}
+				\small
+				\color{blue}{Affine Network Model
+				\footnote{
+					\tiny{P.J. Flory, Principles of Polymer Chemistry, (1953)}
+				}
+				}
+				\vspace{-2mm}
+				\scriptsize
+				\begin{align*}
+					% &\text{Affine Network Model}\\
+					&G_{affine} = \nu k_B T  \\
+					&\text{$\nu$: Number density of strands in the system}
+				\end{align*}
+				\column{.48\linewidth}
+				\small
+				\color{magenta}{Phantom Network Model
+				\footnote{
+					\tiny{H.M. James, E.J. Guth, Chem. Phys., 21, 6, 1039 (1953)}
+				}
+				}
+				\vspace{-2mm}
+				\scriptsize
+				\begin{align*}
+					% &\text{Phantom Network Model}\\
+					&G_{phantom} = \nu k_B T \left(1 - \dfrac{2}{f}\right) \\
+					&\text{$f$: Functionality of Junction Points}
+				\end{align*}
+				\normalsize
+			\end{columns}
+		\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Constraint Factors for Junction Points and Strands}
+		\vspace{-2mm}
+		\begin{alertblock}{Vicinity of Junction Point}
+			\begin{columns}[totalwidth=1\textwidth]
+				\column{.75\textwidth}
+				\vspace{-3mm}
+				\begin{itemize}
+					\item Junction points are surrounded by many of \alert{adjacent strands(x in fig.).}
+					\item %Because of surrounding strands, 
+					Fluctuation of junctions are \alert{suppressed}. 
+				\end{itemize}
+				\column{.22\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{JP_vicinity.png}
+			\end{columns}
+		\end{alertblock}
+		\vspace{-1mm}
+		Storage modulus $G$ is \alert{combination of $G_c$ and $G_e$}
+		\vspace{-1mm}
+			\begin{columns}[totalwidth=1\textwidth]
+				\column{.65\textwidth}
+				\begin{itemize}
+					\item Constrained Junction Model
+					\begin{itemize}
+						\item Constraints are reduced and $G$ approaches to $G_c$.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
+					\end{itemize}
+					\item Topological relationships
+					\begin{itemize}
+						\item Contribution of entanglement.\footnote{\tiny{D.S.Pearson and W.Graessley, Macromol., 11, 3, 528 (1978)}}
+						\vspace{-2mm}
+						\scriptsize
+						\begin{align*}
+							G_e = T_e G_N^0
+						\end{align*}
+					\end{itemize}
+				\end{itemize}
+				\column{.25\textwidth}
+				\vspace{-2mm}
+				\includegraphics[width=\textwidth]{Constrained_Juntion.pdf}
+
+				\vspace{3mm}
+				\includegraphics[width=\textwidth]{topological_effect_ring.png}
+			\end{columns}
 		% \end{block}
 \end{frame}
 
 \begin{frame}
-	\frametitle{S-S curves for SBR at veried temp. and speed}
-		% \begin{alertblock}{Strain-stress curves for SBR at veried temp. and speed}
-
-			\begin{columns}[T, onlytextwidth]
-				\column{.45\linewidth}
-				\centering
-				\includegraphics[width=\textwidth]{SBR_lowTemp.png}
-				\column{.45\linewidth}
-				\centering
-				\includegraphics[width=\textwidth]{SBR_lowTemp_2.png}
-			\end{columns}
-
+	\frametitle{Constraint Factors for Junction Points and Strands}
+	\vspace{-3mm}
+		\begin{itemize}
+			\item Diffused-Constraint Model
 			\begin{itemize}
-				\item \alert{低温、高速変形}でSBRでも伸びきり効果が発現\footnote{
-					{\footnotesize T.L. Smith, R.A. Dickie, J. Pol. Sci. part A-2, 7 635 (1969)}
-				}
-				% \item 時間（変形速度）温度換算則で考えてみれば？
+				\item Confining potential affect all points along the chain.\footnote{\tiny{A. Kloczkowski, J.E. Mark, B. Erman, Macromol., 28, 5089 (1995)}}
 			\end{itemize}
+			\item Nonaffine Tube Model
+			\begin{itemize}
+				\item Improved model of "Edwards' Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
+			\end{itemize}
+			\item Slip-tube Model
+			\begin{itemize}
+				\item A pairwise interaction of chains is introduced.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
+			\end{itemize}
+		\end{itemize}
 
-		% \end{alertblock}
-\end{frame}
 
-\begin{frame}
-	\frametitle{ゴムの破壊と時間温度換算則}
-		\begin{alertblock}{ゴムの破壊について}
-			クラック先端での大変形を伴う非線形現象だが、\\時間温度換算則の成立が多数報告\footnote{
-				Smith T., Stedry P., J. Appl. Phys., 31 1892 (1960)
-			}
-		\end{alertblock}
-		\vspace{-2mm}
-		\begin{columns}[T, totalwidth=\textwidth]
-			\column{.48\textwidth}
-				亀裂先端近傍での大変形
-				\vspace{-3mm}
-				\begin{center}
-					\includegraphics[width=.55\textwidth]{rubber_crack.png}
-				\end{center}
-			\column{.48\textwidth}
-				時間温度換算則の成立
-				\includegraphics[width=.8\textwidth]{Time_Temp_2.png}
+		\begin{columns}[totalwidth=1\textwidth]
+			\column{.65\textwidth}
+			\begin{itemize}
+				\item allowframebreaksbbb
+				\item bbbb
+				\item Z
+			\end{itemize}
+			\column{.25\textwidth}
+			\includegraphics[width=.9\textwidth]{NW_model_rubinstein.png}
 		\end{columns}
 \end{frame}
 
+\setcounter{footnote}{0}
+
+\begin{frame}
+	\frametitle{Recent approach for Constraints (Entanglements)}
+		\vspace{-3mm}
+		\begin{itemize}
+			\item Diffused-Constraint Model
+			\begin{itemize}
+				\item Confining potential affect all points along the chain.\footnote{\tiny{A. Kloczkowski, J.E. Mark, B. Erman, Macromol., 28, 5089 (1995)}}
+			\end{itemize}
+			\item Nonaffine Tube Model
+			\begin{itemize}
+				\item Improved model of "Edwards' Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
+			\end{itemize}
+			% \item Slip-tube Model
+			% \begin{itemize}
+			% 	\item A pairwise interaction of chains is introduced.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
+			% \end{itemize}
+		\end{itemize}
+
+		\begin{columns}[totalwidth=1\textwidth]
+			\column{.7\textwidth}
+			\scriptsize
+			\begin{align*}
+				&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
+				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
+				% &\text{where $\nu$ is the number density of network chains,} \\
+				& \text{L is the number of slip-links per network chain}
+			\end{align*}
+			\column{.25\textwidth}
+			\includegraphics[width=.9\textwidth]{NW_model_rubinstein.png}
+		\end{columns}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{ss}
+	\begin{align*}
+		f=\dfrac{f}{g}
+	\end{align*}
+	\begin{align*}
+		&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
+		&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
+		& \text{L is the number of slip-links per network chain}
+	\end{align*}
+
+\end{frame}
 
 
-% \begin{frame}
-% 	\frametitle{ゴムの破壊耐性}
-% 	% \vspace{-2mm}
-% 		\begin{exampleblock}{Andrews 理論}
-% 			\begin{columns}[T, onlytextwidth]
-% 				\column{.75\linewidth}
-% 				\begin{itemize}
-% 					\item クラック近傍の応力場に注目\footnote{
-% 						\scriptsize
-% 			{E.H.Andrews, Y.Fukahori, J. of Mat. Sci. 12, 1307 (1977)}
-% 					}
-% 						\begin{itemize}
-% 							\item \color{blue}{Loading 場}と \color{red}{Unloading 場}
-% 						\end{itemize}
-% 					\item クラック進展時に\color{green}{応力場が遷移}
-% 						\begin{itemize}
-% 							\item ヒステリシスロス$\Rightarrow${エネルギー散逸}
-% 							\item クラックの進展を\alert{抑制}
-% 						\end{itemize}
-% 				\end{itemize}
-% 				\column{.25\linewidth}
-% 					\begin{center}
-% 						\includegraphics[width=.85\textwidth]{crack.png}
-% 					\end{center}
-% 			\end{columns}
-% 		\end{exampleblock}
-% 		\vspace{-2mm}
-% 		\begin{alertblock}{疲労破壊も考慮すると}
-% 			\begin{itemize}
-% 				\item \alert{可逆的}であることが望ましい。\textcolor{blue}{$\neq$ 犠牲結合}
-% 				\item 変形の周期に対応できるように、\alert{回復速度}も重要。
-% 				\item \alert{粘弾性挙動としてのヒステリシスロス$\Leftrightarrow$緩和挙動}
-% 			\end{itemize}
-% 		\end{alertblock}
-% \end{frame}
+\setcounter{footnote}{0}
+\section{ランダムネットワークの検討}
+\subsection{ランダムネットワークについて}
 
-% \subsection{ゴムのモデル化}
-% \begin{frame}
-%     \frametitle{Classical Theory of Rubber Elasticity}
-%         \vspace{-2mm}
-% 		\begin{block}{Free Energy Density of Rubbers against Strain invariant}
-% 			\vspace{-2mm}
-% 			% 非圧縮性条件から第3不変量がおちて、
-% 			\scriptsize
-% 			\begin{align*}
-% 				\dfrac{F}{V} = W 
-% 				% &= \sum_{i,j = 0}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j \\[-2mm]
-% 				&= C_0 + \underbrace{{\color{green}C_1(I_1-3)} + {\color{red}C_2(I_2-3)}}_{\color{red}Mooney-Rivlin Model} + \sum_{i,j = 1}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j
-% 			\end{align*}  
-% 		\end{block}
-% 		\vspace{-5mm}
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.48\linewidth}
-% 				\begin{exampleblock}{Neo-Hookean Model}
-% 					\vspace{-2mm}
-% 					% 第1不変量のみを対象
-% 						\scriptsize
-% 						\begin{align*}
-% 							&W = C_1 (I_1-3) \\
-% 							&\text{against Uniaxial elongation} \\
-% 							&\sigma_{nom} = 2 C_1\left(\lambda - \dfrac{1}{\lambda^2}\right) = G \left(\lambda - \dfrac{1}{\lambda^2}\right)
-% 						\end{align*}
-% 				\end{exampleblock}
-% 			\column{.48\linewidth}
-% 				\begin{alertblock}{Mooney-Rivlin Model}
-% 					\vspace{-2mm}
-% 					% 高次の項をおとす
-% 					\scriptsize
-% 					\begin{align*}
-% 						&W = C_1 (I_1-3) + C_2(I_2-3) \\
-% 						&\text{against Uniaxial elongation} \\
-% 						&\sigma_{nom} = 2 \left(C_1 + C_2\dfrac{1}{\lambda} \right) \left(\lambda - \dfrac{1}{\lambda^2}\right)
-% 					\end{align*}
-% 				\end{alertblock}
-% 		\end{columns}
-% 		\vspace{-1mm}
-% 		\begin{block}{With or without Junction Poinits fluctuation}
-% 			\vspace{1mm}
-% 			\begin{columns}[T, onlytextwidth]
-% 				\column{.48\linewidth}
-% 				\small
-% 				\color{blue}{Affine Network Model
-% 				\footnote{
-% 					\tiny{P.J. Flory, Principles of Polymer Chemistry, (1953)}
-% 				}
-% 				}
-% 				\vspace{-2mm}
-% 				\scriptsize
-% 				\begin{align*}
-% 					% &\text{Affine Network Model}\\
-% 					&G_{affine} = \nu k_B T  \\
-% 					&\text{$\nu$: Number density of strands in the system}
-% 				\end{align*}
-% 				\column{.48\linewidth}
-% 				\small
-% 				\color{magenta}{Phantom Network Model
-% 				\footnote{
-% 					\tiny{H.M. James, E.J. Guth, Chem. Phys., 21, 6, 1039 (1953)}
-% 				}
-% 				}
-% 				\vspace{-2mm}
-% 				\scriptsize
-% 				\begin{align*}
-% 					% &\text{Phantom Network Model}\\
-% 					&G_{phantom} = \nu k_B T \left(1 - \dfrac{2}{f}\right) \\
-% 					&\text{$f$: Functionality of Junction Points}
-% 				\end{align*}
-% 				\normalsize
-% 			\end{columns}
-% 		\end{block}
-% \end{frame}
-
-% \begin{frame}
-% 	\frametitle{Constraint Factors for Junction Points and Strands}
-% 		\vspace{-2mm}
-% 		\begin{alertblock}{Vicinity of Junction Point}
-% 			\begin{columns}[totalwidth=1\textwidth]
-% 				\column{.75\textwidth}
-% 				\vspace{-3mm}
-% 				\begin{itemize}
-% 					\item Junction points are surrounded by many of \alert{adjacent strands(x in fig.).}
-% 					\item %Because of surrounding strands, 
-% 					Fluctuation of junctions are \alert{suppressed}. 
-% 				\end{itemize}
-% 				\column{.22\textwidth}
-% 				\centering
-% 				\includegraphics[width=\textwidth]{JP_vicinity.png}
-% 			\end{columns}
-% 		\end{alertblock}
-% 		\vspace{-1mm}
-% 		Storage modulus $G$ is \alert{combination of $G_c$ and $G_e$}
-% 		\vspace{-1mm}
-% 			\begin{columns}[totalwidth=1\textwidth]
-% 				\column{.65\textwidth}
-% 				\begin{itemize}
-% 					\item Constrained Junction Model
-% 					\begin{itemize}
-% 						\item Constraints are reduced and $G$ approaches to $G_c$.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
-% 					\end{itemize}
-% 					\item Topological relationships
-% 					\begin{itemize}
-% 						\item Contribution of entanglement.\footnote{\tiny{D.S.Pearson and W.Graessley, Macromol., 11, 3, 528 (1978)}}
-% 						\vspace{-2mm}
-% 						\scriptsize
-% 						\begin{align*}
-% 							G_e = T_e G_N^0
-% 						\end{align*}
-% 					\end{itemize}
-% 				\end{itemize}
-% 				\column{.3\textwidth}
-% 				\vspace{-2mm}
-% 				\includegraphics[width=\textwidth]{Constrained_Juntion.pdf}
-
-% 				\vspace{3mm}
-% 				\includegraphics[width=\textwidth]{topological_effect_ring.png}
-% 			\end{columns}
-% 		% \end{block}
-% \end{frame}
-
-% \setcounter{footnote}{0}
-
-% \begin{frame}
-% 	\frametitle{Recent approach for Constraints (Entanglements)}
-	
-% 		\begin{itemize}
-% 			\item Diffused-Constraint Model
-% 			\begin{itemize}
-% 				\item Confining potential affect all points along the chain.\footnote{\tiny{A. Kloczkowski, J.E. Mark, B. Erman, Macromol., 28, 5089 (1995)}}
-% 			\end{itemize}
-% 			\item Nonaffine Tube Model
-% 			\begin{itemize}
-% 				\item Improved model of "Edwards' Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
-% 			\end{itemize}
-% 			\item Slip-tube Model
-% 			\begin{itemize}
-% 				\item A pairwise interaction of chains is introduced.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
-% 			\end{itemize}
-% 		\end{itemize}
-
-% 		% \begin{alertblock}{Slip-tube Model(Simple analytical appoximation)}
-% 			\begin{columns}[totalwidth=1\textwidth]
-% 				\column{.7\textwidth}
-% 				\scriptsize
-% 				\begin{align*}
-% 					&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
-% 					&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
-% 					% &\text{where $\nu$ is the number density of network chains,} \\
-% 					& \text{L is the number of slip-links per network chain}
-% 				\end{align*}
-% 				\column{.25\textwidth}
-% 				\includegraphics[width=.9\textwidth]{NW_model_rubinstein.png}
-% 			\end{columns}
-% 		% \end{alertblock}	
-% \end{frame}
-
-% \setcounter{footnote}{0}
-% \section{ランダムネットワークの検討}
-% \subsection{ランダムネットワークについて}
-
-% \begin{frame}
-% 	\frametitle{ランダムネットワークの検討}
-% 		% \begin{block}{}
-% 			\begin{itemize}
-% 				\item 前述のモデルの問題点
-% 				\begin{itemize}
-% 					\item 変形速度依存性の議論が陽に行われていない。
-% 					\item 基本となるPNMの再現が必須。
-% 				\end{itemize}
-% 				\item ネットワーク構造の\alert{連結性にランダム性}を導入
-%                     \begin{itemize}
-% 						\item Flory の\alert{ファントムネットワークの要件}に合致\footnote{
-% 							\scriptsize{P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)}
-% 						}
-% 						\begin{itemize}
-% 							\item ストランドが独立に等方的にゆらぐ
-% 							\item ストランドの末端間距離がガウス分布
-% 							\item ゆらぎがひずみの影響を受けない
-% 						\end{itemize}
-% 					\end{itemize}
-% 				\item 既往研究
-% 				\begin{itemize}
-% 					\item Random end-crosslink for telechelic polymers\footnote{
-% 						\scriptsize{G.S. Grest, et.al., Non-Cryst. Solids, 274, 139 (2000)}
-% 						}
-% 					\item Primitive Chain Network Simulation\footnote{
-% 						\scriptsize{Y. Masubuchi, Nihon Reoroji Gakkaishi, 49, 2, 73 (2021)}
-% 					}
-% 				\end{itemize}
-% 			\end{itemize}
-% 		% \end{block}
-% \end{frame}
+\begin{frame}
+	\frametitle{ランダムネットワークの検討}
+		% \begin{block}{}
+			\begin{itemize}
+				\item 前述のモデルの問題点
+				\begin{itemize}
+					\item 変形速度依存性の議論が陽に行われていない。
+					\item 基本となるPNMの再現が必須。
+				\end{itemize}
+				\item ネットワーク構造の\alert{連結性にランダム性}を導入
+                    \begin{itemize}
+						\item Flory の\alert{ファントムネットワークの要件}に合致\footnote{
+							\scriptsize{P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)}
+						}
+						\begin{itemize}
+							\item the mean values $\bar{\bm{r}}$ of starand fluctuate
+							\item fluctuations $\Delta \bm{r} = \bm{r} - \bar{\bm{r}}$ are Gaussian
+							\item the mean-square fluctuations depend only on structure
+						\end{itemize}
+					\end{itemize}
+				\item Previous Work for Random Network
+				\begin{itemize}
+					\item Random end-crosslink for telechelic polymers\footnote{
+						\scriptsize{G.S. Grest, et.al., Non-Cryst. Solids, 274, 139 (2000)}
+						}
+					\item Primitive Chain Network Simulation\footnote{
+						\scriptsize{Y. Masubuchi, Nihon Reoroji Gakkaishi, 49, 2, 73 (2021)}
+					}
+				\end{itemize}
+			\end{itemize}
+		% \end{block}
+\end{frame}
 
 % \subsection{ランダムネットワークの作成}
 % \begin{frame}
