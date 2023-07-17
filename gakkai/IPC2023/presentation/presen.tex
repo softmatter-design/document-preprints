@@ -148,11 +148,13 @@
 
 		% 発表ノート
 		\note{
+			Let me start with this slide as background.
 			\begin{enumerate}
 				\item focusing on Energy conservation
 				\begin{itemize}
-					\item weight reduction of transportation equipment, especially automobiles is being considered.
-					\item for that purpose, multi-materialization using Aluminum, Magnesium, CFR(T)Ps is discussed.
+					\item weight reduction of cars is big issue.
+					\item for that purpose, multi-materialization 
+					\item using Aluminum, Magnesium, CFR(T)Ps is discussed.
 					\item these different colors
 					\item in the process, adhesive bonding technology is a big key.
 					\item for example, these red lines
@@ -180,7 +182,7 @@
 							\begin{itemize}
 								\item Reduced stress on unloading
 								\item Energy dissipation during cycle
-								\item \alert{Possitive correration} with fracture energy\footnote{
+								\item \alert{Positive correlation} with fracture energy\footnote{
 									\scriptsize{K.A.Grosch, J.A.C.Harwood, A.R.Payne, \\Rub. Chem. Tech., 41, 1157(1968)}
 								}
 							\end{itemize}
@@ -215,9 +217,9 @@
 				\item hyst
 				\begin{itemize}
 					\item Mechanical Hysteresis is illustrated in this figure.
-					\item Reduced stress comes out on unloading compared with loading one.
+					% \item Reduced stress comes out on unloading compared with loading one.
 					\item this green area is equivalent to Energy dissipation during cycle
-					\item and the intensity of  hysteresis loss had been reported to have Possitive correration with fracture energy by Payne.
+					\item Positive correlation with fracture energy had been reported to have  by Payne.
 				\end{itemize}
 				\item The origin of hysteresis loss is also categorized by Payne
 				\begin{itemize}
@@ -323,7 +325,7 @@
 		\note{
 			\begin{itemize}
 				\item On the fracture of rubber, Andrews proposed a model focused on Stress fields around the Crack top area
-				\item stress fields can be divide in twe regions, stress loading field and unloading one.
+				\item stress fields can be divide in twe regions, stress loading zone and unloading one.
 				\item On the progress of the crack, 
 					\begin{itemize}
 						\item stress field is transit
@@ -334,7 +336,7 @@
 		}
 \end{frame}
 
-\subsection{ゴムのモデル化}
+\subsection{Theoretical Models for Rubber}
 \begin{frame}
     \frametitle{Classical Theory of Rubber Elasticity}
         % \vspace{-2mm}
@@ -408,55 +410,15 @@
 				\normalsize
 			\end{columns}
 		\end{block}
+
+		\note{
+			Here, the classical theories of rubber Elasticity are summerized.
+			\begin{itemize}
+				\item Considering junction points fluctuation, Phantom Network Model is proposed.
+				\item in this model, Modulus is reduced depending on the functionality of junctions.
+			\end{itemize}
+		}
 \end{frame}
-
-\begin{frame}
-	\frametitle{Constraint Factors for Junction Points and Strands}
-		\vspace{-2mm}
-		\begin{alertblock}{Vicinity of Junction Point}
-			\begin{columns}[totalwidth=1\textwidth]
-				\column{.75\textwidth}
-				\vspace{-3mm}
-				\begin{itemize}
-					\item Junction points are surrounded by many of \alert{adjacent strands(x in fig.).}
-					\item %Because of surrounding strands, 
-					Fluctuation of junctions are \alert{suppressed}. 
-				\end{itemize}
-				\column{.22\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{JP_vicinity.png}
-			\end{columns}
-		\end{alertblock}
-		\vspace{-1mm}
-		Storage modulus $G$ is \alert{combination of $G_c$ and $G_e$}
-		\vspace{-1mm}
-			\begin{columns}[totalwidth=1\textwidth]
-				\column{.65\textwidth}
-				\begin{itemize}
-					\item Constrained Junction Model
-					\begin{itemize}
-						\item Constraints are reduced and $G$ approaches to $G_c$.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
-					\end{itemize}
-					\item Topological relationships
-					\begin{itemize}
-						\item Contribution of entanglement.\footnote{\tiny{D.S.Pearson and W.Graessley, Macromol., 11, 3, 528 (1978)}}
-						\vspace{-2mm}
-						\scriptsize
-						\begin{align*}
-							G_e = T_e G_N^0
-						\end{align*}
-					\end{itemize}
-				\end{itemize}
-				\column{.25\textwidth}
-				\vspace{-2mm}
-				\includegraphics[width=\textwidth]{Constrained_Juntion.pdf}
-
-				\vspace{3mm}
-				\includegraphics[width=\textwidth]{topological_effect_ring.png}
-			\end{columns}
-		% \end{block}
-\end{frame}
-
 
 \begin{frame}
 	\frametitle{Constraint Factors for Junction Points and Strands}
@@ -475,7 +437,7 @@
 			\end{columns}
 		\end{alertblock}
 		\vspace{-1mm}
-		\begin{block}{Constraints Effect}
+		\begin{block}{Effect of other strands}
 			\only<1>{
 				\begin{itemize}
 					\item Suppress the fluctuation of Junction Point
@@ -526,6 +488,18 @@
 						\item Because of other strands, Fluctuation of junctions are \alert{suppressed}. 
 					\end{itemize}
 					\item Effect
+					\begin{itemize}
+						\item Suppress the fluctuation of Junction Point
+						\begin{itemize}
+							\item Deviate from Phantom Network Model
+							\item Affect $G_c$
+						\end{itemize}
+						\item Strands Entangles each other
+						\begin{itemize}
+							\item Works as a Junction Point
+							\item Generate additional $G_e$
+						\end{itemize}
+					\end{itemize}
 					\item Previous models
 					\begin{itemize}
 						\item On the uniaxial deformation, constraints are released and $G$ approaches to $G_c$
@@ -538,9 +512,10 @@
 			
 \end{frame}
 
+\setcounter{footnote}{0}
 \begin{frame}
-	\frametitle{Constraint Factors for Junction Points and Strands}
-	\vspace{-3mm}
+	\frametitle{Recent approach for Constraints (Entanglements)}
+	\vspace{-2mm}
 		\begin{itemize}
 			\item Diffused-Constraint Model
 			\begin{itemize}
@@ -550,101 +525,41 @@
 			\begin{itemize}
 				\item Improved model of "Edwards' Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
 			\end{itemize}
-			\item Slip-tube Model
+			\item \alert<2>{Slip-tube Model}
 			\begin{itemize}
 				\item A pairwise interaction of chains is introduced.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
 			\end{itemize}
 		\end{itemize}
 
-
-		\begin{columns}[totalwidth=1\textwidth]
-			\column{.65\textwidth}
-			\begin{itemize}
-				\item allowframebreaksbbb
-				\item bbbb
-				\item Z
-			\end{itemize}
-			\column{.25\textwidth}
-			\includegraphics[width=.9\textwidth]{NW_model_rubinstein.png}
-		\end{columns}
+		\vspace{1mm}
+		\centering
+		\visible<2>{
+			\includegraphics[width=.9\textwidth]{rubinstein_4.png}
+		}
 \end{frame}
+
+\section{Simulation}
+\subsection{Random Network}
 
 \setcounter{footnote}{0}
-
 \begin{frame}
-	\frametitle{Recent approach for Constraints (Entanglements)}
-		\vspace{-3mm}
-		\begin{itemize}
-			\item Diffused-Constraint Model
+	\frametitle{Random Networks}
+		\begin{columns}[c, onlytextwidth]
+			\column{.72\linewidth}
 			\begin{itemize}
-				\item Confining potential affect all points along the chain.\footnote{\tiny{A. Kloczkowski, J.E. Mark, B. Erman, Macromol., 28, 5089 (1995)}}
-			\end{itemize}
-			\item Nonaffine Tube Model
-			\begin{itemize}
-				\item Improved model of "Edwards' Tube Model".\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 30, 25, 8036 (1997)}}
-			\end{itemize}
-			% \item Slip-tube Model
-			% \begin{itemize}
-			% 	\item A pairwise interaction of chains is introduced.\footnote{\tiny{M. Rubinstein, S. Panyukov, Macromol., 35, 6670 (2002)}}
-			% \end{itemize}
-		\end{itemize}
-
-		\begin{columns}[totalwidth=1\textwidth]
-			\column{.7\textwidth}
-			\scriptsize
-			\begin{align*}
-				&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
-				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
-				% &\text{where $\nu$ is the number density of network chains,} \\
-				& \text{L is the number of slip-links per network chain}
-			\end{align*}
-			\column{.25\textwidth}
-			\includegraphics[width=.9\textwidth]{NW_model_rubinstein.png}
-		\end{columns}
-
-\end{frame}
-
-\begin{frame}
-	\frametitle{ss}
-	\begin{align*}
-		f=\dfrac{f}{g}
-	\end{align*}
-	\begin{align*}
-		&f^*(\lambda^{-1}) = G_c + \dfrac{G_e}{0.74 \lambda + 0.61 \lambda^{-1/2} - 0.35} \\
-		&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
-		& \text{L is the number of slip-links per network chain}
-	\end{align*}
-
-\end{frame}
-
-
-\setcounter{footnote}{0}
-\section{ランダムネットワークの検討}
-\subsection{ランダムネットワークについて}
-
-\begin{frame}
-	\frametitle{ランダムネットワークの検討}
-		% \begin{block}{}
-			\begin{itemize}
-				\item 前述のモデルの問題点
-				\begin{itemize}
-					\item 変形速度依存性の議論が陽に行われていない。
-					\item 基本となるPNMの再現が必須。
-				\end{itemize}
-				\item ネットワーク構造の\alert{連結性にランダム性}を導入
-                    \begin{itemize}
-						\item Flory の\alert{ファントムネットワークの要件}に合致\footnote{
-							\scriptsize{P. J. Flory, Proc. R. Soc. London. Series A, 351, 351 (1976)}
-						}
-						\begin{itemize}
-							\item the mean values $\bar{\bm{r}}$ of starand fluctuate
-							\item fluctuations $\Delta \bm{r} = \bm{r} - \bar{\bm{r}}$ are Gaussian
-							\item the mean-square fluctuations depend only on structure
-						\end{itemize}
+				\item Introduction of \alert{Random Connectivity}.
+					\item \alert{Criteria for PNM} is fulfilled\footnote{
+								\scriptsize{P. J. Flory, Proc. R. Soc. London. A, 351, 351 (1976)}
+						}.
+					\begin{itemize}
+						\item the mean values $\bar{\bm{r}}$ of strands are \alert{fluctuate}
+						\item fluctuations $\Delta \bm{r} = \bm{r} - \bar{\bm{r}}$ are \alert{Gaussian}
+						\item the mean-square fluctuations \alert{depend only on structure}
 					\end{itemize}
+					% \end{itemize}
 				\item Previous Work for Random Network
 				\begin{itemize}
-					\item Random end-crosslink for telechelic polymers\footnote{
+					\item Random endcrosslink for telechelics\footnote{
 						\scriptsize{G.S. Grest, et.al., Non-Cryst. Solids, 274, 139 (2000)}
 						}
 					\item Primitive Chain Network Simulation\footnote{
@@ -652,274 +567,331 @@
 					}
 				\end{itemize}
 			\end{itemize}
-		% \end{block}
+			\column{.26\linewidth}
+				\centering
+					\includegraphics[width=\textwidth]{random_NW.png}
+		\end{columns}
 \end{frame}
 
-% \subsection{ランダムネットワークの作成}
-% \begin{frame}
-% 	\frametitle{ランダムネットワークの作成}
-% 	\vspace{-3mm}
-% 	\begin{block}{初期構造の作成}
-% 		\begin{enumerate}
-% 			\item \alert{実空間}で8-Chain Model から初期構造を作成。
-% 				\begin{itemize}
-% 					\normalsize
-% 					\item 所望の分岐数に\alert{ランダム}に選択した\alert{結合を除去}
-% 					\item 除去したジオメトリー$\Rightarrow$\alert{トポロジーモデル}
-% 				\end{itemize}
-% 			\item トポロジー空間でランダム性の導入
-% 				\begin{itemize}
-% 					\normalsize
-% 					\item \alert{エッジ交換}でノードごとにランダムな接続性導入
-% 				\end{itemize}	
-% 			\item 対応する{実空間でのネットワーク初期構造}を作成
-% 			\item \alert{適正なストランド長}となるように\alert{多重度設定}
-% 			\item \alert{Slow Push Offにより初期構造を緩和}
-% 		\end{enumerate}
+\subsection{Generation Recipe of Random Networks}
 
-% 		\vspace{-1mm}
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.33\linewidth}
-% 				\includegraphics[width=\textwidth]{8_per.png}
-% 			\column{.33\linewidth}
-% 				\vspace{-5mm}
-% 				\begin{center}
-% 					\includegraphics[width=.6\textwidth]{Network.png}
-% 				\end{center}
-% 			\column{.33\linewidth}
-% 				\includegraphics[width=\textwidth]{bond_exchg.png}
-% 		\end{columns}
-% 	\end{block}
-% \end{frame}
+\end{frame}
+\begin{frame}
+	\frametitle{Generation of Initial Structure of Random Networks}
+
+	\begin{enumerate}
+		% \item \alert{実空間}で8-Chain Model から初期構造を作成。
+		\item 8-Chain Model is used as starting structure in \alert{Real space}.
+			\begin{itemize}
+				\normalsize
+				% \item 所望の分岐数に\alert{ランダム}に選択した\alert{結合を除去}
+				\item Randomly selected edge is removed until desired functionality.
+				% \item 除去したジオメトリーに対応した\alert{トポロジーモデル}
+				\item Topological model is generated. 
+			\end{itemize}
+		% \item トポロジー空間でランダム性の導入
+		\item Randomness is introduced in \alert{topological space}.
+			\begin{itemize}
+				\normalsize
+				% \item \alert{エッジ交換}して、ノードごとにランダムな接続性を導入
+				\item By \alert{edge exchange}, random connectivity is introduced for each node.
+			\end{itemize}	
+		% \item 対応する\alert{実空間でのネットワーク初期構造}を作成
+		\item Corresponding real space structure is generated.
+		% \item \alert{ストランド長がホモポリマーに対応}するように多重度設定
+		\item According to e2e distance of strand, system size and multiplicity are set.
+	\end{enumerate}
+
+	\vspace{-1mm}
+	\begin{columns}[T, onlytextwidth]
+		\column{.33\linewidth}
+			\includegraphics[width=\textwidth]{8_per.png}
+		\column{.33\linewidth}
+			\vspace{-5mm}
+			\begin{center}
+				\includegraphics[width=.6\textwidth]{Network.png}
+			\end{center}
+		\column{.33\linewidth}
+			\includegraphics[width=\textwidth]{bond_exchg.png}
+	\end{columns}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Reluxation of Initial Structure in KG Network}
+        \vspace{-2mm}
+		\begin{block}{KG Network: KG chain as strand}
+			\begin{itemize}
+				\item \alert{Relaxation of initial structure} is important.
+					\fontsize{6pt}{0pt}
+					\begin{align*}
+						&U_{KG}(r) = 
+						\begin{cases}
+						U_{nonbond} = U_{LJ} \;\text{where } r_c = 2^{(1/6)}\sigma \\
+						U_{bond} = U_{LJ} + U_{FENE}
+						\end{cases} 
+					\end{align*}
+			\end{itemize}
+		\end{block}
+		\vspace{-3mm}
+		\begin{columns}[T, onlytextwidth]
+			\column{.66\linewidth}
+				\begin{exampleblock}{Initial Structure Relaxation}
+					\begin{itemize}
+						\item According method of Auhl\footnote{
+							\scriptsize{R. Auhl et al. J. of Chem. Phys., 119, 12718 (2003)}
+						}に従い、
+						\begin{itemize}
+							\item Using force-capped-LJ pot.
+							\item relaxed by Slow Push Off
+						\end{itemize}
+					\end{itemize}
+					\fontsize{6pt}{0pt}
+					\begin{align*}
+						&U_{FCLJ}(r) = 
+						\begin{cases}
+						(r-r_{fc})*U_{LJ}^{\prime}(r_{fc}) + U_{LJ}(r_{fc}) \; &r< r_{fc} \\
+						U_{LJ}   \;\;\;\;\;\;\; &r \geq r_{fc}
+						\end{cases} 
+					\end{align*}
+				\end{exampleblock}
+			\column{.32\linewidth}
+				\vspace{2mm}
+				\begin{center}
+					\includegraphics[width=1.2\textwidth]{Ev_fcLJ.png}
+				\end{center}
+				\vspace{-3mm}
+				\scriptsize
+				\begin{itemize}
+					\item force-capped-LJ Pot.
+					\item gradually entangled
+				\end{itemize}
+		\end{columns}
+\end{frame}
+
+\subsection{Simulation COnditions}
+\begin{frame}
+	\frametitle{「素抜け鎖」の力学応答}
+		\begin{alertblock}{「素抜け鎖」でのランダムネットワーク}
+			\begin{itemize}
+				% \item ストランド：す抜け鎖
+				\item \alert{「排除体積効果および絡み合いのない」}ネットワーク
+			\end{itemize}
+        \end{alertblock}
+        \vspace{-3mm}
+		\begin{columns}[totalwidth=\linewidth]
+			\column{.48\linewidth}
+				\begin{block}{一軸伸張結果}
+					\begin{itemize}
+						\item 伸張速度低下で\\\alert{ファントム応答}に漸近
+						% \item 低伸張率から伸び切り
+                    \end{itemize}
+                    \begin{center}
+                        \includegraphics[width=.9\columnwidth]{N48_sunuke.png}
+                    \end{center}
+				\end{block}
+			\column{.48\linewidth}
+				\begin{exampleblock}{ステップ変形の応力緩和}
+                    \begin{itemize}
+                        \item 高速伸長：$\dot{\gamma} = 1e^{-3}$
+                        \item 変位：$\lambda = 1.5$
+                    \end{itemize}
+					\begin{center}
+                        \includegraphics[width=.9\columnwidth]{gt_sunuke.png}
+                    \end{center}
+				\end{exampleblock}
+		\end{columns}
+\end{frame}
+
 
 % \begin{frame}
-%     \frametitle{初期構造の緩和}
-%         \vspace{-2mm}
-% 		\begin{block}{KG 鎖をストランドとするネットワーク}
-% 			\begin{itemize}
-% 				\item KG鎖は「非素抜け」なので、\alert{初期構造の緩和}が重要。
-% 					\fontsize{6pt}{0pt}
-% 					\begin{align*}
-% 						&U_{KG}(r) = 
-% 						\begin{cases}
-% 						U_{nonbond} = U_{LJ} \;\text{where } r_c = 2^{(1/6)}\sigma \\
-% 						U_{bond} = U_{LJ} + U_{FENE}
-% 						\end{cases} 
-% 					\end{align*}
-% 			\end{itemize}
-% 		\end{block}
-% 		\vspace{-3mm}
-% 		\begin{columns}[T, onlytextwidth]
-% 			\column{.66\linewidth}
-% 				\begin{exampleblock}{初期構造の緩和}
-% 					\begin{itemize}
-% 						\item Auhl 等の方法\footnote{
-% 							\scriptsize{R. Auhl et al. J. of Chem. Phys., 119, 12718 (2003)}
-% 						}に従い、
-% 						\begin{itemize}
-% 							\item force-capped-LJ ポテンシャル
-% 							\item Slow Push Off で初期構造を緩和
-% 						\end{itemize}
-% 					\end{itemize}
-% 					\fontsize{6pt}{0pt}
-% 					\begin{align*}
-% 						&U_{FCLJ}(r) = 
-% 						\begin{cases}
-% 						(r-r_{fc})*U_{LJ}^{\prime}(r_{fc}) + U_{LJ}(r_{fc}) \; &r< r_{fc} \\
-% 						U_{LJ}   \;\;\;\;\;\;\; &r \geq r_{fc}
-% 						\end{cases} 
-% 					\end{align*}
-% 				\end{exampleblock}
-% 			\column{.32\linewidth}
-% 				\vspace{2mm}
-% 				\begin{center}
-% 					\includegraphics[width=1.2\textwidth]{Ev_fcLJ.png}
-% 				\end{center}
-% 				\vspace{-3mm}
-% 				\scriptsize
-% 				\begin{itemize}
-% 					\item force-capped-LJ Pot.
-% 					\item 素抜け⇒絡み合い
-% 				\end{itemize}
-% 		\end{columns}
-% \end{frame}
-
-% \subsection{ランダムネットワークのシミュレーション}
-% \begin{frame}
-% 	\frametitle{「素抜け鎖」の力学応答}
-% 		\begin{alertblock}{「素抜け鎖」でのランダムネットワーク}
-% 			\begin{itemize}
-% 				% \item ストランド：す抜け鎖
-% 				\item \alert{「排除体積効果および絡み合いのない」}ネットワーク
-% 			\end{itemize}
-%         \end{alertblock}
+%     \frametitle{絡み合いを低減したネットワーク}
 %         \vspace{-3mm}
-% 		\begin{columns}[totalwidth=\linewidth]
-% 			\column{.48\linewidth}
-% 				\begin{block}{一軸伸張結果}
-% 					\begin{itemize}
-% 						\item 伸張速度低下で\\\alert{ファントム応答}に漸近
-% 						% \item 低伸張率から伸び切り
-%                     \end{itemize}
-%                     \begin{center}
-%                         \includegraphics[width=.9\columnwidth]{N48_sunuke.png}
-%                     \end{center}
-% 				\end{block}
-% 			\column{.48\linewidth}
-% 				\begin{exampleblock}{ステップ変形の応力緩和}
-%                     \begin{itemize}
-%                         \item 高速伸長：$\dot{\gamma} = 1e^{-3}$
-%                         \item 変位：$\lambda = 1.5$
-%                     \end{itemize}
-% 					\begin{center}
-%                         \includegraphics[width=.9\columnwidth]{gt_sunuke.png}
-%                     \end{center}
-% 				\end{exampleblock}
-% 		\end{columns}
-% \end{frame}
-
-% \begin{frame}
-% 	\frametitle{KG 鎖の力学応答}
-% 	\vspace{-3mm}
-% 	\begin{alertblock}{KG 鎖の四分岐ランダムネットワーク}
-% 		LJ ポテンシャルによる排除体積効果および絡み合い
-% 	\end{alertblock}
-% 	\vspace{-4mm}
-% 	\begin{columns}[T, onlytextwidth]
-% 		\column{.48\linewidth}
-% 			\begin{block}{一軸伸張結果}
+% 		\begin{columns}[T, onlytextwidth]
+%             \column{.45\linewidth}
+%                 \small
 % 				\begin{itemize}
-% 					\item ネオフッキアンに漸近
-% 					\item ANMよりも応力は高い
+% 					\item 4-Chain-\alert{NPT}
+% 					\includegraphics[width=.62\textwidth]{NPT_PPA.png}
+% 					\item 4-Chain-NVT
+% 					\includegraphics[width=.62\textwidth]{N48_f4_PPA.png}
 % 				\end{itemize}
-% 				\includegraphics[width=\textwidth]{N48_C4_M3.png}
-% 			\end{block}
-			
-% 		\column{.48\linewidth}
+% 			\column{.55\linewidth}
 % 			\begin{block}{応力緩和関数 $G(t)$}
 % 				\begin{itemize}
 % 					\item ステップ変形（$\lambda=2.0$）
-% 					\item ANM よりも高弾性率
+% 					\item 弾性率がPNMに漸近
+% 					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
 % 				\end{itemize}
-% 				\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
-% 			\end{block}
-% 	\end{columns}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{ランダムネットワークの絡み合い解析: Z1-code}
-%         \vspace{-2mm}
-%         \begin{columns}[onlytextwidth]
-%             \column{.4\linewidth}
-%                 \includegraphics[width=.9\textwidth]{z_cord_4Chain.png}
-
-%                 Z1-code での絡み合い
-%             \column{.56\linewidth}
-%             \begin{block}{ホモポリマーとの比較}
-%                 \begin{itemize}
-%                     \item Z は一本鎖あたりの絡み合い
-%                     \item 今回のネットワークは、\\ホモポリマーと同等
-%                 \end{itemize}
-%                 \scriptsize
-%                 \begin{center}
-%                     \begin{tabular}{c||c|c} \hline
-%                         &Homo & 4 Chain NW \\ \hline \hline
-%                         Segments& 50& 48 \\ \hline
-%                         Chains & 200& 768 \\ \hline
-%                         Entanglements& 204& 800\\ \hline
-%                         Entangled Chains&134&557 \\ \hline
-%                         \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
-%                     \end{tabular}
-%                 \end{center}
-%             \end{block}
-%         \end{columns}
-%     \begin{alertblock}{Z1-codeとは}
-%         \begin{itemize}
-%             \item 絡み合いを可視化するアルゴリズム\footnote{
-%                 M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
-%                 % \begin{itemize}
-%                 %     \item M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
-%                 %     \item S. Shanbhag, M. Kröger, Macromolecules 40, 2897(2007)
-%                 %     \item R. Hoy, K. Foteinopoulou, M. Kröger, Phys. Rev. E, 31803 (2009)
-%                 % \end{itemize}
-%             }
-%         %    N.C. Karayiannis, M. Kröger, Int. J. Mol. Sci. 10, 5054 (2009)
-%         \end{itemize}
-%     \end{alertblock}
-% \end{frame}
-
-% % \begin{frame}
-% %     \frametitle{絡み合いを低減したネットワーク}
-% %         \vspace{-3mm}
-% % 		\begin{columns}[T, onlytextwidth]
-% %             \column{.45\linewidth}
-% %                 \small
-% % 				\begin{itemize}
-% % 					\item 4-Chain-\alert{NPT}
-% % 					\includegraphics[width=.62\textwidth]{NPT_PPA.png}
-% % 					\item 4-Chain-NVT
-% % 					\includegraphics[width=.62\textwidth]{N48_f4_PPA.png}
-% % 				\end{itemize}
-% % 			\column{.55\linewidth}
-% % 			\begin{block}{応力緩和関数 $G(t)$}
-% % 				\begin{itemize}
-% % 					\item ステップ変形（$\lambda=2.0$）
-% % 					\item 弾性率がPNMに漸近
-% % 					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
-% % 				\end{itemize}
-% % 					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
-% % 					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
-% % 				\end{block}
-% % 		\end{columns}
-% % \end{frame}
-
-% \begin{frame}
-%     \frametitle{絡み合いの効果について}
-% 	\vspace{-3mm}
-% 	\begin{alertblock}{Entanglement in Slip-tube Model}
-% 		% \begin{columns}[onlytextwidth]
-% 		% 	\column{.8\linewidth}
-% 			\small
-% 			Rubinstein らの先行研究\footnote{
-% 				\scriptsize{M. Rubinstein, S. Panyukov, Macromolecules, 35, 6670 (2002)}
-% 				}
-% 			\vspace{-3mm}
-% 			\scriptsize
-% 			\begin{align*}
-% 				&G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
-% 				% &\text{where $\nu$ is the number density of network chains,} \\
-% 				& \text{and L is the number of slip-links per network chain}
-% 			\end{align*}
-% 	\end{alertblock}
-% 	% \vspace{-1mm}
-% 	\begin{columns}[onlytextwidth]
-% 		\column{.2\linewidth}
-% 			\centering
-% 			\vspace{3mm}
-% 			\includegraphics[width=.8\textwidth]{z_cord_NPT_4Chain.png}
-% 			\vspace{2mm}
-% 				\includegraphics[width=.8\textwidth]{z_cord_4Chain.png}
-% 		\column{.8\linewidth}
-% 		\scriptsize
-% 			\centering
-% 			\begin{tabular}{c|c|c} \hline
-% 				&NPT & NVT \\ \hline \hline
-% 				\textcolor{blue}{Chains, $\nu$} & \multicolumn{2}{|c}{\textcolor{blue}{768, 0.018}}\\ \hline
-% 				% \textcolor{blue}{$\nu$}& \multicolumn{2}{|c}{\textcolor{blue}{0.018}}\\ \hline
-% 				\textcolor{blue}{$G_c = \nu \times (1-2/4)$}&\multicolumn{2}{|c}{\textcolor{blue}{0.009}} \\ \hline \hline
-% 				Entanglements& 278& 800\\ \hline
-% 				Entangled Chains&249&557 \\ \hline
-% 				\textcolor{green}{L} & \textcolor{green}{278/768=0.36} & \textcolor{green}{800/768=1.04} \\ \hline
-% 				$G_e=4/7 \times \nu \times L $ & 0.004 & 0.011 \\ \hline \hline
-% 				\alert{$G_{calcd.}=G_c + G_e$} & \alert{0.013} & \alert{0.020} \\ \hline \hline
-% 				\textcolor{blue}{$G_{measd.}$} & \textcolor{blue}{0.013} & \textcolor{blue}{0.022} \\ \hline
-% 			\end{tabular}
-% 	\end{columns}
+% 					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
+% 					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
+% 				\end{block}
+% 		\end{columns}
 % \end{frame}
 
 
+\section{Results}
+\subsection{Networks with Phantom Chains}
 
+\begin{frame}
+	\frametitle{
+		Strand length Effect for 4-Chains
+	}
+	\begin{itemize}
+		\item Strand length is varied from 36 to 48
+		\item System size is reduced to keep $\rho = 0.85$
+	\end{itemize}
 
+	\begin{figure}[htb]
+		\centering
+			\includegraphics[width=.8\textwidth]{N36_N40_N48.png}
+			\caption{Strand Length Comparison for N = 36, 40, 48}
+			\label{4_N364048}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{
+		Comparison of Functionality (f = 3, 4, 6)
+	}
+
+	\begin{figure}[htb]
+		\centering
+			\includegraphics[width=.9\textwidth]{compare_346.png}
+			\caption{Comparison of Functionality (f = 3, 4, 6)}
+			\label{N48_f346}
+	\end{figure}
+
+\end{frame}
+
+\subsection{KG Chain Networks}
+\begin{frame}
+	\frametitle{KG 鎖の力学応答}
+	\vspace{-3mm}
+	\begin{alertblock}{KG 鎖の四分岐ランダムネットワーク}
+		LJ ポテンシャルによる排除体積効果および絡み合い
+	\end{alertblock}
+	\vspace{-4mm}
+	\begin{columns}[T, onlytextwidth]
+		\column{.48\linewidth}
+			\begin{block}{一軸伸張結果}
+				\begin{itemize}
+					\item ネオフッキアンに漸近
+					\item ANMよりも応力は高い
+				\end{itemize}
+				\includegraphics[width=\textwidth]{N48_C4_M3.png}
+			\end{block}
+			
+		\column{.48\linewidth}
+			\begin{block}{応力緩和関数 $G(t)$}
+				\begin{itemize}
+					\item ステップ変形（$\lambda=2.0$）
+					\item ANM よりも高弾性率
+				\end{itemize}
+				\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
+			\end{block}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis of Entanglements in Network: Z1-code}
+        \vspace{-2mm}
+        \begin{columns}[onlytextwidth][c]
+            \column{.38\linewidth}
+                \includegraphics[width=\textwidth]{z_cord_4Chain.png}
+				% \caption{Entanglements by Z-1 Code}
+				
+            \column{.6\linewidth}
+            \begin{block}{Comparison with Homopolymer Melt}
+                \begin{itemize}
+                    \item Z is number of entanglements per chain
+                    % \item 今回のネットワークは、\\ホモポリマーと同等
+                \end{itemize}
+                \scriptsize
+                \begin{center}
+                    \begin{tabular}{c||c|c} \hline
+                        &Homo & 4 Chain NW \\ \hline \hline
+                        Segments& 50& 48 \\ \hline
+                        Chains & 200& 768 \\ \hline
+                        Entanglements& 204& 800\\ \hline
+                        Entangled Chains&134&557 \\ \hline
+                        \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
+                    \end{tabular}
+                \end{center}
+            \end{block}
+        \end{columns}
+    \begin{alertblock}{Z1-code?}
+        \begin{itemize}
+            \item Algorism to visualize and count entanglements\footnote{
+                M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
+            }
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Reduced Entanglements by NPT Model}
+        \vspace{-3mm}
+		\begin{columns}[T, onlytextwidth]
+            \column{.45\linewidth}
+                \small
+				\begin{itemize}
+					\item 4-Chain-\alert{NPT}
+					
+					\includegraphics[width=.62\textwidth]{NPT_PPA.png}
+					\item 4-Chain-NVT
+					
+					\includegraphics[width=.62\textwidth]{N48_f4_PPA.png}
+				\end{itemize}
+			\column{.55\linewidth}
+			\begin{block}{$G(t)$}
+				\begin{itemize}
+					\item Step Deformation（$\lambda=2.0$）
+					\item Reduced Modulus
+					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
+				\end{itemize}
+					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
+					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
+				\end{block}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{
+		Entanglement effect in Slip-tube Model
+	}
+	\vspace{-1mm}
+	\begin{alertblock}{Entanglement in Slip-tube Model}
+		% \begin{columns}[onlytextwidth]
+		% 	\column{.8\linewidth}
+			\footnotesize
+			Theoretical model by Rubinstein\footnote{
+				\scriptsize{M. Rubinstein, S. Panyukov, Macromolecules, 35, 6670 (2002)}
+				}
+			\vspace{-3mm}
+			\scriptsize
+			\begin{align*}
+				G_c = \nu k_B T \left(1-\dfrac{2}{\phi} \right), \quad G_e = \dfrac{4}{7} \nu k_B T L \\
+				% &\text{where $\nu$ is the number density of network chains,} \\
+				\text{and L is the number of slip-links per network chain}
+			\end{align*}
+	\end{alertblock}
+	\vspace{2mm}
+	\centering
+			\includegraphics[width=.9\textwidth]{Entanglement_Comp.png}
+	\scriptsize
+
+\end{frame}
+
+\subsection{Relaxation in KG Networks}
+\begin{frame}
+	\frametitle{
+		aa
+	}
+
+	
+
+\end{frame}
 % \section{ランダムネットワークのせん断変形}
 % \subsection{分岐数の異なるネットワークのせん断変形}
 % \begin{frame}
