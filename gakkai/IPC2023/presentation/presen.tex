@@ -170,7 +170,7 @@
 \end{frame}
 
 
-\subsection{Durability of Rubber}
+% \subsection{Durability of Rubber}
 \begin{frame}
 	\frametitle{Mechanical Hysteresis Loss and Fracture Energy}
 	\vspace{-1mm}
@@ -536,14 +536,19 @@
 		\visible<2>{
 			\includegraphics[width=.9\textwidth]{rubinstein_4.png}
 		}
+		\note{
+			\begin{itemize}
+				\item These three models are the recent approach for a evaluation of constraints.
+				\item The latest Rubinstein's Slip-tube model" seems proper.
+				\item All recent models are based on Phantom Network Model.
+			\end{itemize}
+		}
 \end{frame}
 
-\section{Simulation}
-\subsection{Random Network}
-
+\subsection{Objectives}
 \setcounter{footnote}{0}
 \begin{frame}
-	\frametitle{Random Networks}
+	\frametitle{Random Networks as a key for PNM}
 		\begin{columns}[c, onlytextwidth]
 			\column{.72\linewidth}
 			\begin{itemize}
@@ -571,34 +576,68 @@
 				\centering
 					\includegraphics[width=\textwidth]{random_NW.png}
 		\end{columns}
+
+		\note{
+			\begin{itemize}
+				\item Introduction of Random Connectivity is known to a key for PNM
+				\item As a result, Criteria for PNM is fulfilled
+				\item in these previous works, the network is not simple.
+			\end{itemize}
+		}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Objectives}
+
+	\begin{itemize}
+		\item Recent approach for rubber elasticity models are based on Phantom Network Model.
+		\item Introducing random connectivity, MD simulation studies were carried out.
+		\item To investigate the criteria for Phantom Network Model, Two model chains are used.
+		\begin{enumerate}
+			\item Employing phantom chain, basics for PNM is examined.
+			\item Changing the chain to KG Chain, constraints effects are investigated.
+			\begin{itemize}
+				\item KG Chain:
+				\item Excluded Volume Effect
+				\item No mutual crossing of Strands
+			\end{itemize}
+		\end{enumerate}
+	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Recent approach for rubber elasticity models are based on Phantom Network Model.
+			\item Introducing random connectivity, MD simulation studies were carried out.
+			\item To investigate the criteria for Phantom Network Model, Two model chains are used.
+			\begin{enumerate}
+				\item Employing phantom chain, basics for PNM is examined.
+				\item Changing the chain to KG Chain, constraints effects are investigated.
+				\begin{itemize}
+					\item KG Chain:
+					\item Excluded Volume Effect
+					\item No mutual crossing of Strands
+				\end{itemize}
+			\end{enumerate}
+		\end{itemize}
+	}
+\end{frame}
+
+\section{Simulation}
 \subsection{Generation Recipe of Random Networks}
 
-\end{frame}
 \begin{frame}
 	\frametitle{Generation of Initial Structure of Random Networks}
-
 	\begin{enumerate}
-		% \item \alert{実空間}で8-Chain Model から初期構造を作成。
 		\item 8-Chain Model is used as starting structure in \alert{Real space}.
 			\begin{itemize}
-				\normalsize
-				% \item 所望の分岐数に\alert{ランダム}に選択した\alert{結合を除去}
 				\item Randomly selected edge is removed until desired functionality.
-				% \item 除去したジオメトリーに対応した\alert{トポロジーモデル}
 				\item Topological model is generated. 
 			\end{itemize}
-		% \item トポロジー空間でランダム性の導入
 		\item Randomness is introduced in \alert{topological space}.
 			\begin{itemize}
-				\normalsize
-				% \item \alert{エッジ交換}して、ノードごとにランダムな接続性を導入
 				\item By \alert{edge exchange}, random connectivity is introduced for each node.
 			\end{itemize}	
-		% \item 対応する\alert{実空間でのネットワーク初期構造}を作成
 		\item Corresponding real space structure is generated.
-		% \item \alert{ストランド長がホモポリマーに対応}するように多重度設定
 		\item According to e2e distance of strand, system size and multiplicity are set.
 	\end{enumerate}
 
@@ -614,9 +653,54 @@
 		\column{.33\linewidth}
 			\includegraphics[width=\textwidth]{bond_exchg.png}
 	\end{columns}
-
+	
+	\note{
+		\begin{enumerate}
+			\item 8-Chain Model is used as starting structure in \alert{Real space}.
+				\begin{itemize}
+					\item Randomly selected edge is removed until desired functionality.
+					\item Topological model is generated. 
+				\end{itemize}
+			\item Randomness is introduced in \alert{topological space}.
+				\begin{itemize}
+					\item By \alert{edge exchange}, random connectivity is introduced for each node.
+				\end{itemize}	
+			\item Corresponding real space structure is generated.
+			\item According to e2e distance of strand, system size and multiplicity are varied to keep $\rho = 0.85$.
+		\end{enumerate}
+	}
 \end{frame}
 
+\subsection{Phantom and KG Chains as strands}
+\begin{frame}
+	\frametitle{Phantom and KG Chains as strands}
+	\begin{itemize}
+		\item Phantom Chain:
+		\begin{itemize}
+			\item No Excluded Volume is set (no segmental interaction).
+			\item "Force Cap LJ" is set as Angle Potential to enumerate e2e length of KG Chains.
+			\item Harmonic bond（k=1000）
+		\end{itemize}
+		\item KG Chain:
+		\begin{itemize}
+			\item Excluded Volume is set by Repulsive LJ Potential.
+			\item Bond Potential is set to FENE.
+			\item Because of above two potentials, No Chain crossing will occur.
+		\end{itemize}
+	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Conditions for Phantom and KG Chains are shown here.
+			\item Important point is, 
+			\item Employing "Force Cap LJ" for 1, 3 interaction of inner chain segments,
+			\item e2e length of KG Chains is emulated in phantom chain.
+		\end{itemize}
+	}
+\end{frame}
+
+
+\subsection{Simulation Conditions}
 \begin{frame}
     \frametitle{Reluxation of Initial Structure in KG Network}
         \vspace{-2mm}
@@ -640,7 +724,7 @@
 					\begin{itemize}
 						\item According method of Auhl\footnote{
 							\scriptsize{R. Auhl et al. J. of Chem. Phys., 119, 12718 (2003)}
-						}に従い、
+						}
 						\begin{itemize}
 							\item Using force-capped-LJ pot.
 							\item relaxed by Slow Push Off
@@ -667,78 +751,24 @@
 					\item gradually entangled
 				\end{itemize}
 		\end{columns}
-\end{frame}
 
-\subsection{Simulation COnditions}
-\begin{frame}
-	\frametitle{「素抜け鎖」の力学応答}
-		\begin{alertblock}{「素抜け鎖」でのランダムネットワーク}
+		\note{
 			\begin{itemize}
-				% \item ストランド：す抜け鎖
-				\item \alert{「排除体積効果および絡み合いのない」}ネットワーク
+				\item For KG model without mutual chain crossing, 
+				\item Relaxation of initial structure is important.
 			\end{itemize}
-        \end{alertblock}
-        \vspace{-3mm}
-		\begin{columns}[totalwidth=\linewidth]
-			\column{.48\linewidth}
-				\begin{block}{一軸伸張結果}
-					\begin{itemize}
-						\item 伸張速度低下で\\\alert{ファントム応答}に漸近
-						% \item 低伸張率から伸び切り
-                    \end{itemize}
-                    \begin{center}
-                        \includegraphics[width=.9\columnwidth]{N48_sunuke.png}
-                    \end{center}
-				\end{block}
-			\column{.48\linewidth}
-				\begin{exampleblock}{ステップ変形の応力緩和}
-                    \begin{itemize}
-                        \item 高速伸長：$\dot{\gamma} = 1e^{-3}$
-                        \item 変位：$\lambda = 1.5$
-                    \end{itemize}
-					\begin{center}
-                        \includegraphics[width=.9\columnwidth]{gt_sunuke.png}
-                    \end{center}
-				\end{exampleblock}
-		\end{columns}
+		}
 \end{frame}
-
-
-% \begin{frame}
-%     \frametitle{絡み合いを低減したネットワーク}
-%         \vspace{-3mm}
-% 		\begin{columns}[T, onlytextwidth]
-%             \column{.45\linewidth}
-%                 \small
-% 				\begin{itemize}
-% 					\item 4-Chain-\alert{NPT}
-% 					\includegraphics[width=.62\textwidth]{NPT_PPA.png}
-% 					\item 4-Chain-NVT
-% 					\includegraphics[width=.62\textwidth]{N48_f4_PPA.png}
-% 				\end{itemize}
-% 			\column{.55\linewidth}
-% 			\begin{block}{応力緩和関数 $G(t)$}
-% 				\begin{itemize}
-% 					\item ステップ変形（$\lambda=2.0$）
-% 					\item 弾性率がPNMに漸近
-% 					% \item<2> \textcolor{blue}{定数を足せばKGと類似}
-% 				\end{itemize}
-% 					\includegraphics[width=\textwidth]{gt_4chain_comp.png}
-% 					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
-% 				\end{block}
-% 		\end{columns}
-% \end{frame}
-
 
 \section{Results}
 \subsection{Networks with Phantom Chains}
 
 \begin{frame}
 	\frametitle{
-		Strand length Effect for 4-Chains
+		Strand length Effect for Phantom Chain NW(f=4)
 	}
 	\begin{itemize}
-		\item Strand length is varied from 36 to 48
+		\item Strand-length is varied from 36 to 48
 		\item System size is reduced to keep $\rho = 0.85$
 	\end{itemize}
 
@@ -748,6 +778,15 @@
 			\caption{Strand Length Comparison for N = 36, 40, 48}
 			\label{4_N364048}
 	\end{figure}
+
+	\note{
+		\begin{itemize}
+			\item Keeping the density, Starand length were varied.
+			\item Shorter chain length resulted in higher modulus.
+			\item WIth proper chain length, N-48, PNM nature is found. 
+			\item These results were explained by reduced fluctuation mobility of junction point
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}
@@ -762,42 +801,57 @@
 			\label{N48_f346}
 	\end{figure}
 
+	\note{
+		\begin{itemize}
+			\item WIth proper chain length, N-48, PNM nature is found. 
+			\item functionality effect on modulus is perfect.
+		\end{itemize}
+	}
 \end{frame}
 
 \subsection{KG Chain Networks}
 \begin{frame}
-	\frametitle{KG 鎖の力学応答}
+	\frametitle{Mechanical Responce for KG Chains}
 	\vspace{-3mm}
-	\begin{alertblock}{KG 鎖の四分岐ランダムネットワーク}
-		LJ ポテンシャルによる排除体積効果および絡み合い
+	\begin{alertblock}{4-Chain Random Network with KG Chain}
+		\begin{itemize}
+			\item Excluded Volume Effect by non-bonding LJ Potential.
+			\item No strands mutual crossing by FENE bond.
+		\end{itemize}
 	\end{alertblock}
 	\vspace{-4mm}
 	\begin{columns}[T, onlytextwidth]
 		\column{.48\linewidth}
-			\begin{block}{一軸伸張結果}
-				\begin{itemize}
-					\item ネオフッキアンに漸近
-					\item ANMよりも応力は高い
-				\end{itemize}
-				\includegraphics[width=\textwidth]{N48_C4_M3.png}
+			\begin{block}{Phantom Chain}
+				% \begin{itemize}
+				% 	\item ネオフッキアンに漸近
+				% 	\item ANMよりも応力は高い
+				% \end{itemize}
+				\includegraphics[width=\textwidth]{4chain_N50_PNM_shear.png}
 			\end{block}
 			
 		\column{.48\linewidth}
-			\begin{block}{応力緩和関数 $G(t)$}
-				\begin{itemize}
-					\item ステップ変形（$\lambda=2.0$）
-					\item ANM よりも高弾性率
-				\end{itemize}
-				\includegraphics[width=\textwidth]{gt_N48_C4_M3.png}
+			\begin{block}{KG Chain}
+				% \begin{itemize}
+				% 	\item ステップ変形（$\lambda=2.0$）
+				% 	\item ANM よりも高弾性率
+				% \end{itemize}
+				\includegraphics[width=\textwidth]{4chain_N50_shear.png}
 			\end{block}
 	\end{columns}
+
+	\note{
+		\begin{itemize}
+			\item For KG NW, Modulus is much higher than PNM Predict.
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}
     \frametitle{Analysis of Entanglements in Network: Z1-code}
         \vspace{-2mm}
         \begin{columns}[onlytextwidth][c]
-            \column{.38\linewidth}
+            \column{.3\linewidth}
                 \includegraphics[width=\textwidth]{z_cord_4Chain.png}
 				% \caption{Entanglements by Z-1 Code}
 				
@@ -822,11 +876,18 @@
         \end{columns}
     \begin{alertblock}{Z1-code?}
         \begin{itemize}
-            \item Algorism to visualize and count entanglements\footnote{
+            \item Z1-code is an algorism to visualize and count entanglements\footnote{
                 M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
             }
         \end{itemize}
     \end{alertblock}
+	\note{
+		\begin{itemize}
+			\item to investigate for higher modulus,
+			\item Employing Z1-code, number of entanglements per chain Z was calculated.
+			\item the number is almost the same as homo-polymer melts.
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}
@@ -854,6 +915,12 @@
 					% \includegraphics<2>[width=\textwidth]{gt_NPT_mod.png}
 				\end{block}
 		\end{columns}
+		\note{
+		\begin{itemize}
+			\item Employing NPT relaxation, number of entanglements are reduced.
+			\item equilibrated modulus on stress relaxation is much reduced.
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}
@@ -880,16 +947,118 @@
 	\centering
 			\includegraphics[width=.9\textwidth]{Entanglement_Comp.png}
 	\scriptsize
-
+	\note{
+		\begin{itemize}
+			\item Adapting Slip-tube model estimation, the measured modulus is fully explained.
+		\end{itemize}
+	}
 \end{frame}
 
 \subsection{Relaxation in KG Networks}
 \begin{frame}
 	\frametitle{
-		aa
+		G(t) for Step Shear and Dynamic Rheo-Spectrum
 	}
+	\vspace{-2mm}
+	\begin{columns}[c, onlytextwidth]
+		\column{.48\linewidth}
+			\begin{block}{G(t) for Step Stretch}
+				\centering
+					\includegraphics[width=\textwidth]{gt_4chain_N50_stepstretch.png}
+			\end{block}
+		\column{.48\linewidth}
+			\begin{exampleblock}{Dynamic Viscoelastics}
+				\centering
+					\includegraphics[width=\textwidth]{gw_4chain_N50_stepstretch.png}
+			\end{exampleblock}
+	\end{columns}
 
-	
+	\begin{block}{Conditions}
+		\begin{itemize}
+			\item 4-Chain KG-NW(N=50)
+			\item Step Stretch: $\lambda = 2$
+			\item G(t) is transformed to Dynamic Viscoelastic Spectrum 
+		\end{itemize}
+	\end{block}
+
+	\note{
+		\begin{itemize}
+			\item The $\tan \delta$ of the glass transition decayed on a time scale of this region(POINT)
+			\item it was longer than the longest relaxation time of homo-polymers of comparable length.
+			\item This prolonged relaxation time can be attributed to the reduced mobility of the cross-linking points due to the network structure
+		\end{itemize}
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mechanical Hysteresis Loss}
+	\vspace{-2mm}
+	\begin{columns}[c, onlytextwidth]
+		\column{.48\linewidth}
+			\begin{exampleblock}{Dynamic Viscoelastics}
+				\centering
+					\includegraphics[width=\textwidth]{gw_4chain_N50_stepstretch.png}
+			\end{exampleblock}
+			\column{.48\linewidth}
+			\begin{alertblock}{Hysteresis by Cyclic Shear}
+				\centering
+					\includegraphics[width=\textwidth]{CyclicDeform_4chain_N50_rate5e-5.png}
+			\end{alertblock}
+	\end{columns}
+
+	\begin{block}{Conditions}
+		\begin{itemize}
+			\item 4-Chain KG-NW(N=50)
+			\item Cyclic Shear: $\gamma = 1$, $\dot{\gamma} = 5e^{-5}$
+		\end{itemize}
+	\end{block}
+
+	\note{
+		\begin{itemize}
+			\item Around this region(POINT), Hysteresis loss was found.
+			\item Network connectivity should affect the nature of hysteresis loss.
+		\end{itemize}
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conclutions}
+
+	\begin{itemize}
+		\item Introducing random connectivity, MD simulation studies were carried out.
+		\item To investigate the criteria for Phantom Network Model, Two model chains are used.
+		\begin{itemize}
+			\item Employing phantom chain, basics for PNM is examined.
+			\begin{itemize}
+				\item Proper strand length is the key for PNM.
+				\item Functionality effect was confirmed.
+			\end{itemize}
+			\item Changing the chain to KG Chain, constraints effects are investigated.
+			\begin{itemize}
+				\item Trapped Entanglement was explained by Slip-tube Model
+				\item Hysteresis 
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+
+	\note{
+		\begin{itemize}
+			\item Introducing random connectivity, MD simulation studies were carried out.
+			\item To investigate the criteria for Phantom Network Model, Two model chains are used.
+			\begin{itemize}
+				\item Employing phantom chain, basics for PNM is examined.
+				\begin{itemize}
+					\item Proper strand length is the key for PNM.
+					\item Functionality effect was confirmed.
+				\end{itemize}
+				\item Changing the chain to KG Chain, constraints effects are investigated.
+				\begin{itemize}
+					\item Trapped Entanglement was explained by Slip-tube Model
+					\item Hysteresis 
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
+	}
 
 \end{frame}
 % \section{ランダムネットワークのせん断変形}
