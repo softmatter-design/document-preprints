@@ -294,12 +294,15 @@
 			{E.H.Andrews, Y.Fukahori, J. of Mat. Sci. 12, 1307 (1977)}
 					}
 						\begin{itemize}
-							\item \color{blue}{Stress Loading field} and \color{red}{Unloading one}
+							\item \color{blue}{Stress Loading zone}
+							\item \color{red}{Unloading one}
+							\item divided by stress maximum line
 						\end{itemize}
-					\item On the progress of the crack, \color{green}{stress field is transit}
+					\item On the progress of the crack, 
 						\begin{itemize}
+							\item \textcolor{green}{stress field is transit}
 							\item Hysteresis Loss$\Rightarrow${Energy Dissipation}
-							\item \alert{Surpress} the progress of Crack
+							\item The progress of Crack is \alert{Suppressed}
 						\end{itemize}
 				\end{itemize}
 				\column{.25\linewidth}
@@ -308,23 +311,24 @@
 					\end{center}
 			\end{columns}
 		\end{exampleblock}
-		\vspace{-2mm}
-		\begin{alertblock}{疲労破壊も考慮すると}
-			\begin{itemize}
-				\item \alert{可逆的}であることが望ましい。\textcolor{blue}{$\neq$ 犠牲結合}
-				\item 変形の周期に対応できるように、\alert{回復速度}も重要。
-				\item \alert{粘弾性挙動としてのヒステリシスロス$\Leftrightarrow$緩和挙動}
-			\end{itemize}
-		\end{alertblock}
+		% \vspace{-2mm}
+		% \begin{alertblock}{疲労破壊も考慮すると}
+		% 	\begin{itemize}
+		% 		\item \alert{可逆的}であることが望ましい。\textcolor{blue}{$\neq$ 犠牲結合}
+		% 		\item 変形の周期に対応できるように、\alert{回復速度}も重要。
+		% 		\item \alert{粘弾性挙動としてのヒステリシスロス$\Leftrightarrow$緩和挙動}
+		% 	\end{itemize}
+		% \end{alertblock}
 
 		\note{
 			\begin{itemize}
 				\item On the fracture of rubber, Andrews proposed a model focused on Stress fields around the Crack top area
 				\item stress fields can be divide in twe regions, stress loading field and unloading one.
-				\item On the progress of the crack, \color{green}{stress field is transit}
+				\item On the progress of the crack, 
 					\begin{itemize}
-						\item Hysteresis Loss$\Rightarrow${Energy Dissipation}
-						\item \alert{Surpress} the progress of Crack
+						\item stress field is transit
+						\item During this transition, Hysteresis Loss is occur and dissipate energy
+						\item through this process, the progress of Crack is suppressed
 					\end{itemize}
 			\end{itemize}
 		}
@@ -333,18 +337,18 @@
 \subsection{ゴムのモデル化}
 \begin{frame}
     \frametitle{Classical Theory of Rubber Elasticity}
-        \vspace{-2mm}
-		\begin{block}{Free Energy Density of Rubbers against Strain invariant}
-			\vspace{-2mm}
-			% 非圧縮性条件から第3不変量がおちて、
-			\scriptsize
-			\begin{align*}
-				\dfrac{F}{V} = W 
-				% &= \sum_{i,j = 0}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j \\[-2mm]
-				&= C_0 + \underbrace{{\color{green}C_1(I_1-3)} + {\color{red}C_2(I_2-3)}}_{\color{red}Mooney-Rivlin Model} + \sum_{i,j = 1}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j
-			\end{align*}  
-		\end{block}
-		\vspace{-5mm}
+        % \vspace{-2mm}
+		% \begin{block}{Free Energy Density of Rubbers against Strain invariant}
+		% 	\vspace{-2mm}
+		% 	% 非圧縮性条件から第3不変量がおちて、
+		% 	\scriptsize
+		% 	\begin{align*}
+		% 		\dfrac{F}{V} = W 
+		% 		% &= \sum_{i,j = 0}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j \\[-2mm]
+		% 		&= C_0 + \underbrace{{\color{green}C_1(I_1-3)} + {\color{red}C_2(I_2-3)}}_{\color{red}Mooney-Rivlin Model} + \sum_{i,j = 1}^{\infty} C_{ij}(I_1-3)^i(I_2-3)^j
+		% 	\end{align*}  
+		% \end{block}
+		% \vspace{-5mm}
 		\begin{columns}[T, onlytextwidth]
 			\column{.48\linewidth}
 				\begin{exampleblock}{Neo-Hookean Model}
@@ -369,7 +373,7 @@
 					\end{align*}
 				\end{alertblock}
 		\end{columns}
-		\vspace{-1mm}
+		% \vspace{-1mm}
 		\begin{block}{With or without Junction Poinits fluctuation}
 			\vspace{1mm}
 			\begin{columns}[T, onlytextwidth]
@@ -451,6 +455,87 @@
 				\includegraphics[width=\textwidth]{topological_effect_ring.png}
 			\end{columns}
 		% \end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Constraint Factors for Junction Points and Strands}
+		\vspace{-2mm}
+		\begin{alertblock}{Vicinity of Junction Point}
+			\begin{columns}[totalwidth=1\textwidth]
+				\column{.75\textwidth}
+				\vspace{-3mm}
+				\begin{itemize}
+					\item Junction points are surrounded by many of \alert{adjacent strands(x in fig.).}
+					\item Fluctuation of junctions are \alert{suppressed}. 
+				\end{itemize}
+				\column{.22\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{JP_vicinity.png}
+			\end{columns}
+		\end{alertblock}
+		\vspace{-1mm}
+		\begin{block}{Constraints Effect}
+			\only<1>{
+				\begin{itemize}
+					\item Suppress the fluctuation of Junction Point
+					\begin{itemize}
+						\item Deviate from Phantom Network Model
+						\item Affect $G_c$
+					\end{itemize}
+					\item Strands Entangles each other
+					\begin{itemize}
+						\item Works as a Junction Point
+						\item Generate additional $G_e$
+					\end{itemize}
+				\end{itemize}
+				Storage modulus $G$ is \alert{combination of $G_c$ and $G_e$}
+			}
+			\only<2>{
+				\begin{columns}[totalwidth=1\textwidth]
+					\column{.65\textwidth}
+					\begin{itemize}
+						\item Constrained Junction Model
+						\begin{itemize}
+							\item  $G$ approaches to $G_c$.\footnote{\tiny{P.J.Flory, J.Chem.Phys., 66, 12, 5720 (1977)}}
+						\end{itemize}
+						\item Topological relationships
+						\begin{itemize}
+							\item Contribution of entanglement.\footnote{\tiny{D.S.Pearson and W.Graessley, Macromol., 11, 3, 528 (1978)}}
+							\vspace{-2mm}
+							\scriptsize
+							\begin{align*}
+								G_e = T_e G_N^0
+							\end{align*}
+						\end{itemize}
+					\end{itemize}
+					\column{.25\textwidth}
+					\vspace{-2mm}
+					\includegraphics[width=\textwidth]{Constrained_Juntion.pdf}
+	
+					\vspace{3mm}
+					\includegraphics[width=\textwidth]{topological_effect_ring.png}
+				\end{columns}
+			}
+
+			\note{
+				\begin{itemize}
+					\item VIcinity of Junction Point
+					\begin{itemize}
+						\item Junction points are surrounded by many of \alert{adjacent strands.}
+						\item Because of other strands, Fluctuation of junctions are \alert{suppressed}. 
+					\end{itemize}
+					\item Effect
+					\item Previous models
+					\begin{itemize}
+						\item On the uniaxial deformation, constraints are released and $G$ approaches to $G_c$
+						\item Considering topological effect can be counted as Ge
+					\end{itemize}
+				\end{itemize}
+			}
+		\end{block}
+
+			
 \end{frame}
 
 \begin{frame}
