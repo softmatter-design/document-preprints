@@ -773,9 +773,8 @@
 
 	\note{
 		\begin{itemize}
-			\item based on the results of networks consist of phantom chain.
-			\item KG Network was examined with same strand length(f=4 and N=48).
-			\item For KG NW, Modulus is much higher than PNM Predict.
+			\item ファントムネットワークの結果に基づいて、同一のストランド長でKG鎖の検討を行いました。
+			\item その結果、モデュラスは高くなることが確認できました。
 			\item \textcolor{red}{(POINT)}
 		\end{itemize}
 	}
@@ -817,9 +816,8 @@
     \end{alertblock}
 	\note{
 		\begin{itemize}
-			\item to investigate for higher modulus,
-			\item Employing Z1-code, number of entanglements per chain Z was calculated.
-			\item the number is almost the same as homo-polymer melts.
+			\item この弾性率増加の原因を明確にするため、絡み合いを表すZを見てみました。
+			\item Zは同じ長さのストランドの直鎖ポリマーとほぼ同一であり適正な初期化も確認できました。
 			\item \textcolor{red}{(POINT left two)}
 			\item 1.02 and 1.04
 		\end{itemize}
@@ -855,9 +853,8 @@
 		\end{columns}
 		\note{
 		\begin{itemize}
-			\item Employing NPT relaxation, number of entanglements are reduced.
+			\item 比較のために、NPT条件を利用して、絡み合いの少ない初期状態を作成しました。
 			\item calculated $<Z>_{Z1}$ = 0.36
-			\item equilibrated modulus on stress relaxation is much reduced.
 		\end{itemize}
 	}
 \end{frame}
@@ -888,7 +885,7 @@
 	\scriptsize
 	\note{
 		\begin{itemize}
-			\item Adapting Slip-tube model estimation, the measured modulus is fully explained.
+			\item Slip-tube model による見積もりとこれら二つとの比較はよい一致を示しました。
 			\item \textcolor{red}{(POINT left two)}
 		\end{itemize}
 	}
@@ -923,7 +920,7 @@
 
 	\note{
 		\begin{itemize}
-			\item Let me move to the last item
+			\item この緩和
 			\item G(t) and $\tan \delta$ decayed on a time scale of this region
 			\item \textcolor{red}{(POINT)}
 			\item it was longer than the longest relaxation time of homo-polymers of comparable length.
@@ -965,6 +962,45 @@
 			\item Network connectivity should affect the nature of hysteresis loss.
 		\end{itemize}
 	}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{4-Cain NW のせん断変形時のヒステリシス}
+	\begin{itemize}
+		% \item 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは Phantom Network Model:PNM に漸近
+		\item PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で複数回の連続した変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示した。
+	\end{itemize}
+
+	\begin{columns}[totalwidth=\linewidth]
+		\column{.5\textwidth}
+			\centering
+				\includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
+				Stress-Strain Curves for 4-chain NW 
+		\column{.5\textwidth}
+			\centering
+				\includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+				Hysteresis Response with Cyclic Deformations
+		\end{columns}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{各種の変形条件での力学的ヒステリシス}
+		\centering
+			\includegraphics[width=\textwidth]{hyst_shear_all.png}
+			Hysteresis losses for valid shear rate and maximum deformation
+\end{frame}
+
+\begin{frame}
+	\frametitle{ヒステリシスロス}
+	\begin{itemize}
+		\item 変形速度の低下に伴いヒステリシスロスは減少
+		\item \textcolor{red}{$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失}
+	\end{itemize}
+			\centering
+				\includegraphics[width=.6\textwidth]{hyst_shear.png}\\
+					Comparison of Hysteresis losses for 4-Chain NW
 \end{frame}
 
 \begin{frame}
