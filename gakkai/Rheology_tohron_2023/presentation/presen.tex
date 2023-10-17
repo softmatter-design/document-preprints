@@ -3,10 +3,10 @@
 
 %% 発表ノート用の設定
 \usepackage{pgfpages}
-% \setbeameroption{hide notes} % スライドのみ作成
+\setbeameroption{hide notes} % スライドのみ作成
 %\setbeameroption{show only notes} % 発表ノートのみ作成
-\setbeameroption{show notes on second screen=right} % スライドと発表ノートを横並びに作成
-\setbeamertemplate{note page}[plain] % 発表ノートの設定 (ナビゲーションは非表示)
+% \setbeameroption{show notes on second screen=right} % スライドと発表ノートを横並びに作成
+% \setbeamertemplate{note page}[plain] % 発表ノートの設定 (ナビゲーションは非表示)
 
 
 \renewcommand{\kanjifamilydefault}{\gtdefault}
@@ -95,7 +95,7 @@
 {Relaxation Behavior of Network Polymers\\ with Random Connectivity}
 \author[Toagosei H.Sasaki]{Hiroshi Sasaki}
 \institute[Toagosei Co., Ltd.]{Toagosei Co., Ltd.}
-\date{September 27, 2023}
+\date{October 20, 2023}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -710,8 +710,8 @@
 	\begin{figure}[htb]
 		\centering
 			\includegraphics[width=.8\textwidth]{N36_N40_N48.png}
-			\caption{Strand Length Comparison for N = 36, 40, 48}
-			\label{4_N364048}
+
+			\scriptsize{Strand Length Comparison for Shear Stress}
 	\end{figure}
 
 	\note{
@@ -734,9 +734,9 @@
 
 	\begin{figure}[htb]
 		\centering
-			\includegraphics[width=.9\textwidth]{compare_346.png}
-			\caption{Comparison of Functionality (f = 3, 4, 6)}
-			\label{N48_f346}
+			\includegraphics[width=\textwidth]{compare_346.png}
+
+			% \scriptsize{Comparison of Functionality (f = 3, 4, 6)}
 	\end{figure}
 
 	\note{
@@ -780,49 +780,49 @@
 	}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Analysis of Entanglements in Network: Z1-code}
-        \vspace{-2mm}
-        \begin{columns}[onlytextwidth][c]
-            \column{.3\linewidth}
-                \includegraphics[width=\textwidth]{z_cord_4Chain.png}
-				% \caption{Entanglements by Z-1 Code}
+% \begin{frame}
+%     \frametitle{Analysis of Entanglements in Network: Z1-code}
+%         \vspace{-2mm}
+%         \begin{columns}[onlytextwidth][c]
+%             \column{.3\linewidth}
+%                 \includegraphics[width=\textwidth]{z_cord_4Chain.png}
+% 				% \caption{Entanglements by Z-1 Code}
 				
-            \column{.6\linewidth}
-            \begin{block}{Comparison with Homopolymer Melt}
-                \begin{itemize}
-                    \item Z is number of entanglements per chain
-                    % \item 今回のネットワークは、\\ホモポリマーと同等
-                \end{itemize}
-                \scriptsize
-                \begin{center}
-                    \begin{tabular}{c||c|c} \hline
-                        &Homo & 4 Chain NW \\ \hline \hline
-                        Segments& 50& 48 \\ \hline
-                        Chains & 200& 768 \\ \hline
-                        Entanglements& 204& 800\\ \hline
-                        Entangled Chains&134&557 \\ \hline
-                        \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
-                    \end{tabular}
-                \end{center}
-            \end{block}
-        \end{columns}
-    \begin{alertblock}{Z1-code?}
-        \begin{itemize}
-            \item Z1-code is an algorism to visualize and count entanglements\footnote{
-                M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
-            }
-        \end{itemize}
-    \end{alertblock}
-	\note{
-		\begin{itemize}
-			\item この弾性率増加の原因を明確にするため、絡み合いを表すZを見てみました。
-			\item Zは同じ長さのストランドの直鎖ポリマーとほぼ同一であり適正な初期化も確認できました。
-			\item \textcolor{red}{(POINT left two)}
-			\item 1.02 and 1.04
-		\end{itemize}
-	}
-\end{frame}
+%             \column{.6\linewidth}
+%             \begin{block}{Comparison with Homopolymer Melt}
+%                 \begin{itemize}
+%                     \item Z is number of entanglements per chain
+%                     % \item 今回のネットワークは、\\ホモポリマーと同等
+%                 \end{itemize}
+%                 \scriptsize
+%                 \begin{center}
+%                     \begin{tabular}{c||c|c} \hline
+%                         &Homo & 4 Chain NW \\ \hline \hline
+%                         Segments& 50& 48 \\ \hline
+%                         Chains & 200& 768 \\ \hline
+%                         Entanglements& 204& 800\\ \hline
+%                         Entangled Chains&134&557 \\ \hline
+%                         \alert{$<Z>_{Z1}$}&\alert{1.02}& \alert{1.04}\\ \hline
+%                     \end{tabular}
+%                 \end{center}
+%             \end{block}
+%         \end{columns}
+%     \begin{alertblock}{Z1-code?}
+%         \begin{itemize}
+%             \item Z1-code is an algorism to visualize and count entanglements\footnote{
+%                 M. Kröger, Comput. Phys. Commun. 168, 209 (2005)
+%             }
+%         \end{itemize}
+%     \end{alertblock}
+% 	\note{
+% 		\begin{itemize}
+% 			\item この弾性率増加の原因を明確にするため、絡み合いを表すZを見てみました。
+% 			\item Zは同じ長さのストランドの直鎖ポリマーとほぼ同一であり適正な初期化も確認できました。
+% 			\item \textcolor{red}{(POINT left two)}
+% 			\item 1.02 and 1.04
+% 		\end{itemize}
+% 	}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Reduced Entanglements by NPT Model}
@@ -965,43 +965,43 @@
 \end{frame}
 
 
-\begin{frame}
-	\frametitle{4-Cain NW のせん断変形時のヒステリシス}
-	\begin{itemize}
-		% \item 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは Phantom Network Model:PNM に漸近
-		\item PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で複数回の連続した変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示した。
-	\end{itemize}
+% \begin{frame}
+% 	\frametitle{4-Cain NW のせん断変形時のヒステリシス}
+% 	\begin{itemize}
+% 		% \item 変形速度の低減により、$\gamma<1$ 程度の小さなひずみでは Phantom Network Model:PNM に漸近
+% 		\item PNM へと漸近する変形速度 ($\dot{\gamma} = 2e^{-4}$) で複数回の連続した変形に対しても迅速な回復を伴った力学的ヒステリシス (Hysteresis loss $\simeq$ 0.34) を示した。
+% 	\end{itemize}
 
-	\begin{columns}[totalwidth=\linewidth]
-		\column{.5\textwidth}
-			\centering
-				\includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
-				Stress-Strain Curves for 4-chain NW 
-		\column{.5\textwidth}
-			\centering
-				\includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
-				Hysteresis Response with Cyclic Deformations
-		\end{columns}
-\end{frame}
+% 	\begin{columns}[totalwidth=\linewidth]
+% 		\column{.5\textwidth}
+% 			\centering
+% 				\includegraphics[width=\textwidth]{Shear_Random_4chain_N20.png}
+% 				Stress-Strain Curves for 4-chain NW 
+% 		\column{.5\textwidth}
+% 			\centering
+% 				\includegraphics[width=\textwidth]{CyclicDeform_4chain_rate_2e-4.png}
+% 				Hysteresis Response with Cyclic Deformations
+% 		\end{columns}
+% \end{frame}
 
 
-\begin{frame}
-	\frametitle{各種の変形条件での力学的ヒステリシス}
-		\centering
-			\includegraphics[width=\textwidth]{hyst_shear_all.png}
-			Hysteresis losses for valid shear rate and maximum deformation
-\end{frame}
+% \begin{frame}
+% 	\frametitle{各種の変形条件での力学的ヒステリシス}
+% 		\centering
+% 			\includegraphics[width=\textwidth]{hyst_shear_all.png}
+% 			Hysteresis losses for valid shear rate and maximum deformation
+% \end{frame}
 
-\begin{frame}
-	\frametitle{ヒステリシスロス}
-	\begin{itemize}
-		\item 変形速度の低下に伴いヒステリシスロスは減少
-		\item \textcolor{red}{$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失}
-	\end{itemize}
-			\centering
-				\includegraphics[width=.6\textwidth]{hyst_shear.png}\\
-					Comparison of Hysteresis losses for 4-Chain NW
-\end{frame}
+% \begin{frame}
+% 	\frametitle{ヒステリシスロス}
+% 	\begin{itemize}
+% 		\item 変形速度の低下に伴いヒステリシスロスは減少
+% 		\item \textcolor{red}{$\dot{\gamma} \sim 1e^{-5}$ 程度のオーダーの時間スケールで消失}
+% 	\end{itemize}
+% 			\centering
+% 				\includegraphics[width=.6\textwidth]{hyst_shear.png}\\
+% 					Comparison of Hysteresis losses for 4-Chain NW
+% \end{frame}
 
 \begin{frame}
 	\frametitle{ストランドの最長緩和時間}
@@ -1035,6 +1035,38 @@
 	\vspace*{2mm}
 		\alert{ヒステリシスロスが消失する変形速度 ($\sim 1e^{-5}$) と対応}
 	\end{exampleblock}
+		
+\end{frame}
+
+\begin{frame}
+	\frametitle{Effect of Strand Length for Shorter KG Chain}
+	\begin{itemize}
+		\item For Phantom Chain
+		\begin{itemize}
+			\item Longer Strand resulted in lower Modulus
+		\end{itemize}
+		
+		\item KG Chain 
+		\begin{itemize}
+			\item Proper Length was found for Low Modulus
+			\item which implies proper restriction for JP
+		\end{itemize}
+		
+	\end{itemize}
+	% \begin{exampleblock}{最長緩和時間 ($\tau$) を評価}
+		\begin{columns}[totalwidth=\linewidth]
+			\column{.48\textwidth}
+			\centering
+					\includegraphics[width=\textwidth]{n_mod.png}\\
+					\scriptsize{Strand Length vs. Modulei ratio}
+			\column{.48\textwidth}
+				\centering
+					\includegraphics[width=\textwidth]{shear_n16.png}\\
+					\scriptsize{Shear Stress for N=16}
+		\end{columns}
+	% \vspace*{2mm}
+	% 	\alert{ヒステリシスロスが消失する変形速度 ($\sim 1e^{-5}$) と対応}
+	% \end{exampleblock}
 		
 \end{frame}
 
