@@ -697,14 +697,45 @@
 
 \section{Results}
 \subsection{Networks with Phantom Chains}
+\begin{frame}
+	\frametitle{
+		Phantom Chain NW (f=4, N=36)
+	}
+	\begin{itemize}
+		\item Strand-length is set to Equilibrated length (N=36)
+		\item Multiplicity is 3 to keep $\rho = 0.85$
+	\end{itemize}
+
+	\vspace{3mm}
+	\begin{columns}[c, onlytextwidth]
+		\column{.4\linewidth}
+		\centering
+		\includegraphics[width=.65\textwidth]{N36_f4.png}
+		\column{.55\linewidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{contour.png}
+	\end{columns}
+	\note{
+		\begin{itemize}
+			\item N=36が先ほど示した条件でストランドが自然長になる条件なんですが、
+			\item 鎖に沿ったセグメント間距離を見ると随分伸長されていて、
+			\item ズリせん断印加時の応力もPNMよりも高くなっていた。
+			\item ストランドのセグメント数を増加し、かつ、系を収縮することで
+			\item 応力がPNMの予想するものと一致した。
+			\item \textcolor{red}{(POINT N=48)}
+			\item このことから、ストランド長が適切でなければ結節点のゆらぎを抑制し、その結果PNMから乖離していくと推定できた。
+		\end{itemize}
+	}
+\end{frame}
+
 
 \begin{frame}
 	\frametitle{
 		Strand length Effect for Phantom Chain NW
 	}
 	\begin{itemize}
-		\item Strand-length is varied \alert{from 36 to 48 for f=4}
-		\item System size is reduced to keep $\rho = 0.85$
+		\item Strand-length is varied from 36 to 48 for f=4
+		\item System size is \alert{reduced to keep $\rho = 0.85$}
 	\end{itemize}
 
 	\begin{figure}[htb]
@@ -732,12 +763,16 @@
 		Comparison of Functionality (f = 3, 4, 6)
 	}
 
-	\begin{figure}[htb]
+	\begin{block}{For Varied Functionalities}
+		\begin{itemize}
+			\item With proper strand length
+			\item Modulus changed according to theory
+		\end{itemize}
+
+		\vspace{5mm}
 		\centering
 			\includegraphics[width=\textwidth]{compare_346.png}
-
-			% \scriptsize{Comparison of Functionality (f = 3, 4, 6)}
-	\end{figure}
+	\end{block}
 
 	\note{
 		\begin{itemize}
